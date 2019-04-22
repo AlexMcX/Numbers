@@ -8,13 +8,9 @@
 
 import Foundation
 import SpriteKit
+import DependencyInjection
 
 class MainMenuView: BaseView {
-    @objc dynamic weak var playBtn:Button!
-    @objc dynamic var controller:MainMenuController!
-    
-    override func onInit() {
-        print("Main menu: \(controller)")
-        print("Main menu: \(playBtn)")
-    }
+    @objc dynamic weak var playBtn: Button!
+    @objc dynamic weak var optionsBtn: Button!
 }

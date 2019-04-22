@@ -9,13 +9,25 @@
 import SpriteKit
 import DependencyInjection
 
-class BaseView: SKScene, Injectable, InjectableHandler {    
+class BaseView: SKScene, INJInjectable, INJInjectableHandler {
+    @objc dynamic weak var backBtn:Button?
+    
     override func sceneDidLoad() {
+        isUserInteractionEnabled = false;
+        
         initialize()
         
         injection()
         
         onInit()
+        
+        listeners(access: true)
+    }
+    
+    deinit {
+        listeners(access: false)
+        
+        backBtn = nil
     }
     
     func onInit() {
@@ -23,6 +35,10 @@ class BaseView: SKScene, Injectable, InjectableHandler {
     }
     
     func onInjection() {
+        
+    }
+    
+    func listeners(access: Bool) {
         
     }
 }

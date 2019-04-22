@@ -9,27 +9,48 @@
 import UIKit
 import SpriteKit
 import GameplayKit
+import DependencyInjection
 
-class GameViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+class GameViewController: UIViewController, INJInjection {
+    @objc dynamic weak var sceneService:ScenesService!
+    
+    func onInit() {
         if let view = self.view as! SKView? {
-            // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "MainMenuScene") {
-                // Set the scale mode to scale to fit the window
-                scene.scaleMode = .aspectFill
-                
-                // Present the scene
-                view.presentScene(scene)
-            }
+            sceneService.setView(view: view)
+            
+            sceneService.setScene(scene: Scene.BlockMenu)
             
             view.ignoresSiblingOrder = true
             
             view.showsFPS = true
             view.showsNodeCount = true
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+//        if let _ = self.view as! SKView? {
+//            sceneService.setView(view: view)
+            injection()
+            
+            onInit()
+            
+            
+            // Load the SKScene from 'GameScene.sks'
+//            if let scene = SKScene(fileNamed: "MainMenuScene") {
+//                // Set the scale mode to scale to fit the window
+//                scene.scaleMode = .aspectFill
+//
+//                // Present the scene
+//                view.presentScene(scene)
+//            }
+            
+//            view.ignoresSiblingOrder = true
+//
+//            view.showsFPS = true
+//            view.showsNodeCount = true
+//        }
     }
 
     override var shouldAutorotate: Bool {

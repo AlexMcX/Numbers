@@ -10,7 +10,7 @@ import Foundation
 import SpriteKit
 import DependencyInjection
 
-class Button: SKSpriteNode {
+class Button: UIComponent {
     private enum STATE: String {
         case DISABLE = "disable"
         case DOWN = "down"
@@ -18,28 +18,29 @@ class Button: SKSpriteNode {
         case UP = "up"
     }
     
-    private var template:String = ""
-    @objc dynamic weak var bg: SKSpriteNode!
     @objc dynamic weak var title: SKLabelNode!
+    @objc dynamic weak var background: SKSpriteNode!
+    private var template:String = ""
     
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        self.initialize()
-        
-        updateTemplate()
+    public private(set) var onTouch:Signal!;
+    
+    override func onInit() {
+        onTouch = Signal()
         
         isUserInteractionEnabled = true;
+        
+        updateTemplate()
     }
     
+    
     private func updateTemplate() {
-        guard let name = bg.texture?.name else { return }
+        guard let name = background.texture?.name else { return }
         
         template = name.slice(to: STATE.UP.rawValue)
     }
     
     override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+        onTouch.fire()
     }
     
 //    private func setState(_ state:STATE) {

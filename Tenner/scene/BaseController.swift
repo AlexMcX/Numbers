@@ -9,5 +9,16 @@
 import DependencyInjection
 
 class BaseController: INJController {
+    deinit {
+        listeners(access: false)
+    }
+    
+    override func postInit() {
+        listeners(access: true)
+    }
+    
+    func listeners(access: Bool) {
+        
+    }
     
 }
