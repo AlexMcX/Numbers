@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import DependencyInjection
+import SpriteKit
 
 /*
         library - *.sks file name
@@ -15,65 +15,70 @@ import DependencyInjection
         renderer - node name in "library"
  */
 
-class List: UIComponent, INJInjection {
+class List: UIComponent {
     @objc dynamic var library: String!
     @objc dynamic var direction: String!
     @objc dynamic var renderer: String!
     @objc dynamic var padding: String!
     @objc dynamic var test: String!
     
-    @objc dynamic var libService: LibraryService!
-    
     private var paddingComponent: ListItemPaddings?
-    private var components:[ListItemRenderer] = []
+    private var components: [ListItemRenderer]!
     
-    override func onInit() {
-        injection()
+    override func onInitialize() {        
+        components = []
         
         updateVariables()
-        
-        
-        
         
         var provider:[BlockListItemData] = []
 
         for i in 0..<3 {
             provider.append(BlockListItemData(index: i))
         }
-
+        
         validate(provider: provider)
     }
     
-    public func validate(provider: Array<ListItemData>) {
-        var componentRenderer:String;
+    public func validate(provider: Array<Any>) {
+        var component: ListItemRenderer?
+        let componentCLS: ListItemRenderer.Type?
         
-        for data in provider {
-            componentRenderer = renderer
-            componentRenderer = componentRenderer.replacingOccurrences(of: "{state}", with: data.state)
+        if let renderer = renderer {
+            componentCLS = NSClassFromString("\(AppDelegate.IDENTIFIER).\(renderer)") as? ListItemRenderer.Type
             
-            guard let component = libService.getChild(library: library, renderer: componentRenderer) as? ListItemRenderer else {
-                continue
+            for data in provider {
+                if (componentCLS != nil) {
+                    component = componentCLS!.init()
+                }else {
+                    component = libService.getChild(library: library, renderer: renderer) as? ListItemRenderer
+                }
+                
+                if (component == nil) { return }
+                
+                appendRenderer(renderer: component!, data: data)
             }
             
-            component.setData(value: data)
-            
-            components.append(component)
-            
-            addChild(component)
+            resize()
         }
+    }
+
+    private func appendRenderer(renderer: ListItemRenderer, data: Any? = nil) {
+        renderer.setData(value: data)
         
-        resize()
+        components.append(renderer)
+        
+        addChild(renderer)
     }
     
     private func resize() {
-        var position:CGPoint = CGPoint(x: 0, y: 0)
-        
+        var position: CGPoint = CGPoint(x: 0, y: 0)
+
         for component in components {
             position.x += CGFloat(paddingComponent?.x ?? 0)
-            position.y += CGFloat(paddingComponent?.y ?? 0)            
-            
+            position.y += CGFloat(paddingComponent?.y ?? 0)
+
             component.position = position
-            
+
             switch direction {
                 case .none: break
                 case .some("horizontal"):
@@ -99,18 +104,14 @@ class List: UIComponent, INJInjection {
 
 
 
-fileprivate class BlockListItemData: ListItemData {
+class BlockListItemData {
     var name:String = "Block_1"
     var stars:Int = 1
     var needPoints:Int = 2512
-    
+
     init(index: Int) {
         name = "Block_\(index)"
         stars = Int.randomRange(min: 0, max: 3)
         needPoints = Int.randomRange(min: 1000, max: 2000)
-        
-        super.init()
-        
-        state = "normal"
     }
 }

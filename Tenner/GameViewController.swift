@@ -10,12 +10,16 @@ import UIKit
 import SpriteKit
 import GameplayKit
 import DependencyInjection
+import Engine
 
 class GameViewController: UIViewController, INJInjection {
-    @objc dynamic weak var sceneService:ScenesService!
+    @objc dynamic weak var sceneService: ScenesService!
+    @objc dynamic weak var engige: Engine!
     
     func onInit() {
         if let view = self.view as! SKView? {
+            engige.initConfig(fileName: "GameConfig")
+            
             sceneService.setView(view: view)
             
             sceneService.setScene(scene: Scene.BlockMenu)

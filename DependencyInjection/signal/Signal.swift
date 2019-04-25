@@ -25,7 +25,7 @@ open class Signal {
     }
     
     @discardableResult
-    public func add(slot:@escaping ()->Void) -> Int {
+    public func add(slot: @escaping ()->Void) -> Int {
         let result = NSUUID().hashValue
         
         slots[result] = slot
@@ -34,7 +34,7 @@ open class Signal {
     }
     
     @discardableResult
-    public func add(slot:@escaping (Signalable)->Void) -> Int {
+    public func add(slot: @escaping (Signalable)->Void) -> Int {
         let result = NSUUID().hashValue
         
         slotsData[result] = slot

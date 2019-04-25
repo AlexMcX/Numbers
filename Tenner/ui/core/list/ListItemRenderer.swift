@@ -6,13 +6,7 @@
 //  Copyright © 2019 Alexey Oleksandrovich. All rights reserved.
 //
 
-open class ListItemRenderer: UIComponent {
-    public enum STATE: String {
-        case NONE = ""
-        case NORMAL = "normal"
-        case DISABLE = "disable"
-    }
-    
+class ListItemRenderer: UIComponent {   
     override public func validate() {
         
     }

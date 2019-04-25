@@ -9,7 +9,7 @@
 import Foundation
 import DependencyInjection
 
-class ConfigurationModel: INJInstanceModel, Codable {
+public class ConfigModel: INJInstanceModel, Codable {
     var levelStarsMax: Int
     var blockConfig: [Block]
     
@@ -18,21 +18,31 @@ class ConfigurationModel: INJInstanceModel, Codable {
         case blockConfig = "Block Configuration"
     }
     
-    struct Block: Codable {
+    public struct Block: Codable {
+        let id: String
         let title: String
         let levels: [Level]
+        let availableStars: Int
+        let unlockStars: Int
         
         enum CodingKeys : String, CodingKey {
+            case id = "ID"
             case title = "Title"
             case levels = "Levels"
+            case availableStars = "Available stars"
+            case unlockStars = "Unlock stars"
         }
     }
     
-    struct Level: Codable {
+    public struct Level: Codable {
+        let id: String
+        let title: String
         let rows: Int
         let cols: Int
         
         enum CodingKeys : String, CodingKey {
+            case id = "ID"
+            case title = "Title"
             case rows = "Rows"
             case cols = "Cols"
         }

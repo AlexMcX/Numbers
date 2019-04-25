@@ -10,16 +10,26 @@ import SpriteKit
 import DependencyInjection
 
 class LibraryService: INJService {
+    private enum STATE {
+        case wait, register
+    }
     
-    private var scenes: [String:SKScene] = [:]
+    private var scenes: [String:(state: STATE, scene: SKScene?)] = [:]
     
     public func getChild(library: String, renderer: String) -> SKNode? {
-        var lib = scenes[library]
+        var lib: SKScene?
         
-        if (lib == nil) {
+        if (renderer.isEmpty) { return nil }
+        
+        if (scenes[library] == nil) {
+            scenes[library] = (STATE.wait, nil)
+            
             lib = SKScene(fileNamed: library);
             
-            scenes[library] = lib
+            scenes[library]!.scene = lib
+            scenes[library]!.state = .register
+        }else {
+            lib = scenes[library]!.scene
         }
         
         if (lib == nil) { return nil }
@@ -29,6 +39,7 @@ class LibraryService: INJService {
         }
         
         result = result.copy() as! SKNode
+        result.initialize()
         
         result.position = CGPoint(x: 0, y: 0)
         

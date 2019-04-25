@@ -27,6 +27,8 @@ class ScenesService: INJService {
         skScene.name = scene.fileName
         skScene.scaleMode = .aspectFill
         
+        skScene.initialize()
+        
         view.presentSceneTo(to: skScene)
     }
     

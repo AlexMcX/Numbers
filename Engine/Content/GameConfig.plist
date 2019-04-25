@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Max level stars</key>
+	<integer>3</integer>
+	<key>Block Configuration</key>
+	<array>
+		<dict>
+			<key>ID</key>
+			<string>b_0</string>
+			<key>Title</key>
+			<string>Classic</string>
+			<key>Available stars</key>
+			<integer>3</integer>
+			<key>Unlock stars</key>
+			<integer>0</integer>
+			<key>Levels</key>
+			<array>
+				<dict>
+					<key>ID</key>
+					<string>l_0_0</string>
+					<key>Title</key>
+					<string>1</string>
+					<key>Rows</key>
+					<integer>12</integer>
+					<key>Cols</key>
+					<integer>9</integer>
+				</dict>
+				<dict>
+					<key>ID</key>
+					<string>l_0_1</string>
+					<key>Title</key>
+					<string>2</string>
+					<key>Rows</key>
+					<integer>12</integer>
+					<key>Cols</key>
+					<integer>9</integer>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>ID</key>
+			<string>b_1</string>
+			<key>Title</key>
+			<string>Block_1</string>
+			<key>Available stars</key>
+			<integer>3</integer>
+			<key>Unlock stars</key>
+			<integer>50</integer>
+			<key>Levels</key>
+			<array>
+				<dict>
+					<key>ID</key>
+					<string>l_1_0</string>
+					<key>Title</key>
+					<string>1</string>
+					<key>Rows</key>
+					<integer>12</integer>
+					<key>Cols</key>
+					<integer>9</integer>
+				</dict>
+				<dict>
+					<key>ID</key>
+					<string>l_1_1</string>
+					<key>Title</key>
+					<string>2</string>
+					<key>Rows</key>
+					<integer>12</integer>
+					<key>Cols</key>
+					<integer>9</integer>
+				</dict>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -15,7 +15,7 @@ class BaseView: SKScene, INJInjectable, INJInjectableHandler {
     override func sceneDidLoad() {
         isUserInteractionEnabled = false;
         
-        initialize()
+//        initialize()
         
         injection()
         

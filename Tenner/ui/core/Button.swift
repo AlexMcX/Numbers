@@ -25,6 +25,10 @@ class Button: UIComponent {
     public private(set) var onTouch:Signal!;
     
     override func onInit() {
+        
+    }
+    
+    override func onInitialize() {
         onTouch = Signal()
         
         isUserInteractionEnabled = true;

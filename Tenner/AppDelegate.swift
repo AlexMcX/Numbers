@@ -10,7 +10,8 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    public static let IDENTIFIER = "Tenner"
+    
     var window: UIWindow?
 
 

@@ -22,6 +22,7 @@
 		FA60F38A225E6AE5002B7751 /* INJModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA60F389225E6AE5002B7751 /* INJModel.swift */; };
 		FA85941E226DE66500E9C73E /* INJInstanceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85941D226DE66500E9C73E /* INJInstanceModel.swift */; };
 		FA859434226E64FB00E9C73E /* INJDecoderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA859433226E64FB00E9C73E /* INJDecoderService.swift */; };
+		FAE49BE72270FD1600C55512 /* Mirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE49BE62270FD1600C55512 /* Mirror.swift */; };
 		FAEF1826226602090071E050 /* INJDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF1822226602090071E050 /* INJDataService.swift */; };
 		FAEF182C226602A40071E050 /* INJHTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF182B226602A40071E050 /* INJHTTPService.swift */; };
 		FAEF182F226602E10071E050 /* INJHTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF182E226602E10071E050 /* INJHTTPRequest.swift */; };
@@ -49,6 +50,7 @@
 		FA60F389225E6AE5002B7751 /* INJModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INJModel.swift; sourceTree = "<group>"; };
 		FA85941D226DE66500E9C73E /* INJInstanceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INJInstanceModel.swift; sourceTree = "<group>"; };
 		FA859433226E64FB00E9C73E /* INJDecoderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INJDecoderService.swift; sourceTree = "<group>"; };
+		FAE49BE62270FD1600C55512 /* Mirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mirror.swift; sourceTree = "<group>"; };
 		FAEF1822226602090071E050 /* INJDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INJDataService.swift; sourceTree = "<group>"; };
 		FAEF182B226602A40071E050 /* INJHTTPService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INJHTTPService.swift; sourceTree = "<group>"; };
 		FAEF182E226602E10071E050 /* INJHTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INJHTTPRequest.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				FA60F380225E6ADE002B7751 /* StringProtocol.swift */,
 				FA60F381225E6ADE002B7751 /* Bool.swift */,
 				FA60F382225E6ADE002B7751 /* Optional.swift */,
+				FAE49BE62270FD1600C55512 /* Mirror.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				FAEF1826226602090071E050 /* INJDataService.swift in Sources */,
 				FA60F38A225E6AE5002B7751 /* INJModel.swift in Sources */,
 				FA60F37C225E6AD2002B7751 /* INJService.swift in Sources */,
+				FAE49BE72270FD1600C55512 /* Mirror.swift in Sources */,
 				FA0D9D58226B6D42005C4AE2 /* Signalable.swift in Sources */,
 				FA60F383225E6ADE002B7751 /* NSObject.swift in Sources */,
 				FA0D9D56226B6C1E005C4AE2 /* Signal.swift in Sources */,

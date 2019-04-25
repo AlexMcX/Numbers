@@ -37,25 +37,27 @@ class INJInjectingManager: INJInjecting {
             injectionInit.append(injector)
         }
         
-        let property = Mirror(reflecting: injector).children
+        let mirror = Mirror(reflecting: injector)
         
-        for (key, value) in property {
-            let valueType = type(of: value)
-        
-            guard let forKey = key else { continue }
-            
-            // init injection instance
-            let injResult = getInjection(valueType)
-            
-            switch(injResult) {
-                case .PROTOCOL_NONE:
-                    continue
-                case .PROTOCOL(let instance):
-                    (injector as! NSObject).setValue(instance, forKey: forKey)
-                case .PROTOCOL_WAIT(let className):
-                    addWait(className, forKey, injector)
+        for property in mirror.childsWithBase() {
+            for (key, value) in property {
+                let valueType = type(of: value)
                 
-                    isInjection = false
+                guard let forKey = key else { continue }
+                
+                // init injection instance
+                let injResult = getInjection(valueType)
+                
+                switch(injResult) {
+                    case .PROTOCOL_NONE:
+                        continue
+                    case .PROTOCOL(let instance):
+                        (injector as! NSObject).setValue(instance, forKey: forKey)
+                    case .PROTOCOL_WAIT(let className):
+                        addWait(className, forKey, injector)
+                    
+                        isInjection = false
+                }
             }
         }
     
@@ -66,8 +68,7 @@ class INJInjectingManager: INJInjecting {
     
     public func register(injection:INJInjectable) {
         if (verificationInit(injection) ) {
-            print("Error registration \(injection), this instance already exists")
-            return
+            fatalError("❌ Error registration \(injection), this instance already exists")
         }
         
         let className = getInjectionClassName(injection)
@@ -164,7 +165,6 @@ class INJInjectingManager: INJInjecting {
         for (_, wait) in dataWait {
             for (_, instance) in wait {
                 if (getInjectionClassName(injector) == getInjectionClassName(instance)) { return }
-//                if (injector.isEqual(instance)) { return }
             }
         }
         
@@ -178,7 +178,6 @@ class INJInjectingManager: INJInjecting {
     private func verificationInit(_ instance: INJInjectable) -> Bool {
         for inst in injectionInit {
             if (getInjectionClassName(instance) == getInjectionClassName(inst)) { return true }
-//            if (inst.isEqual(instance)) { return true }
         }
         
         return false
