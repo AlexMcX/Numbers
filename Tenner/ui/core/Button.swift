@@ -11,10 +11,7 @@ import SpriteKit
 import DependencyInjection
 
 class Button: UIComponent {
-    @objc dynamic weak var title: SKLabelNode!
-    @objc dynamic weak var background: SKSpriteNode!
-    
-    private var template:String = ""
+    @objc dynamic weak private var title: SKLabelNode!
     
     public private(set) var onTouch:Signal!;
         
@@ -22,18 +19,11 @@ class Button: UIComponent {
         onTouch = Signal()
         
         isUserInteractionEnabled = true;
-        
-        updateTemplate()
-    }
-    
-    
-    private func updateTemplate() {
-        guard let name = background.texture?.name else { return }
-        
-        template = name.slice(to: STATE.NONE.rawValue)
     }
     
     override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         onTouch.fire()
+        
+        print("   🖱 Button::touchesBegan - \(self)")
     }
 }

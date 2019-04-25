@@ -9,7 +9,7 @@
 import SpriteKit
 
 class BlockMenuView: BaseView {
-    @objc dynamic weak var titleTxt: SKLabelNode!
-    @objc dynamic weak var totalTxt: SKLabelNode!
-    @objc dynamic weak var blocks: List!
+    @objc dynamic weak public private(set) var titleTxt: SKLabelNode!
+    @objc dynamic weak public private(set) var totalTxt: SKLabelNode!
+    @objc dynamic weak public private(set) var blocks: List!
 }

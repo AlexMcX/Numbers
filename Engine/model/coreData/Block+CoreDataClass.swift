@@ -11,6 +11,6 @@ import Foundation
 import CoreData
 
 
-public class Block: NSManagedObject {
+open class Block: NSManagedObject {
 
 }

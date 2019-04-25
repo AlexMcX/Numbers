@@ -41,22 +41,24 @@ class INJInjectingManager: INJInjecting {
         
         for property in mirror.childsWithBase() {
             for (key, value) in property {
-                let valueType = type(of: value)
-                
-                guard let forKey = key else { continue }
-                
-                // init injection instance
-                let injResult = getInjection(valueType)
-                
-                switch(injResult) {
-                    case .PROTOCOL_NONE:
-                        continue
-                    case .PROTOCOL(let instance):
-                        (injector as! NSObject).setValue(instance, forKey: forKey)
-                    case .PROTOCOL_WAIT(let className):
-                        addWait(className, forKey, injector)
+                if case Optional<Any>.none = value {
+                    let valueType = type(of: value)
                     
-                        isInjection = false
+                    guard let forKey = key else { continue }
+                    
+                    // init injection instance
+                    let injResult = getInjection(valueType)
+                    
+                    switch(injResult) {
+                        case .PROTOCOL_NONE:
+                            continue
+                        case .PROTOCOL(let instance):
+                            (injector as! NSObject).setValue(instance, forKey: forKey)
+                        case .PROTOCOL_WAIT(let className):
+                            addWait(className, forKey, injector)
+                        
+                            isInjection = false
+                    }
                 }
             }
         }
@@ -126,7 +128,6 @@ class INJInjectingManager: INJInjecting {
         var result = data[className]
 
         if result == nil {
-            print("manager: \(cls)" )
             if (cls is INJInjectableInstance.Type) {
                 return .PROTOCOL_WAIT(className: className)
             }

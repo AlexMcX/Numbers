@@ -9,9 +9,9 @@
 import Foundation
 import DependencyInjection
 
-public class ConfigModel: INJInstanceModel, Codable {
-    var levelStarsMax: Int
-    var blockConfig: [Block]
+open class ConfigModel: INJInstanceModel, Codable {
+    public let levelStarsMax: Int
+    public let blockConfig: [Block]
     
     enum CodingKeys: String, CodingKey {
         case levelStarsMax = "Max level stars"
@@ -19,11 +19,11 @@ public class ConfigModel: INJInstanceModel, Codable {
     }
     
     public struct Block: Codable {
-        let id: String
-        let title: String
-        let levels: [Level]
-        let availableStars: Int
-        let unlockStars: Int
+        public let id: String
+        public let title: String
+        public let levels: [Level]
+        public let availableStars: Int
+        public let unlockStars: Int
         
         enum CodingKeys : String, CodingKey {
             case id = "ID"
@@ -35,10 +35,10 @@ public class ConfigModel: INJInstanceModel, Codable {
     }
     
     public struct Level: Codable {
-        let id: String
-        let title: String
-        let rows: Int
-        let cols: Int
+        public let id: String
+        public let title: String
+        public let rows: Int
+        public let cols: Int
         
         enum CodingKeys : String, CodingKey {
             case id = "ID"

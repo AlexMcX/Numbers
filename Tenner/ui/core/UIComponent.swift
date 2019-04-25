@@ -8,9 +8,10 @@
 
 import SpriteKit
 import DependencyInjection
+import Engine
 
-class UIComponent: SKSpriteNode, INJInjection {
-    @objc dynamic var libService: LibraryService!
+class UIComponent: SKSpriteNode, INJInjectableInstance, INJInjection {
+    @objc dynamic internal private(set) var libService: LibraryService!
     
     public private(set) var data: Any?
     public enum STATE: String {
@@ -24,16 +25,7 @@ class UIComponent: SKSpriteNode, INJInjection {
 
     private var currentState: STATE = .NONE
     private var assetName: String = ""
-    
-    
-    override public init(texture: SKTexture?, color: UIColor, size: CGSize) {
-        super.init(texture: texture, color: color, size: size)
-    }
-    
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
+        
     override func onInitialize() {
         updateAssetName("")
         
@@ -44,8 +36,8 @@ class UIComponent: SKSpriteNode, INJInjection {
         
     }
     
-    func setData(value: Any?) {
-        data = value
+    func setData(data: Any?) {
+        self.data = data
     }
     
     func validate() {
@@ -53,18 +45,20 @@ class UIComponent: SKSpriteNode, INJInjection {
     }
     
     func setState(state: STATE) {
+        if(libService == nil) { return }
+        
         let asset = assetName.replacingOccurrences(of: "{state}", with: state.rawValue)
-        
+
         size = self.calculateAccumulatedFrame().size
-        
+
         guard let component = libService.getChild(library: "MenuLib", renderer: asset) else {
             return
         }
-        
+
         size = component.calculateAccumulatedFrame().size
-        
+
         let childs = component.children
-        
+
         component.removeAllChildren(reg: true)
         addChildren(in: childs, reg: true)
     }

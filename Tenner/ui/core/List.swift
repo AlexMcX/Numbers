@@ -16,48 +16,32 @@ import SpriteKit
  */
 
 class List: UIComponent {
-    @objc dynamic var library: String!
-    @objc dynamic var direction: String!
-    @objc dynamic var renderer: String!
-    @objc dynamic var padding: String!
-    @objc dynamic var test: String!
+    @objc dynamic private var library: String!
+    @objc dynamic private var direction: String!
+    @objc dynamic private var renderer: String!
+    @objc dynamic private var padding: String!
+    @objc dynamic private var test: String!
     
     private var paddingComponent: ListItemPaddings?
     private var components: [ListItemRenderer]!
     
     override public init(texture: SKTexture?, color: UIColor, size: CGSize) {
         super.init(texture: texture, color: color, size: size)
-        
-        print("List::init \(self.debugDescription)")
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
-//        print("List::required init \(self.debugDescription)")
     }
     
     override func onInit() {
         components = []
         
         updateVariables()
-        
-//        print("onInit: \(renderer)  ||      ", self)
-        
-//        var provider:[BlockListItemData] = []
-//
-//        for i in 0..<1 {
-//            provider.append(BlockListItemData(index: i))
-//        }
-//
-//        validate(provider: provider)
     }
     
     public func validate(provider: Array<Any>) {
         var component: ListItemRenderer?
         let componentCLS: ListItemRenderer.Type?
-        
-        print("renderer: \(renderer)  ||     ", self)
         
         if let renderer = renderer {
             componentCLS = NSClassFromString("\(AppDelegate.IDENTIFIER).\(renderer)") as? ListItemRenderer.Type
@@ -79,7 +63,7 @@ class List: UIComponent {
     }
 
     private func appendRenderer(renderer: ListItemRenderer, data: Any? = nil) {
-        renderer.setData(value: data)
+        renderer.setData(data: data)
         
         components.append(renderer)
         
@@ -117,17 +101,3 @@ class List: UIComponent {
         }
     }
 }
-
-
-
-//class BlockListItemData {
-//    var name:String = "Block_1"
-//    var stars:Int = 1
-//    var needPoints:Int = 2512
-//
-//    init(index: Int) {
-//        name = "Block_\(index)"
-//        stars = Int.randomRange(min: 0, max: 3)
-//        needPoints = Int.randomRange(min: 1000, max: 2000)
-//    }
-//}

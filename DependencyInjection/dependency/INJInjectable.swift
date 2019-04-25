@@ -14,7 +14,7 @@ public protocol INJInjectableHandler: INJInjectable {
 
 /*
     Don't dynamic create when init injection protocol
-    append to base onjection protocol when register instance this protocol
+    append to base injection protocol when register instance this protocol
  */
 public protocol INJInjectableInstance: INJInjectable {
     func register()

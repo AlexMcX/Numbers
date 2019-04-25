@@ -10,7 +10,7 @@ import SpriteKit
 import DependencyInjection
 
 class BaseView: SKScene, INJInjectableInstance, INJInjectableHandler {
-    @objc dynamic weak var backBtn:Button?
+    @objc dynamic weak internal private(set) var backBtn:Button?
     
     deinit {
         listeners(access: false)

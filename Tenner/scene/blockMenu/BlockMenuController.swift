@@ -13,7 +13,6 @@ class BlockMenuController: BaseController {
     @objc dynamic private var engige: Engine!
     
     override func onInit() {
-//        print("engine \(engige.configService)")
         updateBlocks()
     }
     

@@ -7,12 +7,6 @@
 //
 
 open class BlockModel {
-    var config: ConfigModel.Block!
-    var data: Block!
-//    let id: String = ""
-//    var title: String = ""
-//    var access: Bool = false
-//    var receivedStars: Int = 0
-//    var availableStars: Int = 0
-//    var unlockStars: Int = 0
+    public var config: ConfigModel.Block!
+    public var data: Block!
 }
