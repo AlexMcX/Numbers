@@ -35,7 +35,7 @@ public protocol INJInjection: INJInjectable {}
 public protocol INJInjectable: NSObjectProtocol {
     func injection()
     func unregistration()
-    func onInit()
+//    func onInit()
 }
 
 public extension INJInjectable {    

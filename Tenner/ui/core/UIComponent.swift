@@ -17,6 +17,9 @@ class UIComponent: SKSpriteNode, INJInjection {
         case NONE = ""
         case NORMAL = "normal"
         case DISABLE = "disable"
+        case DOWN = "down"
+        case OVER = "over"
+        case UP = "up"
     }
 
     private var currentState: STATE = .NONE
@@ -25,48 +28,40 @@ class UIComponent: SKSpriteNode, INJInjection {
     
     override public init(texture: SKTexture?, color: UIColor, size: CGSize) {
         super.init(texture: texture, color: color, size: size)
-        
-        initComponent()
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
-        initComponent()
     }
     
-    public func initComponent() {
-//        injection()
-        
-//        self.initialize()
-        
-//        injectUserData()
-        
+    override func onInitialize() {
         updateAssetName("")
-        
-        preInit()
         
         onInit()
     }
     
-    public func onInit() {
+    func onInit() {
         
     }
     
-    public func setData(value: Any?) {
+    func setData(value: Any?) {
         data = value
     }
     
-    public func validate() {
+    func validate() {
         
     }
     
-    public func setState(state: STATE) {
+    func setState(state: STATE) {
         let asset = assetName.replacingOccurrences(of: "{state}", with: state.rawValue)
+        
+        size = self.calculateAccumulatedFrame().size
         
         guard let component = libService.getChild(library: "MenuLib", renderer: asset) else {
             return
         }
+        
+        size = component.calculateAccumulatedFrame().size
         
         let childs = component.children
         
@@ -74,27 +69,7 @@ class UIComponent: SKSpriteNode, INJInjection {
         addChildren(in: childs, reg: true)
     }
     
-    private func preInit() {
-        self.size = self.calculateAccumulatedFrame().size
-    }
-    
-//    private func injectUserData() {
-//        guard let data = userData else { return }
-//
-//        let property = Mirror(reflecting: self).children
-//
-//        for item in data {
-//            for (key, _) in property {
-//                if (String(describing: item.key) == key) {
-//                    setValue(item.value, forKey: key! as String)
-//
-//                    break
-//                }
-//            }
-//        }
-//    }
-    
-    internal func updateAssetName(_ name: String) {
+    func updateAssetName(_ name: String) {
         if (!name.isEmpty && assetName != name) {
             assetName = name
 

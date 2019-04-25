@@ -126,6 +126,7 @@ class INJInjectingManager: INJInjecting {
         var result = data[className]
 
         if result == nil {
+            print("manager: \(cls)" )
             if (cls is INJInjectableInstance.Type) {
                 return .PROTOCOL_WAIT(className: className)
             }

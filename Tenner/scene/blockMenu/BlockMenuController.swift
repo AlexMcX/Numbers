@@ -9,10 +9,18 @@ import Foundation
 import Engine
 
 class BlockMenuController: BaseController {
+    @objc dynamic private var view: BlockMenuView!
     @objc dynamic private var engige: Engine!
     
     override func onInit() {
 //        print("engine \(engige.configService)")
+        updateBlocks()
+    }
+    
+    private func updateBlocks() {
+        let data = engige.blockDataService.blocks
+        
+        view.blocks.validate(provider: data)
     }
     
 }

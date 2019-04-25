@@ -11,24 +11,14 @@ import SpriteKit
 import DependencyInjection
 
 class Button: UIComponent {
-    private enum STATE: String {
-        case DISABLE = "disable"
-        case DOWN = "down"
-        case OVER = "over"
-        case UP = "up"
-    }
-    
     @objc dynamic weak var title: SKLabelNode!
     @objc dynamic weak var background: SKSpriteNode!
+    
     private var template:String = ""
     
     public private(set) var onTouch:Signal!;
-    
-    override func onInit() {
         
-    }
-    
-    override func onInitialize() {
+    override func onInit() {
         onTouch = Signal()
         
         isUserInteractionEnabled = true;
@@ -40,18 +30,10 @@ class Button: UIComponent {
     private func updateTemplate() {
         guard let name = background.texture?.name else { return }
         
-        template = name.slice(to: STATE.UP.rawValue)
+        template = name.slice(to: STATE.NONE.rawValue)
     }
     
     override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         onTouch.fire()
     }
-    
-//    private func setState(_ state:STATE) {
-//        switch state {
-//        case .DISABLE:
-//        case .DOWN:
-//        case .OVER:
-//        case .UP
-//    }
 }

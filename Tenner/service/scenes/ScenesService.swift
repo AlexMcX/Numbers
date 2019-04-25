@@ -21,13 +21,13 @@ class ScenesService: INJService {
     public func setScene(scene: SceneIterable) {
         guard let skScene = SKScene(fileNamed: scene.fileName) else { return }
         
-        // init controller to injection
-        _ = (scene.controllerClass as NSObject.Type).init()
-        
         skScene.name = scene.fileName
         skScene.scaleMode = .aspectFill
         
         skScene.initialize()
+        
+        // init controller to injection
+        _ = (scene.controllerClass as NSObject.Type).init()
         
         view.presentSceneTo(to: skScene)
     }
@@ -36,8 +36,7 @@ class ScenesService: INJService {
         
     }
     
-    private func isPrevScene(_ scene: SceneIterable) -> Bool
-    {
+    private func isPrevScene(_ scene: SceneIterable) -> Bool {
         if steps.count > 0 {
             return steps[steps.count - 1].fileName == scene.fileName;
         }

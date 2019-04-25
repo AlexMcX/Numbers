@@ -9,25 +9,21 @@
 import SpriteKit
 import DependencyInjection
 
-class BaseView: SKScene, INJInjectable, INJInjectableHandler {
+class BaseView: SKScene, INJInjectableInstance, INJInjectableHandler {
     @objc dynamic weak var backBtn:Button?
-    
-    override func sceneDidLoad() {
-        isUserInteractionEnabled = false;
-        
-//        initialize()
-        
-        injection()
-        
-        onInit()
-        
-        listeners(access: true)
-    }
     
     deinit {
         listeners(access: false)
         
         backBtn = nil
+    }
+    
+    override func onInitialize() {
+        isUserInteractionEnabled = false;
+        
+        onInit()
+
+        listeners(access: true)
     }
     
     func onInit() {
