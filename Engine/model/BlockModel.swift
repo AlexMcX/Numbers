@@ -9,4 +9,5 @@
 open class BlockModel {
     public var config: ConfigModel.Block!
     public var data: Block!
+//    public var access: Bool!
 }
