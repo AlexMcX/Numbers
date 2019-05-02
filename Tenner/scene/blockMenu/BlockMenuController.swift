@@ -20,6 +20,7 @@ class BlockMenuController: BaseController {
         let data = engige.blockDataService.blocks
         
         view.blocks.validate(provider: data)
+        view.setTotalStars(value: engige.totalStars)
     }
     
 }

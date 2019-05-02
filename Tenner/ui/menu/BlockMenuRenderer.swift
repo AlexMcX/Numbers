@@ -23,10 +23,38 @@ class BlockMenuRenderer: ListItemRenderer {
     
     override func setData(data: Any?) {
         if let data = data as? BlockModel {
-            titleTxt.text = data.config.title
+            titleTxt.text = NSLocalizedString(data.config.title, comment: "")
+         
+            if data.access {
+                setNormalState(data)
+                
+                return
+            }
+            
+            setDisableState(data)
         }
-        
+    }
+    
+    private func setNormalState(_ data: BlockModel) {
         setState(state: .NORMAL)
+        
+        if var textureStar: String = starImg_0.texture?.name {
+            let starImg = [starImg_0, starImg_1, starImg_2]
+            
+            textureStar = textureStar.slice(to: "_")
+            
+            for (index, star) in starImg.enumerated() {                
+                star?.texture = SKTexture(imageNamed: "\(textureStar)_\(index < data.progressStars ? STATE.ON.rawValue: STATE.OFF.rawValue)")
+            }
+        }
+    }
+    
+    private func setDisableState(_ data: BlockModel) {
+        let needTitle: String = NSLocalizedString("BLOC_MENU_NEED_STARS", comment: "")
+        
+        setState(state: .DISABLE)
+        
+        needTxt?.text = needTitle.replacingOccurrences(of: "{value}", with: "\(String(describing: data.unlockStars))")
     }
 
 }

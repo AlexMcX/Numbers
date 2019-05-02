@@ -11,7 +11,10 @@ import DependencyInjection
 
 open class Engine: NSObject, INJInjection {
     @objc dynamic public private(set) var blockDataService: BlockDataService!
-    @objc dynamic public private(set) var configService: ConfigService!
+    @objc dynamic public private(set) var levelsDataService: LevelDataService!
+    @objc dynamic private var configService: ConfigService!
+    
+    public var totalStars: Int { return blockDataService.totalStars }
     
     override init() {
         super.init()

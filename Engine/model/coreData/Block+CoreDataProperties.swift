@@ -18,6 +18,6 @@ extension Block {
     }
 
     @NSManaged public var id: String
-//    @NSManaged public var receivedStars: Int16
+    @NSManaged public var receivedStars: Int16
 
 }

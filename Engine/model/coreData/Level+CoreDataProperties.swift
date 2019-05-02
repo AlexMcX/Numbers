@@ -18,6 +18,7 @@ extension Level {
     }
 
     @NSManaged public var id: String?
+    @NSManaged public var blockID: String?
     @NSManaged public var receivedStars: Int16
 
 }

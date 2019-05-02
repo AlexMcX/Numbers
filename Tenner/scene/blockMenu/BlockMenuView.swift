@@ -12,4 +12,15 @@ class BlockMenuView: BaseView {
     @objc dynamic weak public private(set) var titleTxt: SKLabelNode!
     @objc dynamic weak public private(set) var totalTxt: SKLabelNode!
     @objc dynamic weak public private(set) var blocks: List!
+    
+    override func onInit() {
+        titleTxt.text = NSLocalizedString("BLOCK_MENU_TITLE", comment: "")
+    }
+    
+    public func setTotalStars(value: Int) {
+        let title: String = NSLocalizedString("TOTAL_STARS", comment: "")
+        
+        totalTxt.text = title.replacingOccurrences(of: "{value}", with: "\(value)")
+        
+    }
 }

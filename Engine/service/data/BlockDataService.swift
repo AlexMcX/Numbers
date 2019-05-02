@@ -10,10 +10,11 @@ import DependencyInjection
 import CoreData
 
 open class BlockDataService: INJDataService {
-    @objc dynamic public private(set) var configService: ConfigService!
+    @objc dynamic internal private(set) var configService: ConfigService!
     
     private lazy var blocksData: [Block] = { return fetch() as! [Block] }()
     public lazy var blocks: [BlockModel] = { return getBlocks() }()
+    public lazy var totalStars: Int = { return getTotalStars() }()
     
     override open func onInit() {
         initModel(containerName: "Progress", entityName: "Block", managedObjectClass: Block.self)
@@ -28,6 +29,9 @@ open class BlockDataService: INJDataService {
             
             blockModel.config = config
             blockModel.data = getBlockData(config.id) ?? createBlockData(config.id)
+            blockModel.unlockStars = config.unlockStars
+            blockModel.access = config.unlockStars <= totalStars
+            blockModel.progressStars = Int(blockModel.data.receivedStars)  / config.levels.count
             
             result.append(blockModel)
         }
@@ -51,6 +55,16 @@ open class BlockDataService: INJDataService {
         result = generateObject() as! Block
         
         result.id = id
+        
+        return result
+    }
+    
+    private func getTotalStars() -> Int {
+        var result = 0
+        
+        for block in blocksData {
+            result += Int(block.receivedStars)
+        }
         
         return result
     }

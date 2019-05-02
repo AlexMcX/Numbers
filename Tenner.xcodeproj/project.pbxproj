@@ -29,6 +29,11 @@
 		FA18181F226C8EFF00FAA415 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18181E226C8EFF00FAA415 /* Int.swift */; };
 		FA181821226C8F9500FAA415 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA181820226C8F9500FAA415 /* Bool.swift */; };
 		FA22FA66226284F000880A2B /* MainMenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA22FA65226284F000880A2B /* MainMenuScene.sks */; };
+		FA78CF72227A06A700383F65 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA78CF74227A06A700383F65 /* Localizable.strings */; };
+		FA78CF77227A2B4D00383F65 /* UDRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78CF76227A2B4D00383F65 /* UDRenderer.swift */; };
+		FA78CF79227A34AD00383F65 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78CF78227A34AD00383F65 /* UserData.swift */; };
+		FA78CF7C227A529D00383F65 /* UDPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78CF7B227A529D00383F65 /* UDPadding.swift */; };
+		FA78CF7E227A58B500383F65 /* UDDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78CF7D227A58B500383F65 /* UDDirection.swift */; };
 		FA859427226E177800E9C73E /* DependencyInjection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA859405226DD5D700E9C73E /* DependencyInjection.framework */; };
 		FA859428226E177800E9C73E /* DependencyInjection.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA859405226DD5D700E9C73E /* DependencyInjection.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA85942C226E177D00E9C73E /* Engine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA85940E226DD60400E9C73E /* Engine.framework */; };
@@ -39,7 +44,6 @@
 		FAA008C9226CA37D006E784B /* LibraryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA008C8226CA37D006E784B /* LibraryService.swift */; };
 		FAA008CC226CD1A7006E784B /* BlockMenuRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA008CB226CD1A7006E784B /* BlockMenuRenderer.swift */; };
 		FAA008CE226CD1D7006E784B /* LevelMenuRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA008CD226CD1D7006E784B /* LevelMenuRenderer.swift */; };
-		FAA008D1226D091E006E784B /* ListItemPaddings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA008D0226D091E006E784B /* ListItemPaddings.swift */; };
 		FABBBA7E225FE9E200245E00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABBBA7D225FE9E200245E00 /* AppDelegate.swift */; };
 		FABBBA82225FE9E200245E00 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = FABBBA81225FE9E200245E00 /* Actions.sks */; };
 		FABBBA84225FE9E200245E00 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABBBA83225FE9E200245E00 /* GameScene.swift */; };
@@ -125,6 +129,14 @@
 		FA18181E226C8EFF00FAA415 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		FA181820226C8F9500FAA415 /* Bool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bool.swift; sourceTree = "<group>"; };
 		FA22FA65226284F000880A2B /* MainMenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainMenuScene.sks; sourceTree = "<group>"; };
+		FA78CF64227A04B500383F65 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Main.strings; sourceTree = "<group>"; };
+		FA78CF65227A04B500383F65 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FA78CF73227A06A700383F65 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FA78CF75227A06A800383F65 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FA78CF76227A2B4D00383F65 /* UDRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDRenderer.swift; sourceTree = "<group>"; };
+		FA78CF78227A34AD00383F65 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		FA78CF7B227A529D00383F65 /* UDPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPadding.swift; sourceTree = "<group>"; };
+		FA78CF7D227A58B500383F65 /* UDDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDDirection.swift; sourceTree = "<group>"; };
 		FA8593F2226DD4D800E9C73E /* Engine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Engine.xcodeproj; path = ../Engine.xcodeproj; sourceTree = "<group>"; };
 		FA859400226DD5D700E9C73E /* DependencyInjection.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = DependencyInjection.xcodeproj; sourceTree = SOURCE_ROOT; };
 		FA85943F226E75CC00E9C73E /* MenuConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuConfigService.swift; sourceTree = "<group>"; };
@@ -133,7 +145,6 @@
 		FAA008C8226CA37D006E784B /* LibraryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryService.swift; sourceTree = "<group>"; };
 		FAA008CB226CD1A7006E784B /* BlockMenuRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockMenuRenderer.swift; sourceTree = "<group>"; };
 		FAA008CD226CD1D7006E784B /* LevelMenuRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelMenuRenderer.swift; sourceTree = "<group>"; };
-		FAA008D0226D091E006E784B /* ListItemPaddings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemPaddings.swift; sourceTree = "<group>"; };
 		FABBBA7A225FE9E200245E00 /* Tenner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tenner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FABBBA7D225FE9E200245E00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FABBBA81225FE9E200245E00 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -220,7 +231,6 @@
 			isa = PBXGroup;
 			children = (
 				FA181814226C843200FAA415 /* ListItemRenderer.swift */,
-				FAA008D0226D091E006E784B /* ListItemPaddings.swift */,
 			);
 			path = list;
 			sourceTree = "<group>";
@@ -236,6 +246,17 @@
 				FA181804226C76E700FAA415 /* BlocksMenuScene.sks */,
 			);
 			path = scenes;
+			sourceTree = "<group>";
+		};
+		FA78CF7A227A525B00383F65 /* userData */ = {
+			isa = PBXGroup;
+			children = (
+				FA78CF76227A2B4D00383F65 /* UDRenderer.swift */,
+				FA78CF7B227A529D00383F65 /* UDPadding.swift */,
+				FA78CF7D227A58B500383F65 /* UDDirection.swift */,
+				FA78CF78227A34AD00383F65 /* UserData.swift */,
+			);
+			path = userData;
 			sourceTree = "<group>";
 		};
 		FA7AA1F82265061F00D394F5 /* Frameworks */ = {
@@ -296,6 +317,7 @@
 		FAA008CA226CD18D006E784B /* core */ = {
 			isa = PBXGroup;
 			children = (
+				FA78CF7A227A525B00383F65 /* userData */,
 				FA181816226C846B00FAA415 /* list */,
 				FAFB10FA2264F9F900072C5A /* Button.swift */,
 				FA0D9D3F226B185B005C4AE2 /* CheckBox.swift */,
@@ -379,6 +401,7 @@
 				FA859412226DD9B900E9C73E /* data */,
 				FA22FA642262835E00880A2B /* scenes */,
 				FABBBA95225FEA5700245E00 /* storyboard */,
+				FA78CF74227A06A700383F65 /* Localizable.strings */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -479,6 +502,7 @@
 			knownRegions = (
 				en,
 				Base,
+				uk,
 			);
 			mainGroup = FABBBA71225FE9E200245E00;
 			productRefGroup = FABBBA7B225FE9E200245E00 /* Products */;
@@ -523,6 +547,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA18181C226C888D00FAA415 /* MenuLib.sks in Resources */,
+				FA78CF72227A06A700383F65 /* Localizable.strings in Resources */,
 				FA859444226E76AE00E9C73E /* MenuConfig.plist in Resources */,
 				FA131D8E226A4B2100DCD0E8 /* LevelsMenuScene.sks in Resources */,
 				FABBBA89225FE9E200245E00 /* Main.storyboard in Resources */,
@@ -545,11 +570,14 @@
 			files = (
 				FABBBA84225FE9E200245E00 /* GameScene.swift in Sources */,
 				FA18181F226C8EFF00FAA415 /* Int.swift in Sources */,
+				FA78CF7E227A58B500383F65 /* UDDirection.swift in Sources */,
 				FA0D9D5A226BC374005C4AE2 /* UIComponent.swift in Sources */,
 				FAEF1844226624550071E050 /* MainMenuController.swift in Sources */,
+				FA78CF77227A2B4D00383F65 /* UDRenderer.swift in Sources */,
 				FA0D9D47226B2D9C005C4AE2 /* SceneIterable.swift in Sources */,
 				FAA008C9226CA37D006E784B /* LibraryService.swift in Sources */,
 				FABBBA86225FE9E200245E00 /* GameViewController.swift in Sources */,
+				FA78CF79227A34AD00383F65 /* UserData.swift in Sources */,
 				FA0D9D4C226B3547005C4AE2 /* Scene.swift in Sources */,
 				FA0D9D3E226B16BF005C4AE2 /* OptionMenuController.swift in Sources */,
 				FA0D9D43226B1E42005C4AE2 /* ScenesService.swift in Sources */,
@@ -570,8 +598,8 @@
 				FA0D9D40226B185B005C4AE2 /* CheckBox.swift in Sources */,
 				FAA008CE226CD1D7006E784B /* LevelMenuRenderer.swift in Sources */,
 				FA181821226C8F9500FAA415 /* Bool.swift in Sources */,
+				FA78CF7C227A529D00383F65 /* UDPadding.swift in Sources */,
 				FA18180C226C7C0800FAA415 /* BlockMenuView.swift in Sources */,
-				FAA008D1226D091E006E784B /* ListItemPaddings.swift in Sources */,
 				FA181809226C781E00FAA415 /* List.swift in Sources */,
 				FA0D9D3A226B16B0005C4AE2 /* OptionMenuView.swift in Sources */,
 				FA859442226E763800E9C73E /* MenuConfigModel.swift in Sources */,
@@ -594,10 +622,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		FA78CF74227A06A700383F65 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA78CF73227A06A700383F65 /* en */,
+				FA78CF75227A06A800383F65 /* uk */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		FABBBA87225FE9E200245E00 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				FABBBA88225FE9E200245E00 /* Base */,
+				FA78CF64227A04B500383F65 /* uk */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -606,6 +644,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				FABBBA8D225FE9E300245E00 /* Base */,
+				FA78CF65227A04B500383F65 /* uk */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -617,6 +656,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -678,6 +718,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

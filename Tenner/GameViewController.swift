@@ -22,7 +22,7 @@ class GameViewController: UIViewController, INJInjection {
             
             sceneService.setView(view: view)
             
-            sceneService.setScene(scene: Scene.BlockMenu)
+            sceneService.setScene(scene: Scene.LevelsMenu)
             
             view.ignoresSiblingOrder = true
             
@@ -33,28 +33,10 @@ class GameViewController: UIViewController, INJInjection {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        injection()
         
-//        if let _ = self.view as! SKView? {
-//            sceneService.setView(view: view)
-            injection()
-            
-            onInit()
-            
-            
-            // Load the SKScene from 'GameScene.sks'
-//            if let scene = SKScene(fileNamed: "MainMenuScene") {
-//                // Set the scale mode to scale to fit the window
-//                scene.scaleMode = .aspectFill
-//
-//                // Present the scene
-//                view.presentScene(scene)
-//            }
-            
-//            view.ignoresSiblingOrder = true
-//
-//            view.showsFPS = true
-//            view.showsNodeCount = true
-//        }
+        onInit()
     }
 
     override var shouldAutorotate: Bool {
@@ -67,8 +49,6 @@ class GameViewController: UIViewController, INJInjection {
         } else {
             return .all
         }
-        
-        
     }
 
     override var prefersStatusBarHidden: Bool {

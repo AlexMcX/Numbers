@@ -8,8 +8,8 @@
 
 import DependencyInjection
 
-public class ConfigService: INJDecoderService {
-    @objc dynamic private var configModel: ConfigModel!
+internal class ConfigService: INJDecoderService {
+    @objc dynamic internal private(set) var configModel: ConfigModel!
     
     override public func onInit() {
         

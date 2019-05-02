@@ -21,6 +21,8 @@ class UIComponent: SKSpriteNode, INJInjectableInstance, INJInjection {
         case DOWN = "down"
         case OVER = "over"
         case UP = "up"
+        case ON = "on"
+        case OFF = "off"
     }
 
     private var currentState: STATE = .NONE

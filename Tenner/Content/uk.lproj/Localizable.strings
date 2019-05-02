@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  Tenner
+
+  Created by Alexey Oleksandrovich on 5/1/19.
+  Copyright © 2019 Alexey Oleksandrovich. All rights reserved.
+*/
+
+
+// MAIN MENU
+"PLAY" = "Грати";
+
+// BLOCK MENU
+"BLOCK_MENU_TITLE" = "Блоки";
+"BLOC_MENU_NEED_STARS" = "Потрібно: {value}";
+"BLOCK_MENU_BLOCK_0_TITLE" = "Block 0";
+"BLOCK_MENU_BLOCK_1_TITLE" = "Block 1";
+"BLOCK_MENU_BLOCK_2_TITLE" = "Block 2";
+"BLOCK_MENU_BLOCK_3_TITLE" = "Block 3";
+"BLOCK_MENU_BLOCK_4_TITLE" = "Block 4";
+"BLOCK_MENU_BLOCK_5_TITLE" = "Block 5";
+
+"TOTAL_STARS" = "Загалом: {value}";

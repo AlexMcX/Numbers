@@ -96,14 +96,43 @@ extension SKNode {
         let property = Mirror(reflecting: self).children
         
         for item in data {
-            for (key, _) in property {
+            for (key, value) in property {
                 if (String(describing: item.key) == key) {
-                    setValue(item.value, forKey: key! as String)
+                    if decodeUserData(key: key!, value: value, data: "\(item.value)") == false {
+                        setValue(item.value, forKey: key! as String)
+                    }
                     
                     break
                 }
             }
         }
+    }
+    
+    private func decodeUserData(key: String, value: Any, data: String) -> Bool {
+        let valueType = type(of: value)
+        let className = (valueType as Optional).subjectClassName
+        
+        if !className.isPrefix(value: "Swift") {
+            guard let cls = NSClassFromString(className) as? UserData.Type else { return false }
+            
+            guard let decode = try? JSONDecoder().decode(cls, from: data.data(using: .utf8)!) else {
+                let inst = (cls as NSObject.Type).init() as? UserData
+                do{
+                    try inst!.customDecode(value: data)
+                    
+                    setValue(inst, forKey: key)
+                    
+                    return true
+                }catch {
+                   return false
+                }
+            }
+            
+            setValue(decode, forKey: key)
+            return true
+        }
+        
+        return false
     }
     
     private func initChild() {
