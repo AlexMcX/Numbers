@@ -6,12 +6,13 @@
   Copyright © 2019 Alexey Oleksandrovich. All rights reserved.
 */
 
+"TOTAL_STARS" = "Total: {value}";
 
 // MAIN MENU
 "PLAY" = "Play";
 
 // BLOCK MENU
-"BLOCK_MENU_TITLE" = "Blocks";
+"BLOCKS_MENU_TITLE" = "Blocks";
 "BLOC_MENU_NEED_STARS" = "Need: {value}";
 "BLOCK_MENU_BLOCK_0_TITLE" = "Block 0";
 "BLOCK_MENU_BLOCK_1_TITLE" = "Block 1";
@@ -20,4 +21,5 @@
 "BLOCK_MENU_BLOCK_4_TITLE" = "Block 4";
 "BLOCK_MENU_BLOCK_5_TITLE" = "Block 5";
 
-"TOTAL_STARS" = "Total: {value}";
+// LEVELS MENU
+"LEVELS_MENU_TITLE" = "Levels";

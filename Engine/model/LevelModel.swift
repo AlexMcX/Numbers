@@ -7,8 +7,8 @@
 //
 
 open class LevelModel {
-    var title: String = ""
-    var access: Bool = false
-    var receivedStars: Int = 0
-    var availableStars: Int = 0
+    public var data: Level!
+    public var config: ConfigModel.Level!
+    public var access: Bool = true
+    public var progressStars: Int = 0
 }

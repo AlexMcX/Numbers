@@ -22,8 +22,7 @@ extension SKView {
         UIImageWriteToSavedPhotosAlbum(image()!, nil, nil, nil);
     }
     
-    func image() -> UIImage?
-    {
+    func image() -> UIImage? {
         return SKView.image(view:self, subview:nil);
     }
     
@@ -44,19 +43,20 @@ extension SKView {
         // *********** fadeIn/fadeOut ***********
         UIView.animate(withDuration: sec, animations: { imageView.alpha = 1 },
                        completion: {(finished:Bool) in
-                                        self.presentScene(nil);
-                                        self.presentScene(scene);
                         
-                       UIView.animate(withDuration: sec, animations: { imageView.alpha = 0 }, completion: {(finished:Bool) in
-                                        self.willRemoveSubview(imageView)})
+                            self.presentScene(nil);
+                            self.presentScene(scene);
+
+                            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {
+                                    UIView.animate(withDuration: sec, animations: { imageView.alpha = 0 }, completion: {(finished:Bool) in
+                                            self.willRemoveSubview(imageView)})
+                            }
         });
         
         superview?.addSubview(imageView);
     }
     
-    
-    class func image(view:UIView, subview:UIView?) -> UIImage?
-    {
+    class func image(view:UIView, subview:UIView?) -> UIImage? {
         var image:UIImage;
         
         UIGraphicsBeginImageContextWithOptions(view.frame.size, false, 0);

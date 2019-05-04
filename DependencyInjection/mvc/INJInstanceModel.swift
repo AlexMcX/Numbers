@@ -12,4 +12,8 @@ open class INJInstanceModel: NSObject, INJInjectableInstance {
     open func onInit() {
         
     }
+    
+    open func dispose() {
+        
+    }
 }

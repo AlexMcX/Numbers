@@ -19,6 +19,10 @@ open class INJModel: NSObject, INJInjectable {
         
     }
     
+    open func dispose() {
+        
+    }
+    
     private func initialize() {
         injection()
         

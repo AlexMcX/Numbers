@@ -9,18 +9,21 @@
 import Foundation
 
 class MainMenuController: BaseController {
-    @objc dynamic var view: MainMenuView!
-    @objc dynamic var sceneService: ScenesService!
+    private lazy var _view: MainMenuView = { view as! MainMenuView }()
     
     override func listeners(access: Bool) {
         if (access) {
-            view.playBtn.onTouch.add {
-                self.sceneService.setScene(scene: Scene.BlockMenu)
+            _view.playBtn.onTouch.add {
+                self.sceneService.setScene(scene: Scene.BlocksMenu)
             }
-            
-            view.optionsBtn.onTouch.add {
+
+            _view.optionsBtn.onTouch.add {
                 self.sceneService.setScene(scene: Scene.OptionMenu)
             }
+        }else {
+            _view.playBtn.onTouch.clear()
+            
+            _view.optionsBtn.onTouch.clear()
         }
     }
 }

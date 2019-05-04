@@ -38,4 +38,8 @@ open class INJView: UIViewController, INJInjectable, INJInjectableHandler {
     open func onInjection() {
         
     }
+    
+    open func dispose() {
+        
+    }
 }

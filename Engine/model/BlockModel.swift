@@ -7,8 +7,8 @@
 //
 
 open class BlockModel {
-    public var config: ConfigModel.Block!
     public var data: Block!
+    public var config: ConfigModel.Block!    
     public var access: Bool = true
     public var unlockStars: Int = 0
     public var progressStars: Int = 0

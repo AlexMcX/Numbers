@@ -24,6 +24,6 @@ class Button: UIComponent {
     override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         onTouch.fire()
         
-        print("   🖱 Button::touchesBegan - \(self)")
+//        print("   🖱 Button::touchesBegan - \(self.name)")
     }
 }

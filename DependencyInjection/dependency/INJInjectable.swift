@@ -18,11 +18,16 @@ public protocol INJInjectableHandler: INJInjectable {
  */
 public protocol INJInjectableInstance: INJInjectable {
     func register()
+    func unregistration()
 }
 
 public extension INJInjectableInstance {
     func register() {
         INJInjectingManager.shared.register(injection: self)
+    }
+    
+    func unregistration() {
+        INJInjectingManager.shared.unregister(injection: self)
     }
 }
 
@@ -34,8 +39,8 @@ public protocol INJInjection: INJInjectable {}
 
 public protocol INJInjectable: NSObjectProtocol {
     func injection()
-    func unregistration()
-//    func onInit()
+    func uninjection()
+    func dispose()
 }
 
 public extension INJInjectable {    
@@ -43,7 +48,7 @@ public extension INJInjectable {
         INJInjectingManager.shared.injection(injector: self)
     }
     
-    func unregistration() {
-        INJInjectingManager.shared.unregister(injection: self)
+    func uninjection() {
+        INJInjectingManager.shared.uninjection(injector: self)
     }
 }

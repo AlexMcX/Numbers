@@ -11,8 +11,9 @@ import DependencyInjection
 public enum Scene {
     case MainMenu
     case OptionMenu
-    case BlockMenu
+    case BlocksMenu
     case LevelsMenu
+    case SceneField
 }
 
 extension Scene: SceneIterable, Signalable {
@@ -22,8 +23,9 @@ extension Scene: SceneIterable, Signalable {
         switch self {
             case .MainMenu: return "MainMenuScene"
             case .OptionMenu: return "OptionsMenuScene"
-            case .BlockMenu: return "BlocksMenuScene"
+            case .BlocksMenu: return "BlocksMenuScene"
             case .LevelsMenu: return "LevelsMenuScene"
+            case .SceneField: return "SceneField"
         }
     }
     
@@ -31,8 +33,9 @@ extension Scene: SceneIterable, Signalable {
         switch self {
             case .MainMenu: return MainMenuView.self
             case .OptionMenu: return OptionMenuView.self
-            case .BlockMenu: return BlockMenuView.self
+            case .BlocksMenu: return BlocksMenuView.self
             case .LevelsMenu: return LevelsMenuView.self
+            case .SceneField: return SceneFieldView.self
         }
     }
     
@@ -40,8 +43,9 @@ extension Scene: SceneIterable, Signalable {
         switch self {
             case .MainMenu: return MainMenuController.self
             case .OptionMenu: return OptionMenuController.self
-            case .BlockMenu: return BlockMenuController.self
+            case .BlocksMenu: return BlocksMenuController.self
             case .LevelsMenu: return LevelsMenuController.self
+            case .SceneField: return SceneFieldController.self
         }
     }
 }

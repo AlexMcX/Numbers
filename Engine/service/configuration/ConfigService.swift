@@ -17,15 +17,19 @@ internal class ConfigService: INJDecoderService {
     
     public func initConfig(fileName: String) {
         configModel = create(plist: fileName, type: ConfigModel.self) as? ConfigModel
-        
-//        print("configModel: \(configModel)")
     }
     
     public func getBlocks() -> [ConfigModel.Block] {
         return configModel.blockConfig
     }
     
-//    public func getLevels(block: Int) -> [ConfigModel.Level] {
-//        return getBlocks()[block].levels
-//    }
+    public func getLevels(id: String) -> [ConfigModel.Level]? {
+        for block in getBlocks() {
+            if block.id == id {
+                return block.levels
+            }
+        }
+        
+        return nil
+    }
 }

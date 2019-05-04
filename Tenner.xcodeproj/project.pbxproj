@@ -16,19 +16,29 @@
 		FA0D9D52226B625C005C4AE2 /* SKView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D9D51226B625C005C4AE2 /* SKView.swift */; };
 		FA0D9D5A226BC374005C4AE2 /* UIComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D9D59226BC374005C4AE2 /* UIComponent.swift */; };
 		FA0DF2612265C8EF002CE10A /* SKNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0DF2602265C8EF002CE10A /* SKNode.swift */; };
+		FA0EA7C3227AF2E900661348 /* GridList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0EA7C2227AF2E900661348 /* GridList.swift */; };
+		FA0EA7C5227AFDF900661348 /* UDSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0EA7C4227AFDF900661348 /* UDSize.swift */; };
+		FA0EA7C7227B734600661348 /* MenuLib.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA0EA7C6227B734600661348 /* MenuLib.sks */; };
+		FA0EA7C9227B73C100661348 /* Sprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0EA7C8227B73C100661348 /* Sprite.swift */; };
 		FA131D8C226A44C800DCD0E8 /* EndGameMenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA131D89226A44C800DCD0E8 /* EndGameMenuScene.sks */; };
 		FA131D8E226A4B2100DCD0E8 /* LevelsMenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA131D8D226A4B2100DCD0E8 /* LevelsMenuScene.sks */; };
 		FA181807226C76E700FAA415 /* BlocksMenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA181804226C76E700FAA415 /* BlocksMenuScene.sks */; };
 		FA181809226C781E00FAA415 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA181808226C781E00FAA415 /* List.swift */; };
-		FA18180C226C7C0800FAA415 /* BlockMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18180B226C7C0800FAA415 /* BlockMenuView.swift */; };
-		FA18180E226C7C1700FAA415 /* BlockMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18180D226C7C1700FAA415 /* BlockMenuController.swift */; };
+		FA18180C226C7C0800FAA415 /* BlocksMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18180B226C7C0800FAA415 /* BlocksMenuView.swift */; };
+		FA18180E226C7C1700FAA415 /* BlocksMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18180D226C7C1700FAA415 /* BlocksMenuController.swift */; };
 		FA181811226C7CC900FAA415 /* LevelsMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA181810226C7CC900FAA415 /* LevelsMenuView.swift */; };
 		FA181813226C7CD400FAA415 /* LevelsMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA181812226C7CD400FAA415 /* LevelsMenuController.swift */; };
 		FA181815226C843200FAA415 /* ListItemRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA181814226C843200FAA415 /* ListItemRenderer.swift */; };
-		FA18181C226C888D00FAA415 /* MenuLib.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA18181A226C888D00FAA415 /* MenuLib.sks */; };
 		FA18181F226C8EFF00FAA415 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18181E226C8EFF00FAA415 /* Int.swift */; };
 		FA181821226C8F9500FAA415 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA181820226C8F9500FAA415 /* Bool.swift */; };
 		FA22FA66226284F000880A2B /* MainMenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA22FA65226284F000880A2B /* MainMenuScene.sks */; };
+		FA3923BA227CCAEA0049791B /* SceneField.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA3923B9227CCAEA0049791B /* SceneField.sks */; };
+		FA3923BD227CD9B00049791B /* SceneFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3923BC227CD9B00049791B /* SceneFieldView.swift */; };
+		FA3923BF227CD9BF0049791B /* SceneFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3923BE227CD9BF0049791B /* SceneFieldController.swift */; };
+		FA3923C2227CDA7C0049791B /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3923C1227CDA7C0049791B /* Timer.swift */; };
+		FA3923C4227CDAE20049791B /* StarsField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3923C3227CDAE20049791B /* StarsField.swift */; };
+		FA3923C6227CDB4D0049791B /* PointsField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3923C5227CDB4D0049791B /* PointsField.swift */; };
+		FA3923C8227CDBD30049791B /* TopMenuField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3923C7227CDBD30049791B /* TopMenuField.swift */; };
 		FA78CF72227A06A700383F65 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA78CF74227A06A700383F65 /* Localizable.strings */; };
 		FA78CF77227A2B4D00383F65 /* UDRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78CF76227A2B4D00383F65 /* UDRenderer.swift */; };
 		FA78CF79227A34AD00383F65 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78CF78227A34AD00383F65 /* UserData.swift */; };
@@ -116,19 +126,29 @@
 		FA0D9D51226B625C005C4AE2 /* SKView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKView.swift; sourceTree = "<group>"; };
 		FA0D9D59226BC374005C4AE2 /* UIComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIComponent.swift; sourceTree = "<group>"; };
 		FA0DF2602265C8EF002CE10A /* SKNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKNode.swift; sourceTree = "<group>"; };
+		FA0EA7C2227AF2E900661348 /* GridList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridList.swift; sourceTree = "<group>"; };
+		FA0EA7C4227AFDF900661348 /* UDSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDSize.swift; sourceTree = "<group>"; };
+		FA0EA7C6227B734600661348 /* MenuLib.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuLib.sks; sourceTree = "<group>"; };
+		FA0EA7C8227B73C100661348 /* Sprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sprite.swift; sourceTree = "<group>"; };
 		FA131D89226A44C800DCD0E8 /* EndGameMenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EndGameMenuScene.sks; sourceTree = "<group>"; };
 		FA131D8D226A4B2100DCD0E8 /* LevelsMenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelsMenuScene.sks; sourceTree = "<group>"; };
 		FA181804226C76E700FAA415 /* BlocksMenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BlocksMenuScene.sks; sourceTree = "<group>"; };
 		FA181808226C781E00FAA415 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
-		FA18180B226C7C0800FAA415 /* BlockMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockMenuView.swift; sourceTree = "<group>"; };
-		FA18180D226C7C1700FAA415 /* BlockMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockMenuController.swift; sourceTree = "<group>"; };
+		FA18180B226C7C0800FAA415 /* BlocksMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksMenuView.swift; sourceTree = "<group>"; };
+		FA18180D226C7C1700FAA415 /* BlocksMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksMenuController.swift; sourceTree = "<group>"; };
 		FA181810226C7CC900FAA415 /* LevelsMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsMenuView.swift; sourceTree = "<group>"; };
 		FA181812226C7CD400FAA415 /* LevelsMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsMenuController.swift; sourceTree = "<group>"; };
 		FA181814226C843200FAA415 /* ListItemRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemRenderer.swift; sourceTree = "<group>"; };
-		FA18181A226C888D00FAA415 /* MenuLib.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuLib.sks; sourceTree = "<group>"; };
 		FA18181E226C8EFF00FAA415 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		FA181820226C8F9500FAA415 /* Bool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bool.swift; sourceTree = "<group>"; };
 		FA22FA65226284F000880A2B /* MainMenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainMenuScene.sks; sourceTree = "<group>"; };
+		FA3923B9227CCAEA0049791B /* SceneField.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SceneField.sks; sourceTree = "<group>"; };
+		FA3923BC227CD9B00049791B /* SceneFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneFieldView.swift; sourceTree = "<group>"; };
+		FA3923BE227CD9BF0049791B /* SceneFieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneFieldController.swift; sourceTree = "<group>"; };
+		FA3923C1227CDA7C0049791B /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		FA3923C3227CDAE20049791B /* StarsField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsField.swift; sourceTree = "<group>"; };
+		FA3923C5227CDB4D0049791B /* PointsField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsField.swift; sourceTree = "<group>"; };
+		FA3923C7227CDBD30049791B /* TopMenuField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMenuField.swift; sourceTree = "<group>"; };
 		FA78CF64227A04B500383F65 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Main.strings; sourceTree = "<group>"; };
 		FA78CF65227A04B500383F65 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		FA78CF73227A06A700383F65 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -204,7 +224,7 @@
 		FA131D8F226A504600DCD0E8 /* assets */ = {
 			isa = PBXGroup;
 			children = (
-				FA18181A226C888D00FAA415 /* MenuLib.sks */,
+				FA0EA7C6227B734600661348 /* MenuLib.sks */,
 			);
 			path = assets;
 			sourceTree = "<group>";
@@ -212,8 +232,8 @@
 		FA18180A226C792200FAA415 /* blockMenu */ = {
 			isa = PBXGroup;
 			children = (
-				FA18180B226C7C0800FAA415 /* BlockMenuView.swift */,
-				FA18180D226C7C1700FAA415 /* BlockMenuController.swift */,
+				FA18180B226C7C0800FAA415 /* BlocksMenuView.swift */,
+				FA18180D226C7C1700FAA415 /* BlocksMenuController.swift */,
 			);
 			path = blockMenu;
 			sourceTree = "<group>";
@@ -244,8 +264,28 @@
 				FA131D89226A44C800DCD0E8 /* EndGameMenuScene.sks */,
 				FA131D8D226A4B2100DCD0E8 /* LevelsMenuScene.sks */,
 				FA181804226C76E700FAA415 /* BlocksMenuScene.sks */,
+				FA3923B9227CCAEA0049791B /* SceneField.sks */,
 			);
 			path = scenes;
+			sourceTree = "<group>";
+		};
+		FA3923BB227CD9910049791B /* sceneField */ = {
+			isa = PBXGroup;
+			children = (
+				FA3923BC227CD9B00049791B /* SceneFieldView.swift */,
+				FA3923BE227CD9BF0049791B /* SceneFieldController.swift */,
+			);
+			path = sceneField;
+			sourceTree = "<group>";
+		};
+		FA3923C0227CDA4A0049791B /* sceneField */ = {
+			isa = PBXGroup;
+			children = (
+				FA3923C3227CDAE20049791B /* StarsField.swift */,
+				FA3923C5227CDB4D0049791B /* PointsField.swift */,
+				FA3923C7227CDBD30049791B /* TopMenuField.swift */,
+			);
+			path = sceneField;
 			sourceTree = "<group>";
 		};
 		FA78CF7A227A525B00383F65 /* userData */ = {
@@ -253,6 +293,7 @@
 			children = (
 				FA78CF76227A2B4D00383F65 /* UDRenderer.swift */,
 				FA78CF7B227A529D00383F65 /* UDPadding.swift */,
+				FA0EA7C4227AFDF900661348 /* UDSize.swift */,
 				FA78CF7D227A58B500383F65 /* UDDirection.swift */,
 				FA78CF78227A34AD00383F65 /* UserData.swift */,
 			);
@@ -322,6 +363,9 @@
 				FAFB10FA2264F9F900072C5A /* Button.swift */,
 				FA0D9D3F226B185B005C4AE2 /* CheckBox.swift */,
 				FA181808226C781E00FAA415 /* List.swift */,
+				FA0EA7C2227AF2E900661348 /* GridList.swift */,
+				FA0EA7C8227B73C100661348 /* Sprite.swift */,
+				FA3923C1227CDA7C0049791B /* Timer.swift */,
 				FA0D9D59226BC374005C4AE2 /* UIComponent.swift */,
 			);
 			path = core;
@@ -413,6 +457,7 @@
 				FAEF18412266242A0071E050 /* optionMenu */,
 				FA18180A226C792200FAA415 /* blockMenu */,
 				FA18180F226C7CAE00FAA415 /* levelsMenu */,
+				FA3923BB227CD9910049791B /* sceneField */,
 				FABBBA83225FE9E200245E00 /* GameScene.swift */,
 				FAEF1845226624F80071E050 /* BaseView.swift */,
 				FAEF1847226628590071E050 /* BaseController.swift */,
@@ -452,6 +497,7 @@
 			isa = PBXGroup;
 			children = (
 				FAA008CF226CD1F9006E784B /* menu */,
+				FA3923C0227CDA4A0049791B /* sceneField */,
 				FAA008CA226CD18D006E784B /* core */,
 			);
 			path = ui;
@@ -546,17 +592,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA18181C226C888D00FAA415 /* MenuLib.sks in Resources */,
 				FA78CF72227A06A700383F65 /* Localizable.strings in Resources */,
 				FA859444226E76AE00E9C73E /* MenuConfig.plist in Resources */,
 				FA131D8E226A4B2100DCD0E8 /* LevelsMenuScene.sks in Resources */,
 				FABBBA89225FE9E200245E00 /* Main.storyboard in Resources */,
+				FA3923BA227CCAEA0049791B /* SceneField.sks in Resources */,
 				FAEF184A22667B2D0071E050 /* OptionsMenuScene.sks in Resources */,
 				FA22FA66226284F000880A2B /* MainMenuScene.sks in Resources */,
 				FABBBA8B225FE9E300245E00 /* Assets.xcassets in Resources */,
 				FABBBA8E225FE9E300245E00 /* LaunchScreen.storyboard in Resources */,
 				FABBBA82225FE9E200245E00 /* Actions.sks in Resources */,
 				FA131D8C226A44C800DCD0E8 /* EndGameMenuScene.sks in Resources */,
+				FA0EA7C7227B734600661348 /* MenuLib.sks in Resources */,
 				FA181807226C76E700FAA415 /* BlocksMenuScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -568,8 +615,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA3923C4227CDAE20049791B /* StarsField.swift in Sources */,
+				FA3923C2227CDA7C0049791B /* Timer.swift in Sources */,
 				FABBBA84225FE9E200245E00 /* GameScene.swift in Sources */,
 				FA18181F226C8EFF00FAA415 /* Int.swift in Sources */,
+				FA3923BD227CD9B00049791B /* SceneFieldView.swift in Sources */,
 				FA78CF7E227A58B500383F65 /* UDDirection.swift in Sources */,
 				FA0D9D5A226BC374005C4AE2 /* UIComponent.swift in Sources */,
 				FAEF1844226624550071E050 /* MainMenuController.swift in Sources */,
@@ -584,9 +634,11 @@
 				FA0D9D52226B625C005C4AE2 /* SKView.swift in Sources */,
 				FA0DF2612265C8EF002CE10A /* SKNode.swift in Sources */,
 				FABBBA7E225FE9E200245E00 /* AppDelegate.swift in Sources */,
-				FA18180E226C7C1700FAA415 /* BlockMenuController.swift in Sources */,
+				FA18180E226C7C1700FAA415 /* BlocksMenuController.swift in Sources */,
 				FA181811226C7CC900FAA415 /* LevelsMenuView.swift in Sources */,
+				FA3923BF227CD9BF0049791B /* SceneFieldController.swift in Sources */,
 				FAEF1848226628590071E050 /* BaseController.swift in Sources */,
+				FA0EA7C3227AF2E900661348 /* GridList.swift in Sources */,
 				FA181813226C7CD400FAA415 /* LevelsMenuController.swift in Sources */,
 				FAEF1846226624F80071E050 /* BaseView.swift in Sources */,
 				FAD8EF49226516F000D775FC /* MainMenuView.swift in Sources */,
@@ -595,12 +647,16 @@
 				FAFB10FB2264F9FA00072C5A /* Button.swift in Sources */,
 				FA181815226C843200FAA415 /* ListItemRenderer.swift in Sources */,
 				FA859440226E75CC00E9C73E /* MenuConfigService.swift in Sources */,
+				FA0EA7C9227B73C100661348 /* Sprite.swift in Sources */,
+				FA0EA7C5227AFDF900661348 /* UDSize.swift in Sources */,
 				FA0D9D40226B185B005C4AE2 /* CheckBox.swift in Sources */,
 				FAA008CE226CD1D7006E784B /* LevelMenuRenderer.swift in Sources */,
 				FA181821226C8F9500FAA415 /* Bool.swift in Sources */,
 				FA78CF7C227A529D00383F65 /* UDPadding.swift in Sources */,
-				FA18180C226C7C0800FAA415 /* BlockMenuView.swift in Sources */,
+				FA3923C6227CDB4D0049791B /* PointsField.swift in Sources */,
+				FA18180C226C7C0800FAA415 /* BlocksMenuView.swift in Sources */,
 				FA181809226C781E00FAA415 /* List.swift in Sources */,
+				FA3923C8227CDBD30049791B /* TopMenuField.swift in Sources */,
 				FA0D9D3A226B16B0005C4AE2 /* OptionMenuView.swift in Sources */,
 				FA859442226E763800E9C73E /* MenuConfigModel.swift in Sources */,
 			);

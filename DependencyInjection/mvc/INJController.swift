@@ -9,8 +9,13 @@
 import Foundation
 
 open class INJController: NSObject, INJInjectable, INJInjectableHandler {
-    public override init() {
+    
+    public private(set) weak var view: UIResponder!
+    
+    required public init(view: UIResponder) {
         super.init()
+        
+        self.view = view
         
         injection()
         
@@ -21,20 +26,27 @@ open class INJController: NSObject, INJInjectable, INJInjectableHandler {
         postInit()
     }
     
-    open func preInit() {
+    open func dispose() {
+        uninjection()
         
+        preDispose()
+        
+        onDispose()
+        
+        postDispose()
     }
     
-    open func onInit() {
- 
-    }
+    open func onInjection() {}
     
-    open func postInit() {
-        
-    }
+    // initializators
+    open func preInit() {}
+    open func onInit() {}
+    open func postInit() {}
     
-    open func onInjection() {
-        
-    }
+    // dispose
+    open func preDispose() {}
+    open func onDispose() {}
+    open func postDispose() {}
+    
 }
 

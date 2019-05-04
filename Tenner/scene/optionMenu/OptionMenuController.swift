@@ -7,5 +7,5 @@
 //
 
 class OptionMenuController: BaseController {
-    
+    private lazy var _view: OptionMenuView = { view as! OptionMenuView }()
 }

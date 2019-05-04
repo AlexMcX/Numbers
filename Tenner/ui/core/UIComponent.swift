@@ -12,6 +12,9 @@ import Engine
 
 class UIComponent: SKSpriteNode, INJInjectableInstance, INJInjection {
     @objc dynamic internal private(set) var libService: LibraryService!
+    @objc dynamic weak public private(set) var mcSize: Sprite?
+    
+    public var calculateSize: CGSize { return mcSize != nil ? mcSize!.size : calculateAccumulatedFrame().size }
     
     public private(set) var data: Any?
     public enum STATE: String {
@@ -27,15 +30,26 @@ class UIComponent: SKSpriteNode, INJInjectableInstance, INJInjection {
 
     private var currentState: STATE = .NONE
     private var assetName: String = ""
-        
+    
+    deinit {
+        print("     ❇️ UIComponent::deinit \(self)")
+    }
+    
     override func onInitialize() {
         updateAssetName("")
         
         onInit()
     }
     
+    override func onDeinitialize() {
+        
+    }
+    
     func onInit() {
         
+    }
+    
+    func dispose() {
     }
     
     func setData(data: Any?) {
@@ -51,13 +65,9 @@ class UIComponent: SKSpriteNode, INJInjectableInstance, INJInjection {
         
         let asset = assetName.replacingOccurrences(of: "{state}", with: state.rawValue)
 
-        size = self.calculateAccumulatedFrame().size
-
         guard let component = libService.getChild(library: "MenuLib", renderer: asset) else {
             return
         }
-
-        size = component.calculateAccumulatedFrame().size
 
         let childs = component.children
 

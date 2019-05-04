@@ -12,11 +12,11 @@ import DependencyInjection
 
 extension SKNode {
     public func initialize() {
-        injectionChild()
-        
         if (self is INJInjectable) {
             (self as! INJInjectable).injection()
         }
+        
+        injectionChild()
         
         injectUserData()
         
@@ -25,27 +25,43 @@ extension SKNode {
         onInitialize()
     }
     
-    @objc public func onInitialize() {
+    public func deinitialize() {
+        onDeinitialize()
         
+        if (self is INJInjectable) {
+            (self as! INJInjectable).uninjection()
+        }
+        
+        injectionChild(true)
+        
+        injectUserData(true)
+        
+        initChild(true)
     }
     
+    @objc public func onInitialize() {}
+    
+    @objc public func onDeinitialize() {}
+    
     public func addChildren(in nodes: [SKNode], reg injection: Bool) {
-        var property: Mirror.Children? = nil
+        var mirror: Mirror?
         
         if (injection) {
-            property = Mirror(reflecting: self).children
+             mirror = Mirror(reflecting: self)
         }
         
         for node in nodes {
             addChild(node)
             
-            if (property != nil) {
-                if let nodeName = node.name {
-                    for (key, _) in property! {
-                        if (key == nodeName) {
-                            setValue(node, forKey: key! as String)
-                            
-                            break
+            if (mirror != nil) {
+                if let nodeName = node.name {                    
+                    mirrorLoop: for property in mirror!.childsWithBase() {
+                        for (key, _) in property {
+                            if (key == nodeName) {
+                                setValue(node, forKey: key! as String)
+                                
+                                break mirrorLoop
+                            }
                         }
                     }
                 }
@@ -76,34 +92,47 @@ extension SKNode {
     public func removeAllChildren(reg injection: Bool) {
         removeChildren(in: children, reg: injection)
     }
-    
-    
-    private func injectionChild() {
-        let property = Mirror(reflecting: self).children
         
-        for (key, _) in property {
-            guard let child = childNode(withName: key! as String) else {
-                continue
+    private func injectionChild(_ isClear: Bool = false) {
+        let mirror = Mirror(reflecting: self)
+        
+        for property in mirror.childsWithBase() {
+            for (key, _) in property {
+                guard let child = childNode(withName: key! as String) else {
+                    continue
+                }
+                
+                setValue(isClear ? nil : child, forKey: key! as String)
             }
-            
-            setValue(child, forKey: key! as String)
         }
     }
     
-    private func injectUserData() {
+    private func injectUserData(_ isClear: Bool = false) {
         guard let data = userData else { return }
         
-        let property = Mirror(reflecting: self).children
+        let mirror = Mirror(reflecting: self)
         
         for item in data {
-            for (key, value) in property {
-                if (String(describing: item.key) == key) {
-                    if decodeUserData(key: key!, value: value, data: "\(item.value)") == false {
-                        setValue(item.value, forKey: key! as String)
+            for property in mirror.childsWithBase() {
+                for (key, value) in property {
+                    if (String(describing: item.key) == key) {
+                        if decodeUserData(key: key!, value: value, data: "\(item.value)") == false {
+                            setValue(isClear ? nil : item.value, forKey: key! as String)
+                        }
+                        
+                        break
                     }
-                    
-                    break
                 }
+            }
+        }
+    }
+    
+    private func initChild(_ isClear: Bool = false) {
+        for child in children {
+            if(isClear) {
+                child.deinitialize()
+            }else {
+                child.initialize()
             }
         }
     }
@@ -129,15 +158,10 @@ extension SKNode {
             }
             
             setValue(decode, forKey: key)
+            
             return true
         }
         
         return false
-    }
-    
-    private func initChild() {
-        for child in children {
-            child.initialize()
-        }
     }
 }

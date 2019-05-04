@@ -9,12 +9,14 @@
 import DependencyInjection
 import CoreData
 
-open class BlockDataService: INJDataService {
+open class BlocksDataService: INJDataService {
     @objc dynamic internal private(set) var configService: ConfigService!
     
     private lazy var blocksData: [Block] = { return fetch() as! [Block] }()
-    public lazy var blocks: [BlockModel] = { return getBlocks() }()
-    public lazy var totalStars: Int = { return getTotalStars() }()
+    lazy var blocks: [BlockModel] = { return getBlocks() }()
+    lazy var totalStars: Int = { return getTotalStars() }()
+    
+    internal var currentID: String?
     
     override open func onInit() {
         initModel(containerName: "Progress", entityName: "Block", managedObjectClass: Block.self)
@@ -49,7 +51,7 @@ open class BlockDataService: INJDataService {
         return nil
     }
     
-    private func createBlockData(_ id: String) -> Block? {
+    private func createBlockData(_ id: String) -> Block {
         var result: Block;
         
         result = generateObject() as! Block

@@ -19,8 +19,8 @@ class UDRenderer: UserData {
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
-        renderer = try container.decode(String.self, forKey: .renderer)
-        library = try container.decode(String.self, forKey: .library)
+        renderer = try? container.decode(String.self, forKey: .renderer)
+        library = try? container.decode(String.self, forKey: .library)
 
         try super.init(from: decoder)
     }

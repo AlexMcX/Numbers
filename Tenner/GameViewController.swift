@@ -22,13 +22,18 @@ class GameViewController: UIViewController, INJInjection {
             
             sceneService.setView(view: view)
             
-            sceneService.setScene(scene: Scene.LevelsMenu)
+            sceneService.setScene(scene: Scene.MainMenu)
             
             view.ignoresSiblingOrder = true
             
             view.showsFPS = true
             view.showsNodeCount = true
         }
+    }
+    
+    func dispose() {
+        sceneService = nil
+        engige = nil
     }
     
     override func viewDidLoad() {

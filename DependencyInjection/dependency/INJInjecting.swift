@@ -10,6 +10,7 @@ import Foundation
 
 protocol INJInjecting {
     func injection(injector:INJInjectable)
+    func uninjection(injector:INJInjectable)
     func register(injection:INJInjectable)
     func unregister(injection:INJInjectable)
 }

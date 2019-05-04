@@ -22,7 +22,11 @@ open class INJService: NSObject, INJInjectable, INJInjectableHandler {
 
     }
     
-    public func onInjection() {
+    open func onInjection() {
+        
+    }
+    
+    open func dispose() {
         
     }
 }

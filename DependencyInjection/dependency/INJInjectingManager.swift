@@ -10,8 +10,8 @@ import Foundation
 
 class INJInjectingManager: INJInjecting {
     private enum ProtocolStatus {
-        case PROTOCOL(instance:INJInjectable)
-        case PROTOCOL_WAIT(className:String)
+        case PROTOCOL(className: String, instance: INJInjectable)
+        case PROTOCOL_WAIT(className: String)
         case PROTOCOL_NONE
     }
     
@@ -19,28 +19,23 @@ class INJInjectingManager: INJInjecting {
     
     private init() {}
     
-    // [className:Instance]
-    private var data:[String: INJInjectable] = [:]
+    // [className:(Instance, count)]
+    private var data:[String: (inst: INJInjectable, count: Int)] = [:]
     
     // [className:wait this class [forKey:InjectionProtocol]]
     private var dataWait:[String: [(String, INJInjectable)]] = [:]
-    
-    private var injectionInit:[INJInjectable] = []
     
     public func injection(injector:INJInjectable) {
         var isInjection:Bool = true
         
         if (verificationInit(injector)) { return }
         
-        // append when injector is not INJInjection protocol
-        if (injector is INJInjection == false) {
-            injectionInit.append(injector)
-        }
-        
         let mirror = Mirror(reflecting: injector)
         
         for property in mirror.childsWithBase() {
             for (key, value) in property {
+                if (isLazyProperty(key) == true) { continue }
+                
                 if case Optional<Any>.none = value {
                     let valueType = type(of: value)
                     
@@ -52,7 +47,9 @@ class INJInjectingManager: INJInjecting {
                     switch(injResult) {
                         case .PROTOCOL_NONE:
                             continue
-                        case .PROTOCOL(let instance):
+                        case .PROTOCOL(let className, let instance):
+                            data[className]?.count += 1
+
                             (injector as! NSObject).setValue(instance, forKey: forKey)
                         case .PROTOCOL_WAIT(let className):
                             addWait(className, forKey, injector)
@@ -62,10 +59,30 @@ class INJInjectingManager: INJInjecting {
                 }
             }
         }
-    
+
         if (isInjection) {
             (injector as? INJInjectableHandler)?.onInjection()
         }
+    }
+    
+    public func uninjection(injector: INJInjectable) {
+        print("   🔆 INJInjectingManager::uninjection \"\(getInjectionClassName(injector))\"")
+
+        let mirror = Mirror(reflecting: injector)
+        
+        for property in mirror.childsWithBase() {
+            for (key, value) in property {
+                guard let key = key, let value = value as? INJInjectable else { continue }
+                
+                if (verificationInit(value)) {
+                    decrementData(value)
+                    
+                    (injector as! NSObject).setValue(nil, forKey: key)
+                }
+            }
+        }
+        
+        decrementData(injector)
     }
     
     public func register(injection:INJInjectable) {
@@ -87,7 +104,7 @@ class INJInjectingManager: INJInjecting {
             
             dispatchInjection(dispatch)
             
-            injectionInit.append(injection)
+            addData(injection)
         }
     }
     
@@ -99,15 +116,15 @@ class INJInjectingManager: INJInjecting {
         let className = (opt as Optional).subjectClassName
         let shotClassName = className.slice(from: ".", removePrefixes: true)
         
-        // find in injection instance
-        for inst in injectionInit {
-            if (getInjectionClassName(inst) == shotClassName) {
-                return .PROTOCOL(instance: inst)
+        if (isCreatedClass(className)) {
+            // find in injection instance
+            for (key, info) in data {
+                if (key == shotClassName) {
+                    return .PROTOCOL(className:shotClassName, instance: info.inst)
+                }
             }
-        }
         
         
-        if !className.isPrefix(value: "Swift") {
             guard let cls = NSClassFromString(className) as? INJInjectable.Type else {
                 guard let cls = NSClassFromString(shotClassName) as? INJInjectable.Type else {
                     return .PROTOCOL_NONE
@@ -125,7 +142,10 @@ class INJInjectingManager: INJInjecting {
     private func initInjection(_ cls: INJInjectable.Type) -> ProtocolStatus {
         let className:String = String(describing: cls)
         
-        var result = data[className]
+        // don't dynamic instance create
+        if (cls is INJInjection.Type) { return .PROTOCOL_NONE }
+        
+        var result = data[className]?.inst
 
         if result == nil {
             if (cls is INJInjectableInstance.Type) {
@@ -134,10 +154,10 @@ class INJInjectingManager: INJInjecting {
             
             result = (cls as! NSObject.Type).init() as? INJInjectable
             
-            addData(instance: result!)
+            addData(result!)
         }
-
-        return .PROTOCOL(instance:result!)
+        
+        return .PROTOCOL(className:className, instance:result!)
     }
     
     private func addWait(_ className: String, _ forKey: String, _ injector: INJInjectable) {
@@ -148,12 +168,32 @@ class INJInjectingManager: INJInjecting {
         dataWait[className]?.append((forKey, injector))
     }
     
-    private func addData(instance: INJInjectable) {
-        let className = getInjectionClassName(instance)
+    private func addData(_ instance: INJInjectable) {
+        let className = getInjectionClassName(instance, true)
         
         if (data[className] != nil) { return }
         
-        data[className] = instance
+        data[className] = (instance, 0)
+    }
+    
+    /*
+        decrement "count" instances in data
+        if count is 0, remove instance
+     */
+    private func decrementData(_ instance: INJInjectable) {
+        let className = getInjectionClassName(instance, true)
+        
+       if (data[className] == nil)  { return }
+        
+        data[className]!.count -= 1
+        
+        if (data[className]!.count == 0) {
+//            data[className]?.inst.dispose()
+//            
+//            data.removeValue(forKey: className)
+            
+//            print("      << num count \"\(className)\", is 0")
+        }
     }
     
     
@@ -173,15 +213,50 @@ class INJInjectingManager: INJInjecting {
         (injector as? INJInjectableHandler)?.onInjection()
     }   
     
-    private func getInjectionClassName(_ instance: INJInjectable) -> String {
-        return String(describing: Mirror(reflecting: instance).subjectType)
+    private func getInjectionClassName(_ instance: INJInjectable, _ needShot: Bool = false) -> String {
+        var result = String(describing: Mirror(reflecting: instance).subjectType)
+        
+        if (needShot) {
+            result = result.slice(from: ".", removePrefixes: true)
+        }
+        
+        return result
     }
     
     private func verificationInit(_ instance: INJInjectable) -> Bool {
-        for inst in injectionInit {
-            if (getInjectionClassName(instance) == getInjectionClassName(inst)) { return true }
+        guard let _ = data[getInjectionClassName(instance, true)] else {
+            return false
         }
         
-        return false
+        return true
     }
+    
+    private func isLazyProperty(_ name: String?) -> Bool {
+        guard let name = name else { return false }
+        
+        return name.index(of: ".storage") != nil
+    }
+    
+    private func isCreatedClass(_ className: String) -> Bool {
+        let prefixes = ["Swift", "Any", "__C"]
+        
+        for prefix in prefixes {
+            if className.isPrefix(value: prefix) {
+                return false
+            }
+        }
+        
+        return true
+    }
+    
+    #if DEBUG
+    public func printData(_ prefix: String = "") {
+        print("       ♻️<<<<<< \(prefix) INJInjectingManager::DATA >>>")
+        for (key, info) in data {
+            print("         - key:\(key), count:\(info.count)")
+        }
+        print("       <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
+    }
+    #else
+    #endif
 }

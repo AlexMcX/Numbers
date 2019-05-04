@@ -59,4 +59,10 @@ open class Signal {
             call(data)
         }
     }
+    
+    public func clear() {
+        slots.removeAll()
+        
+        slotsData.removeAll()
+    }
 }

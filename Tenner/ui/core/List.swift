@@ -10,71 +10,106 @@ import Foundation
 import SpriteKit
 
 class List: UIComponent {
-    @objc dynamic private var direction: UDDirection!
-    @objc dynamic private var padding: UDPadding!
-    @objc dynamic private var renderer: UDRenderer!
+    @objc dynamic private(set) var udDirection: UDDirection!
+    @objc dynamic private(set) var udPadding: UDPadding!
+    @objc dynamic private(set) var udRenderer: UDRenderer!
+    @objc dynamic private(set) var udSize: UDSize!
     
-    private var components: [ListItemRenderer]!
-    
-    override public init(texture: SKTexture?, color: UIColor, size: CGSize) {
-        super.init(texture: texture, color: color, size: size)
+    public var borderSize: CGSize = CGSize()
+    public var direction: UDDirection.Direction = .horizontal {
+        didSet {
+            if (oldValue.rawValue != direction.rawValue) {
+                reset()
+            }
+        }
     }
     
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
+    
+    
+    private(set) var components: [ListItemRenderer]!
+    private var provider: Array<Any>?
+    private var container: Sprite!
+    private(set) var contentSize: CGSize = CGSize(width: 0, height: 0)
     
     override func onInit() {
         components = []
+        
+        direction = udDirection?.value ?? .horizontal
+        
+        borderSize.width = udSize != nil ? CGFloat(udSize!.width!) : mcSize != nil ? mcSize!.calculateSize.width : 0
+        borderSize.height = udSize != nil ? CGFloat(udSize!.height!) : mcSize != nil ? mcSize!.calculateSize.height : 0
+        
+        container = Sprite()
+        addChild(container)
     }
     
     public func validate(provider: Array<Any>) {
-        var component: ListItemRenderer?
-        let componentCLS: ListItemRenderer.Type?
+        validate(provider: provider, position: setPosition)
+    }
+    
+    public func validate(provider: Array<Any>, position: @escaping (ListItemRenderer) ->Bool) {
+        self.provider = provider
         
-        if let renderer = renderer {
-            componentCLS = NSClassFromString("\(AppDelegate.IDENTIFIER).\(renderer.renderer!)") as? ListItemRenderer.Type
+        DispatchQueue.main.async {
+            var component: ListItemRenderer?
+            let componentCLS: ListItemRenderer.Type?
             
-            for data in provider {
-                if (componentCLS != nil) {
-                    component = componentCLS!.init()
-                }else {
-                    component = libService.getChild(library: renderer.library!, renderer: renderer.renderer!) as? ListItemRenderer
+            if let renderer = self.udRenderer {
+                componentCLS = NSClassFromString("\(AppDelegate.IDENTIFIER).\(renderer.renderer!)") as? ListItemRenderer.Type
+                
+                for data in provider {
+                    if (componentCLS != nil) {
+                        component = componentCLS!.init()
+                    }else {
+                        component = self.libService.getChild(library: renderer.library!, renderer: renderer.renderer!) as? ListItemRenderer
+                    }
+                    
+                    if (component == nil) { return }
+                    
+                    if (position(component!) == false) { return }
+                    
+                    self.appendRenderer(renderer: component!, data: data)
                 }
-                
-                if (component == nil) { return }
-                
-                appendRenderer(renderer: component!, data: data)
             }
-            
-            resize()
         }
     }
+    
+    private func setPosition(component: ListItemRenderer) -> Bool {
+        if components.count > 0 {
+            component.position.x = contentSize.width + CGFloat(udPadding?.x ?? 0)
+            component.position.y = -contentSize.height - CGFloat(udPadding?.y ?? 0)
+        }
+        
+        switch direction {
+            case .none: return false
+            case .horizontal:
+                if (borderSize.width < contentSize.width + component.calculateSize.width) {
+                    return false
+                }
 
+                contentSize.width += component.calculateSize.width
+            case .vertical:
+                if (borderSize.height < contentSize.height + component.calculateSize.height) {
+                    return false
+                }
+
+                contentSize.height += component.calculateSize.height
+        }
+        
+        return true
+    }
+    
+    private func reset() {
+        if (components.count > 0) {
+            print("  🔆 List::reset()")
+        }
+    }
+    
     private func appendRenderer(renderer: ListItemRenderer, data: Any? = nil) {
         renderer.setData(data: data)
         
         components.append(renderer)
         
-        addChild(renderer)
-    }
-    
-    private func resize() {
-        var position: CGPoint = CGPoint(x: 0, y: 0)
-        
-        for component in components {
-            position.x += CGFloat(padding.x ?? 0)
-            position.y += CGFloat(padding.y ?? 0)
-
-            component.position = position
-            
-            switch direction.value {
-                case .none: break
-                case .horizontal:
-                    position.x -= component.size.width
-                case .vertical:
-                    position.y -= component.size.height
-            }
-        }
+        container.addChild(renderer)
     }
 }

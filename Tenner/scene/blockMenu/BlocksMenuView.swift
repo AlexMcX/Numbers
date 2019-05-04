@@ -8,13 +8,13 @@
 
 import SpriteKit
 
-class BlockMenuView: BaseView {
+class BlocksMenuView: BaseView {
     @objc dynamic weak public private(set) var titleTxt: SKLabelNode!
     @objc dynamic weak public private(set) var totalTxt: SKLabelNode!
     @objc dynamic weak public private(set) var blocks: List!
     
     override func onInit() {
-        titleTxt.text = NSLocalizedString("BLOCK_MENU_TITLE", comment: "")
+        titleTxt.text = NSLocalizedString("BLOCKS_MENU_TITLE", comment: "")
     }
     
     public func setTotalStars(value: Int) {

@@ -10,24 +10,26 @@ import SpriteKit
 import DependencyInjection
 
 class BaseView: SKScene, INJInjectableInstance, INJInjectableHandler {
-    @objc dynamic weak internal private(set) var backBtn:Button?
+    @objc dynamic weak internal private(set) var backBtn: Button?
     
     deinit {
-        listeners(access: false)
-        
-        backBtn = nil
+        print("     ❇️ BaseView::deinit \(self)")
     }
     
     override func onInitialize() {
         isUserInteractionEnabled = false;
         
+        preInit()
+        
         onInit()
+        
+        postInit()
 
         listeners(access: true)
     }
     
-    func onInit() {
-        
+    override func onDeinitialize() {
+        listeners(access: false)
     }
     
     func onInjection() {
@@ -37,4 +39,22 @@ class BaseView: SKScene, INJInjectableInstance, INJInjectableHandler {
     func listeners(access: Bool) {
         
     }
+    
+    // initializators
+    func preInit() {}
+    func onInit() {}
+    func postInit() {}
+    
+    // dispose
+    func dispose() {
+        preDispose()
+        
+        onDispose()
+        
+        postDispose()
+    }
+    
+    func preDispose() {}
+    func onDispose() {}
+    func postDispose() {}
 }

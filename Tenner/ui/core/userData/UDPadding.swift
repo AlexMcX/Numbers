@@ -19,8 +19,8 @@ class UDPadding: UserData {
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        x = try container.decode(Int.self, forKey: .x)
-        y = try container.decode(Int.self, forKey: .y)
+        x = try? container.decode(Int.self, forKey: .x)
+        y = try? container.decode(Int.self, forKey: .y)
         
         try super.init(from: decoder)
     }
