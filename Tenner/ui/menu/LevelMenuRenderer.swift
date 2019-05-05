@@ -10,6 +10,7 @@ import SpriteKit
 import Engine
 
 class LevelMenuRenderer: ListItemRenderer {
+    @objc dynamic weak public private(set) var playBtn: Button?
     @objc dynamic weak public private(set) var titleTxt: SKLabelNode!
     @objc dynamic weak public private(set) var starImg_0: SKSpriteNode!
     @objc dynamic weak public private(set) var starImg_1: SKSpriteNode!
@@ -20,6 +21,8 @@ class LevelMenuRenderer: ListItemRenderer {
     }
     
     override func setData(data: Any?) {
+        super.setData(data: data)
+        
         if let data = data as? LevelModel {
             if data.access {
                 setNormalState(data)
@@ -28,6 +31,16 @@ class LevelMenuRenderer: ListItemRenderer {
             }
             
             setState(state: .DISABLE)
+        }
+    }
+    
+    override func listeners(_ access: Bool) {
+        if (access) {
+            playBtn?.onTouch.add {                
+                self.delegate?.selectItem(item: self)
+            }
+        }else {
+            playBtn?.onTouch.clear()
         }
     }
     
@@ -45,5 +58,7 @@ class LevelMenuRenderer: ListItemRenderer {
                 star?.texture = SKTexture(imageNamed: "\(textureStar)_\(index < data.progressStars ? STATE.ON.rawValue: STATE.OFF.rawValue)")
             }
         }
+        
+        listeners(true)
     }
 }

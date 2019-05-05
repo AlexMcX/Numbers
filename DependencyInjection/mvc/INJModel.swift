@@ -9,23 +9,7 @@
 import Foundation
 
 open class INJModel: NSObject, INJInjectable {
-    override init() {
-        super.init()
-        
-        initialize()
-    }
+    open func onInitialize() {}
     
-    open func onInit() {
-        
-    }
-    
-    open func dispose() {
-        
-    }
-    
-    private func initialize() {
-        injection()
-        
-        onInit();
-    }
+    open func onDeinitialize() {}   
 }

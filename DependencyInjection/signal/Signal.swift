@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class Signal {
+public class Signal {
     private var slots:[Int:()->Void]!
     private var slotsData:[Int:(Signalable)->Void]!
     

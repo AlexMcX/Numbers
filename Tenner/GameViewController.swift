@@ -15,8 +15,8 @@ import Engine
 class GameViewController: UIViewController, INJInjection {
     @objc dynamic weak var sceneService: ScenesService!
     @objc dynamic weak var engige: Engine!
-    
-    func onInit() {
+        
+    public func onInitialize() {
         if let view = self.view as! SKView? {
             engige.initConfig(fileName: "GameConfig")
             
@@ -31,9 +31,8 @@ class GameViewController: UIViewController, INJInjection {
         }
     }
     
-    func dispose() {
-        sceneService = nil
-        engige = nil
+    public func onDeinitialize() {
+        
     }
     
     override func viewDidLoad() {
@@ -41,7 +40,7 @@ class GameViewController: UIViewController, INJInjection {
 
         injection()
         
-        onInit()
+        onInitialize()
     }
 
     override var shouldAutorotate: Bool {

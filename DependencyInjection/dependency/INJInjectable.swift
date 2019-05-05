@@ -8,8 +8,23 @@
 
 import Foundation
 
-public protocol INJInjectableHandler: INJInjectable {
-    func onInjection()
+public protocol INJInjectable: NSObjectProtocol {
+    func injection()
+    func uninjection()
+    
+    // need realization
+    func onInitialize()
+    func onDeinitialize()
+}
+
+public extension INJInjectable {
+    func injection() {
+        INJInjectingManager.shared.injection(injector: self)
+    }
+    
+    func uninjection() {
+        INJInjectingManager.shared.uninjection(injector: self)
+    }
 }
 
 /*
@@ -36,19 +51,8 @@ public extension INJInjectableInstance {
  */
 public protocol INJInjection: INJInjectable {}
 
-
-public protocol INJInjectable: NSObjectProtocol {
-    func injection()
-    func uninjection()
-    func dispose()
+public protocol INJInjectableHandler: INJInjectable {
+    func onInjection()
 }
 
-public extension INJInjectable {    
-    func injection() {
-        INJInjectingManager.shared.injection(injector: self)
-    }
-    
-    func uninjection() {
-        INJInjectingManager.shared.uninjection(injector: self)
-    }
-}
+

@@ -18,7 +18,13 @@ open class INJController: NSObject, INJInjectable, INJInjectableHandler {
         self.view = view
         
         injection()
-        
+    }
+    
+    deinit {
+        uninjection()
+    }
+    
+    public func onInitialize() {
         preInit()
         
         onInit()
@@ -26,9 +32,7 @@ open class INJController: NSObject, INJInjectable, INJInjectableHandler {
         postInit()
     }
     
-    open func dispose() {
-        uninjection()
-        
+    public func onDeinitialize() {
         preDispose()
         
         onDispose()
@@ -43,10 +47,9 @@ open class INJController: NSObject, INJInjectable, INJInjectableHandler {
     open func onInit() {}
     open func postInit() {}
     
-    // dispose
+    // deinitializator
     open func preDispose() {}
     open func onDispose() {}
     open func postDispose() {}
-    
 }
 

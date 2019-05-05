@@ -14,19 +14,42 @@ open class INJService: NSObject, INJInjectable, INJInjectableHandler {
         super.init()
         
         injection()
+    }
+    
+    #if DEBUG
+    deinit {
+        print("     ❇️ INJService::deinit \(self.className)")
+    }
+    #else
+    #endif
+    
+    public func onInitialize() {
+        preInit()
         
         onInit()
+        
+        postInit()
     }
     
-    open func onInit() {
-
+    public func onDeinitialize() {
+        preDispose()
+        
+        onDispose()
+        
+        postDispose()
     }
+    
+    // initializators
+    open func preInit() {}
+    open func onInit() {}
+    open func postInit() {}
+    
+    // deinitializator
+    open func preDispose() {}
+    open func onDispose() {}
+    open func postDispose() {}
     
     open func onInjection() {
-        
-    }
-    
-    open func dispose() {
         
     }
 }

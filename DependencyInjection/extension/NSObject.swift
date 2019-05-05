@@ -8,9 +8,9 @@
 
 import Foundation
 
-public extension NSObject {
+public extension NSObject {    
     func setValueSafe(_ value: Any, forKey: String) {
-        guard let _ = propertyNames().firstIndex(of:forKey) else { return }
+        guard let _ = properties().property(forName: forKey) else { return }
         
         setValue(value, forKey: forKey)
     }
@@ -21,21 +21,40 @@ public extension NSObject {
         }
     }
     
-    func propertyNames() -> Array<String> {
-        var result:[String] = []
-        var count:UInt32 = 0
-        let cl:AnyClass = self.classForCoder
-        let properties = class_copyPropertyList(cl, &count)
+    
+//    func propertyNames() -> Array<String> {
+//        var result:[String] = []
+//        var count:UInt32 = 0
+//        let cl:AnyClass = self.classForCoder
+//        let properties = class_copyPropertyList(cl, &count)
+//
+//        for i in 0..<count {
+//            guard let property = properties?[Int(i)] else { continue }
+//
+//            let name = String(cString: property_getName(property))
+//
+//            result.append(name)
+//        }
+//
+//        free(properties)
+//
+//        return result
+//    }
+    
+    func properties() -> NSObjectProperty {
+        var data:[(String, Any)] = []
+        let mirror = Mirror(reflecting: self)
+        let result: NSObjectProperty = NSObjectProperty()
         
-        for i in 0..<count {
-            guard let property = properties?[Int(i)] else { continue }
-            
-            let name = String(cString: property_getName(property))
-            
-            result.append(name)
+        for property in mirror.childsWithBase() {           
+            for (key, value) in property {                
+                if let key = key {                    
+                    data.append((key, value))
+                }
+            }
         }
         
-        free(properties)
+        result.data = data
         
         return result
     }

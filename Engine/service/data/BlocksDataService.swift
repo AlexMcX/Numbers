@@ -10,13 +10,13 @@ import DependencyInjection
 import CoreData
 
 open class BlocksDataService: INJDataService {
-    @objc dynamic internal private(set) var configService: ConfigService!
+    @objc dynamic private var configService: ConfigService!
     
     private lazy var blocksData: [Block] = { return fetch() as! [Block] }()
     lazy var blocks: [BlockModel] = { return getBlocks() }()
     lazy var totalStars: Int = { return getTotalStars() }()
     
-    internal var currentID: String?
+    internal var current: BlockModel?
     
     override open func onInit() {
         initModel(containerName: "Progress", entityName: "Block", managedObjectClass: Block.self)

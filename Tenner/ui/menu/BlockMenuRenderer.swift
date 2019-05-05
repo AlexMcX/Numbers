@@ -22,6 +22,8 @@ class BlockMenuRenderer: ListItemRenderer {
     }
     
     override func setData(data: Any?) {
+        super.setData(data: data)
+        
         if let data = data as? BlockModel {
             titleTxt.text = NSLocalizedString(data.config.title, comment: "")
          
@@ -32,6 +34,16 @@ class BlockMenuRenderer: ListItemRenderer {
             }
             
             setDisableState(data)
+        }
+    }
+    
+    override func listeners(_ access: Bool) {        
+        if (access) {
+            playBtn?.onTouch.add {
+                self.delegate?.selectItem(item: self)
+            }
+        }else {
+            playBtn?.onTouch.clear()
         }
     }
     
@@ -47,6 +59,8 @@ class BlockMenuRenderer: ListItemRenderer {
                 star?.texture = SKTexture(imageNamed: "\(textureStar)_\(index < data.progressStars ? STATE.ON.rawValue: STATE.OFF.rawValue)")
             }
         }
+        
+        listeners(true)
     }
     
     private func setDisableState(_ data: BlockModel) {

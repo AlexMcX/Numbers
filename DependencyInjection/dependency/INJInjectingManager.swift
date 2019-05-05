@@ -66,7 +66,7 @@ class INJInjectingManager: INJInjecting {
     }
     
     public func uninjection(injector: INJInjectable) {
-        print("   🔆 INJInjectingManager::uninjection \"\(getInjectionClassName(injector))\"")
+        print("   🔆 INJInjectingManager::uninjection \"\(injector.className)\"")
 
         let mirror = Mirror(reflecting: injector)
         
@@ -90,7 +90,7 @@ class INJInjectingManager: INJInjecting {
             fatalError("❌ Error registration \(injection), this instance already exists")
         }
         
-        let className = getInjectionClassName(injection)
+        let className = injection.classNameShot
         var dispatch = [INJInjectable]()
         
         if let injectors = dataWait[className] {
@@ -153,6 +153,7 @@ class INJInjectingManager: INJInjecting {
             }
             
             result = (cls as! NSObject.Type).init() as? INJInjectable
+            result?.onInitialize()
             
             addData(result!)
         }
@@ -169,7 +170,7 @@ class INJInjectingManager: INJInjecting {
     }
     
     private func addData(_ instance: INJInjectable) {
-        let className = getInjectionClassName(instance, true)
+        let className = instance.classNameShot
         
         if (data[className] != nil) { return }
         
@@ -181,21 +182,20 @@ class INJInjectingManager: INJInjecting {
         if count is 0, remove instance
      */
     private func decrementData(_ instance: INJInjectable) {
-        let className = getInjectionClassName(instance, true)
+        let className = instance.classNameShot
         
-       if (data[className] == nil)  { return }
+        if (data[className] == nil)  { return }
         
         data[className]!.count -= 1
         
         if (data[className]!.count == 0) {
-//            data[className]?.inst.dispose()
-//            
+            data[className]?.inst.onDeinitialize()
+//
 //            data.removeValue(forKey: className)
             
 //            print("      << num count \"\(className)\", is 0")
         }
-    }
-    
+    }    
     
     private func dispatchInjection(_ injectors: [INJInjectable]) {
         for injector in injectors {
@@ -206,25 +206,15 @@ class INJInjectingManager: INJInjecting {
     private func dispatchInjection(_ injector: INJInjectable) {
         for (_, wait) in dataWait {
             for (_, instance) in wait {
-                if (getInjectionClassName(injector) == getInjectionClassName(instance)) { return }
+                if (injector.className == instance.className) { return }
             }
         }
         
         (injector as? INJInjectableHandler)?.onInjection()
-    }   
-    
-    private func getInjectionClassName(_ instance: INJInjectable, _ needShot: Bool = false) -> String {
-        var result = String(describing: Mirror(reflecting: instance).subjectType)
-        
-        if (needShot) {
-            result = result.slice(from: ".", removePrefixes: true)
-        }
-        
-        return result
     }
     
     private func verificationInit(_ instance: INJInjectable) -> Bool {
-        guard let _ = data[getInjectionClassName(instance, true)] else {
+        guard let _ = data[instance.classNameShot] else {
             return false
         }
         

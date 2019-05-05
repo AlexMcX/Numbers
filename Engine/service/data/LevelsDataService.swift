@@ -12,13 +12,10 @@ import CoreData
 class LevelsDataService: INJDataService {
     @objc dynamic private var configService: ConfigService!
     
-//    private lazy var levelsData: [Level] = { return fetch() as! [Level] }()
-//    public lazy var levels: [LevelModel] = { return getLevels() }()
-    
-    internal var currentID: String?
-    internal var currentBlockID: String? {
+    internal var current: LevelModel?
+    internal var currentBlock: BlockModel? {
         didSet {
-            if (oldValue != currentBlockID) {
+            if (oldValue != currentBlock) {
                 updateLevels()
             }
         }
@@ -36,11 +33,7 @@ class LevelsDataService: INJDataService {
         levels.removeAll()
         levelsData = nil
         
-        if let blockID = currentBlockID {
-            guard let levelsData = configService.getLevels(id: blockID) else {
-                return
-            }
-            
+        if let levelsData = currentBlock?.config.levels {
             self.levelsData = levelsData
             
             for config in levelsData {
@@ -66,7 +59,7 @@ class LevelsDataService: INJDataService {
     }
     
     private func getLevelData(_ id: String) -> Level? {
-        guard let id = currentID, let result = fetch(unique: "id", value: id) else {
+        guard let id = current?.data.id, let result = fetch(unique: "id", value: id) else {
             return nil
         }
         
@@ -86,18 +79,4 @@ class LevelsDataService: INJDataService {
         
         return result
     }
-    
-//    private func getPreviousLevelModel(_ id: String) -> LevelModel? {
-//        for (index, level) in levels.enumerated() {
-//            if (level.config.id == id) {
-//                if(index > 0) {
-//                    return levels[index - 1]
-//                }
-//
-//                return nil
-//            }
-//        }
-        
-//        return nil
-//    }
 }

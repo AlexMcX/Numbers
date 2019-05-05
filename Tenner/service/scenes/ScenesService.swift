@@ -39,6 +39,7 @@ class ScenesService: INJService {
         
         // init controller to injection
         let controller: BaseController = (scene.controllerClass as BaseController.Type).init(view: skScene as! BaseView)
+        controller.onInitialize()
         
         addSequance(scene, controller)
         
@@ -61,8 +62,8 @@ class ScenesService: INJService {
     
     private func removeScene(_ scene: SceneIterable) {
         guard let controller = sequence[scene.fileName]?.controller else { return }
-        
-        controller.dispose()
+    
+        controller.onDeinitialize()
         
         // controller may not exist "view"
         (controller.view as? SKNode)?.deinitialize()

@@ -9,37 +9,33 @@
 import UIKit
 
 open class INJView: UIViewController, INJInjectable, INJInjectableHandler {
-    public convenience init() {
-        self.init(nibName: nil, bundle: nil);
-    }
-    
-    public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil);
+    public func onInitialize() {
+        preInit()
         
-        initialize()
-    }
-    
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder:aDecoder)
+        onInit()
         
-        initialize();
+        postInit()
     }
     
-    private func initialize() {
-        injection()
+    public func onDeinitialize() {
+        preDispose()
         
-        onInit();
+        onDispose()
+        
+        postDispose()
     }
     
-    open func onInit() {
-
-    }
+    // initializators
+    open func preInit() {}
+    open func onInit() {}
+    open func postInit() {}
+    
+    // deinitializator
+    open func preDispose() {}
+    open func onDispose() {}
+    open func postDispose() {}
     
     open func onInjection() {
-        
-    }
-    
-    open func dispose() {
         
     }
 }

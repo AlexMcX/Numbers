@@ -6,8 +6,14 @@
 //  Copyright © 2019 Alexey Oleksandrovich. All rights reserved.
 //
 
-class ListItemRenderer: UIComponent {   
+class ListItemRenderer: UIComponent {
+    public var delegate: ListItemDelegate?
+    
     override public func validate() {
         
+    }
+    
+    override func onDispose() {
+        delegate = nil
     }
 }

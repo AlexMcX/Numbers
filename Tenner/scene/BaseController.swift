@@ -12,19 +12,22 @@ class BaseController: INJController {
     @objc dynamic weak var sceneService: ScenesService!
     
     private lazy var _view: BaseView = { view as! BaseView }()
-        
+    
+    #if DEBUG    
     deinit {
-        print("     ❇️ BaseController::deinit \(self)")
+        print("     ❇️ BaseController::deinit \(self.className)")
+    }
+    #else
+    #endif
+    
+    override func postInit() {
+        listenersBase(true)
+        listeners(access: true)
     }
     
     override func preDispose() {
         listenersBase(false)
         listeners(access: false)
-    }
-    
-    override func postInit() {
-        listenersBase(true)
-        listeners(access: true)
     }
     
     func listeners(access: Bool) {

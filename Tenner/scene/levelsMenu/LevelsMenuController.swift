@@ -9,13 +9,26 @@
 import Foundation
 import Engine
 
-class LevelsMenuController: BaseController {
+class LevelsMenuController: BaseController, ListDelegate {
     @objc dynamic private var engine: Engine!
     
     private lazy var _view: LevelsMenuView = { view as! LevelsMenuView }()
     
     override func onInit() {
+        _view.levels.delegate = self
+        
         _view.levels.validate(provider: engine.getLevels())
+        
         _view.setTotalStars(value: engine.totalStars)
+    }
+    
+    override func onDispose() {
+        _view.levels.delegate = nil
+    }
+    
+    func selectItem(data: Any) {
+        engine.initLevel(level: data as? LevelModel)
+        
+        sceneService.setScene(scene: Scene.SceneField)
     }
 }

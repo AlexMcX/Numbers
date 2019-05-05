@@ -9,7 +9,7 @@
 import DependencyInjection
 
 internal class ConfigService: INJDecoderService {
-    @objc dynamic internal private(set) var configModel: ConfigModel!
+    @objc dynamic private var configModel: ConfigModel!
     
     override public func onInit() {
         
@@ -23,13 +23,13 @@ internal class ConfigService: INJDecoderService {
         return configModel.blockConfig
     }
     
-    public func getLevels(id: String) -> [ConfigModel.Level]? {
-        for block in getBlocks() {
-            if block.id == id {
-                return block.levels
-            }
-        }
-        
-        return nil
-    }
+//    public func getLevels(id: String) -> [ConfigModel.Level]? {
+//        for block in getBlocks() {
+//            if block.id == id {
+//                return block.levels
+//            }
+//        }
+//        
+//        return nil
+//    }
 }

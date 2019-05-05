@@ -31,26 +31,32 @@ class UIComponent: SKSpriteNode, INJInjectableInstance, INJInjection {
     private var currentState: STATE = .NONE
     private var assetName: String = ""
     
+    #if DEBUG
     deinit {
-        print("     ❇️ UIComponent::deinit \(self)")
+        var text = "     ❇️ UIComponent::deinit \"\(self.className)\""
+        text += name != nil ? ", with name:\"\(String(describing: name!))\"" : ""
+        print(text)
     }
+    #else
+    #endif
     
     override func onInitialize() {
         updateAssetName("")
         
         onInit()
+        
+        listeners(true)
     }
     
     override func onDeinitialize() {
+        onDispose()
         
+        listeners(false)
     }
     
-    func onInit() {
-        
-    }
+    func onInit() {}
     
-    func dispose() {
-    }
+    func onDispose() {}
     
     func setData(data: Any?) {
         self.data = data
@@ -81,5 +87,9 @@ class UIComponent: SKSpriteNode, INJInjectableInstance, INJInjection {
 
             setState(state: currentState)
         }
+    }
+    
+    func listeners(_ access: Bool) {
+        
     }
 }

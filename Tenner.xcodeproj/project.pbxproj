@@ -22,6 +22,8 @@
 		FA0EA7C9227B73C100661348 /* Sprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0EA7C8227B73C100661348 /* Sprite.swift */; };
 		FA131D8C226A44C800DCD0E8 /* EndGameMenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA131D89226A44C800DCD0E8 /* EndGameMenuScene.sks */; };
 		FA131D8E226A4B2100DCD0E8 /* LevelsMenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA131D8D226A4B2100DCD0E8 /* LevelsMenuScene.sks */; };
+		FA1536E8227F4BF6004EE2DE /* ListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1536E7227F4BF5004EE2DE /* ListDelegate.swift */; };
+		FA1536EA227F5339004EE2DE /* ListItemDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1536E9227F5339004EE2DE /* ListItemDelegate.swift */; };
 		FA181807226C76E700FAA415 /* BlocksMenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA181804226C76E700FAA415 /* BlocksMenuScene.sks */; };
 		FA181809226C781E00FAA415 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA181808226C781E00FAA415 /* List.swift */; };
 		FA18180C226C7C0800FAA415 /* BlocksMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18180B226C7C0800FAA415 /* BlocksMenuView.swift */; };
@@ -132,6 +134,8 @@
 		FA0EA7C8227B73C100661348 /* Sprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sprite.swift; sourceTree = "<group>"; };
 		FA131D89226A44C800DCD0E8 /* EndGameMenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EndGameMenuScene.sks; sourceTree = "<group>"; };
 		FA131D8D226A4B2100DCD0E8 /* LevelsMenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelsMenuScene.sks; sourceTree = "<group>"; };
+		FA1536E7227F4BF5004EE2DE /* ListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDelegate.swift; sourceTree = "<group>"; };
+		FA1536E9227F5339004EE2DE /* ListItemDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemDelegate.swift; sourceTree = "<group>"; };
 		FA181804226C76E700FAA415 /* BlocksMenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BlocksMenuScene.sks; sourceTree = "<group>"; };
 		FA181808226C781E00FAA415 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		FA18180B226C7C0800FAA415 /* BlocksMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksMenuView.swift; sourceTree = "<group>"; };
@@ -227,6 +231,15 @@
 				FA0EA7C6227B734600661348 /* MenuLib.sks */,
 			);
 			path = assets;
+			sourceTree = "<group>";
+		};
+		FA1536E6227F4A27004EE2DE /* delegate */ = {
+			isa = PBXGroup;
+			children = (
+				FA1536E7227F4BF5004EE2DE /* ListDelegate.swift */,
+				FA1536E9227F5339004EE2DE /* ListItemDelegate.swift */,
+			);
+			path = delegate;
 			sourceTree = "<group>";
 		};
 		FA18180A226C792200FAA415 /* blockMenu */ = {
@@ -358,6 +371,7 @@
 		FAA008CA226CD18D006E784B /* core */ = {
 			isa = PBXGroup;
 			children = (
+				FA1536E6227F4A27004EE2DE /* delegate */,
 				FA78CF7A227A525B00383F65 /* userData */,
 				FA181816226C846B00FAA415 /* list */,
 				FAFB10FA2264F9F900072C5A /* Button.swift */,
@@ -646,6 +660,7 @@
 				FAFB11002264FCB100072C5A /* SKTexture.swift in Sources */,
 				FAFB10FB2264F9FA00072C5A /* Button.swift in Sources */,
 				FA181815226C843200FAA415 /* ListItemRenderer.swift in Sources */,
+				FA1536EA227F5339004EE2DE /* ListItemDelegate.swift in Sources */,
 				FA859440226E75CC00E9C73E /* MenuConfigService.swift in Sources */,
 				FA0EA7C9227B73C100661348 /* Sprite.swift in Sources */,
 				FA0EA7C5227AFDF900661348 /* UDSize.swift in Sources */,
@@ -655,6 +670,7 @@
 				FA78CF7C227A529D00383F65 /* UDPadding.swift in Sources */,
 				FA3923C6227CDB4D0049791B /* PointsField.swift in Sources */,
 				FA18180C226C7C0800FAA415 /* BlocksMenuView.swift in Sources */,
+				FA1536E8227F4BF6004EE2DE /* ListDelegate.swift in Sources */,
 				FA181809226C781E00FAA415 /* List.swift in Sources */,
 				FA3923C8227CDBD30049791B /* TopMenuField.swift in Sources */,
 				FA0D9D3A226B16B0005C4AE2 /* OptionMenuView.swift in Sources */,

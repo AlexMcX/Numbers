@@ -12,13 +12,15 @@ import DependencyInjection
 
 extension SKNode {
     public func initialize() {
+        let props = properties()
+        
         if (self is INJInjectable) {
             (self as! INJInjectable).injection()
         }
         
-        injectionChild()
+        injectionChild(props, false)
         
-        injectUserData()
+        injectUserData(props, false)
         
         initChild()
         
@@ -26,15 +28,17 @@ extension SKNode {
     }
     
     public func deinitialize() {
+        let props = properties()
+        
         onDeinitialize()
         
         if (self is INJInjectable) {
             (self as! INJInjectable).uninjection()
         }
         
-        injectionChild(true)
+        injectionChild(props, true)
         
-        injectUserData(true)
+        injectUserData(props, true)
         
         initChild(true)
     }
@@ -43,21 +47,23 @@ extension SKNode {
     
     @objc public func onDeinitialize() {}
     
+    
+    
     public func addChildren(in nodes: [SKNode], reg injection: Bool) {
-        var mirror: Mirror?
+        var mirrors: [Mirror.Children]?
         
         if (injection) {
-             mirror = Mirror(reflecting: self)
+            mirrors = Mirror(reflecting: self).childsWithBase()
         }
         
         for node in nodes {
             addChild(node)
             
-            if (mirror != nil) {
-                if let nodeName = node.name {                    
-                    mirrorLoop: for property in mirror!.childsWithBase() {
+            if (mirrors != nil) {
+                if let nodeName = node.name {
+                    mirrorLoop: for property in mirrors! {
                         for (key, _) in property {
-                            if (key == nodeName) {
+                            if (key == nodeName) {                                
                                 setValue(node, forKey: key! as String)
                                 
                                 break mirrorLoop
@@ -68,6 +74,33 @@ extension SKNode {
             }
         }
     }
+    
+    
+//    public func addChildren(in nodes: [SKNode], reg injection: Bool) {
+//        var mirror: Mirror?
+//
+//        if (injection) {
+//             mirror = Mirror(reflecting: self)
+//        }
+//
+//        for node in nodes {
+//            addChild(node)
+//
+//            if (mirror != nil) {
+//                if let nodeName = node.name {
+//                    mirrorLoop: for property in mirror!.childsWithBase() {
+//                        for (key, _) in property {
+//                            if (key == nodeName) {
+//                                setValue(node, forKey: key! as String)
+//
+//                                break mirrorLoop
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
     
     public func removeChildren(in nodes: [SKNode], reg injection: Bool) {
         if (injection && nodes.count > 0) {
@@ -92,39 +125,61 @@ extension SKNode {
     public func removeAllChildren(reg injection: Bool) {
         removeChildren(in: children, reg: injection)
     }
+    
+    
+    private func injectionChild(_ properties: NSObjectProperty, _ isClear: Bool) {
+//        let mirror = Mirror(reflecting: self)
         
-    private func injectionChild(_ isClear: Bool = false) {
-        let mirror = Mirror(reflecting: self)
-        
-        for property in mirror.childsWithBase() {
-            for (key, _) in property {
-                guard let child = childNode(withName: key! as String) else {
-                    continue
-                }
-                
-                setValue(isClear ? nil : child, forKey: key! as String)
-            }
+        for key in properties.keys() {
+            guard let child = childNode(withName: key) else { continue }
+            
+            setValue(isClear ? nil : child, forKey: key)
         }
+        
+//        for property in mirror.childsWithBase() {
+//            for (key, _) in property {
+//                guard let child = childNode(withName: key! as String) else {
+//                    continue
+//                }
+//
+//                setValue(isClear ? nil : child, forKey: key! as String)
+//            }
+//        }
     }
     
-    private func injectUserData(_ isClear: Bool = false) {
+    private func injectUserData(_ properties: NSObjectProperty, _ isClear: Bool) {
         guard let data = userData else { return }
-        
-        let mirror = Mirror(reflecting: self)
-        
+
         for item in data {
-            for property in mirror.childsWithBase() {
-                for (key, value) in property {
-                    if (String(describing: item.key) == key) {
-                        if decodeUserData(key: key!, value: value, data: "\(item.value)") == false {
-                            setValue(isClear ? nil : item.value, forKey: key! as String)
-                        }
-                        
-                        break
+            for (key, value) in properties.enumerated() {
+                if (String(describing: item.key) == key) {
+//                    if decodeUserData(key: key!, value: value, data: "\(item.value)") == false {
+                    if decodeUserData(key: key, value: value, data: "\(item.value)") == false {
+                        setValue(isClear ? nil : item.value, forKey: key)
                     }
+
+                    break
                 }
             }
         }
+        
+//        guard let data = userData else { return }
+//
+//        let mirror = Mirror(reflecting: self)
+//
+//        for item in data {
+//            for property in mirror.childsWithBase() {
+//                for (key, value) in property {
+//                    if (String(describing: item.key) == key) {
+//                        if decodeUserData(key: key!, value: value, data: "\(item.value)") == false {
+//                            setValue(isClear ? nil : item.value, forKey: key! as String)
+//                        }
+//
+//                        break
+//                    }
+//                }
+//            }
+//        }
     }
     
     private func initChild(_ isClear: Bool = false) {
@@ -138,6 +193,7 @@ extension SKNode {
     }
     
     private func decodeUserData(key: String, value: Any, data: String) -> Bool {
+//    private func decodeUserData(key: String, data: String) -> Bool {
         let valueType = type(of: value)
         let className = (valueType as Optional).subjectClassName
         

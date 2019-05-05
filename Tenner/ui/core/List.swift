@@ -9,12 +9,13 @@
 import Foundation
 import SpriteKit
 
-class List: UIComponent {
+class List: UIComponent, ListItemDelegate {
     @objc dynamic private(set) var udDirection: UDDirection!
     @objc dynamic private(set) var udPadding: UDPadding!
     @objc dynamic private(set) var udRenderer: UDRenderer!
     @objc dynamic private(set) var udSize: UDSize!
     
+    public var delegate: ListDelegate?
     public var borderSize: CGSize = CGSize()
     public var direction: UDDirection.Direction = .horizontal {
         didSet {
@@ -42,7 +43,7 @@ class List: UIComponent {
         container = Sprite()
         addChild(container)
     }
-    
+        
     public func validate(provider: Array<Any>) {
         validate(provider: provider, position: setPosition)
     }
@@ -107,9 +108,17 @@ class List: UIComponent {
     
     private func appendRenderer(renderer: ListItemRenderer, data: Any? = nil) {
         renderer.setData(data: data)
+        renderer.delegate = self
         
         components.append(renderer)
         
         container.addChild(renderer)
+    }
+    
+    // Mark: ListItemDelegate
+    internal func selectItem(item: ListItemRenderer) {
+        if let data = item.data {
+            delegate?.selectItem(data: data)
+        }
     }
 }

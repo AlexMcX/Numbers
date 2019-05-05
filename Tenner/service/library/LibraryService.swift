@@ -45,11 +45,7 @@ class LibraryService: INJService {
         
         return result
     }
-    
-    override func dispose() {
-        clear()
-    }
-    
+        
     public func clear() {
         scenes.removeAll()
     }

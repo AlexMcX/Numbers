@@ -9,11 +9,29 @@
 import Foundation
 
 open class INJInstanceModel: NSObject, INJInjectableInstance {
-    open func onInit() {
+    public func onInitialize() {
+        preInit()
         
+        onInit()
+        
+        postInit()
     }
     
-    open func dispose() {
+    public func onDeinitialize() {
+        preDispose()
         
+        onDispose()
+        
+        postDispose()
     }
+    
+    // initializators
+    open func preInit() {}
+    open func onInit() {}
+    open func postInit() {}
+    
+    // deinitializator
+    open func preDispose() {}
+    open func onDispose() {}
+    open func postDispose() {}
 }

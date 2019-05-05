@@ -10,8 +10,8 @@ import Foundation
 import DependencyInjection
 
 open class Engine: NSObject, INJInjectable {
-    @objc dynamic private(set) var blockDataService: BlocksDataService!
-    @objc dynamic private(set) var levelsDataService: LevelsDataService!
+    @objc dynamic private var blockDataService: BlocksDataService!
+    @objc dynamic private var levelsDataService: LevelsDataService!
     @objc dynamic private var configService: ConfigService!
     
     public var totalStars: Int { return blockDataService.totalStars }
@@ -19,29 +19,36 @@ open class Engine: NSObject, INJInjectable {
     override init() {
         super.init()
         
-        initialize()
+        injection()
     }
     
-    public func onInit() {
+    public func onInitialize() {}
+    
+    public func onDeinitialize() {}
         
-    }
-    
-    public func dispose() {
-        
-    }
-    
     public func initConfig(fileName: String) {
         configService.initConfig(fileName: fileName)
     }
     
-    public func initBlock(id: String?) {
-        blockDataService.currentID = id
-        levelsDataService.currentBlockID = id
+    
+    public func initBlock(block: BlockModel?) {
+        blockDataService.current = block
+        levelsDataService.currentBlock = block
     }
     
-    public func initLevel(id: String?) {
-        levelsDataService.currentID = id
+    public func initLevel(level: LevelModel?) {
+        levelsDataService.current = level
     }
+    
+    
+//    public func initBlock(id: String?) {
+//        blockDataService.currentID = id
+//        levelsDataService.currentBlockID = id
+//    }
+    
+//    public func initLevel(id: String?) {
+//        levelsDataService.currentID = id
+//    }
     
     public func getBlocks() -> [BlockModel] {
         return blockDataService.blocks
@@ -49,11 +56,5 @@ open class Engine: NSObject, INJInjectable {
     
     public func getLevels() -> [LevelModel] {
         return levelsDataService.levels
-    }
-    
-    private func initialize() {
-        injection()
-        
-        onInit();
     }
 }
