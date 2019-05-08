@@ -6,6 +6,7 @@
 //  Copyright © 2019 Alexey Oleksandrovich. All rights reserved.
 //
 
+import UI
 import UIKit
 import SpriteKit
 import GameplayKit

@@ -6,6 +6,8 @@
 //  Copyright © 2019 Alexey Oleksandrovich. All rights reserved.
 //
 
+import UI
+
 class OptionMenuController: BaseController {
     private lazy var _view: OptionMenuView = { view as! OptionMenuView }()
 }

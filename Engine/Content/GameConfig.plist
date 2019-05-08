@@ -25,6 +25,41 @@
 					<key>Type</key>
 					<string>Tenner</string>
 				</dict>
+				<dict>
+					<key>ID</key>
+					<string>l_0_1</string>
+					<key>Title</key>
+					<string>1</string>
+					<key>Type</key>
+					<string>Tenner</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>ID</key>
+			<string>b_1</string>
+			<key>Title</key>
+			<string>BLOCK_MENU_BLOCK_0_TITLE</string>
+			<key>Unlock stars</key>
+			<integer>100</integer>
+			<key>Levels</key>
+			<array>
+				<dict>
+					<key>ID</key>
+					<string>l_1_0</string>
+					<key>Title</key>
+					<string>1</string>
+					<key>Type</key>
+					<string>Tenner</string>
+				</dict>
+				<dict>
+					<key>ID</key>
+					<string>l_1_1</string>
+					<key>Title</key>
+					<string>1</string>
+					<key>Type</key>
+					<string>Tenner</string>
+				</dict>
 			</array>
 		</dict>
 	</array>

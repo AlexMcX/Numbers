@@ -9,43 +9,25 @@
 /* Begin PBXBuildFile section */
 		FA0D9D3A226B16B0005C4AE2 /* OptionMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D9D39226B16B0005C4AE2 /* OptionMenuView.swift */; };
 		FA0D9D3E226B16BF005C4AE2 /* OptionMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D9D3D226B16BF005C4AE2 /* OptionMenuController.swift */; };
-		FA0D9D40226B185B005C4AE2 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D9D3F226B185B005C4AE2 /* CheckBox.swift */; };
-		FA0D9D43226B1E42005C4AE2 /* ScenesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D9D42226B1E42005C4AE2 /* ScenesService.swift */; };
-		FA0D9D47226B2D9C005C4AE2 /* SceneIterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D9D46226B2D9C005C4AE2 /* SceneIterable.swift */; };
 		FA0D9D4C226B3547005C4AE2 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D9D4B226B3547005C4AE2 /* Scene.swift */; };
-		FA0D9D52226B625C005C4AE2 /* SKView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D9D51226B625C005C4AE2 /* SKView.swift */; };
-		FA0D9D5A226BC374005C4AE2 /* UIComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D9D59226BC374005C4AE2 /* UIComponent.swift */; };
-		FA0DF2612265C8EF002CE10A /* SKNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0DF2602265C8EF002CE10A /* SKNode.swift */; };
-		FA0EA7C3227AF2E900661348 /* GridList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0EA7C2227AF2E900661348 /* GridList.swift */; };
-		FA0EA7C5227AFDF900661348 /* UDSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0EA7C4227AFDF900661348 /* UDSize.swift */; };
 		FA0EA7C7227B734600661348 /* MenuLib.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA0EA7C6227B734600661348 /* MenuLib.sks */; };
-		FA0EA7C9227B73C100661348 /* Sprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0EA7C8227B73C100661348 /* Sprite.swift */; };
 		FA1172AC22820FCF00E28C46 /* SceneField.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA1172AA22820FCF00E28C46 /* SceneField.sks */; };
 		FA131D8C226A44C800DCD0E8 /* EndGameMenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA131D89226A44C800DCD0E8 /* EndGameMenuScene.sks */; };
 		FA131D8E226A4B2100DCD0E8 /* LevelsMenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA131D8D226A4B2100DCD0E8 /* LevelsMenuScene.sks */; };
-		FA1536E8227F4BF6004EE2DE /* ListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1536E7227F4BF5004EE2DE /* ListDelegate.swift */; };
-		FA1536EA227F5339004EE2DE /* ListItemDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1536E9227F5339004EE2DE /* ListItemDelegate.swift */; };
 		FA181807226C76E700FAA415 /* BlocksMenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA181804226C76E700FAA415 /* BlocksMenuScene.sks */; };
-		FA181809226C781E00FAA415 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA181808226C781E00FAA415 /* List.swift */; };
 		FA18180C226C7C0800FAA415 /* BlocksMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18180B226C7C0800FAA415 /* BlocksMenuView.swift */; };
 		FA18180E226C7C1700FAA415 /* BlocksMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18180D226C7C1700FAA415 /* BlocksMenuController.swift */; };
 		FA181811226C7CC900FAA415 /* LevelsMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA181810226C7CC900FAA415 /* LevelsMenuView.swift */; };
 		FA181813226C7CD400FAA415 /* LevelsMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA181812226C7CD400FAA415 /* LevelsMenuController.swift */; };
-		FA181815226C843200FAA415 /* ListItemRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA181814226C843200FAA415 /* ListItemRenderer.swift */; };
 		FA18181F226C8EFF00FAA415 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18181E226C8EFF00FAA415 /* Int.swift */; };
 		FA181821226C8F9500FAA415 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA181820226C8F9500FAA415 /* Bool.swift */; };
 		FA22FA66226284F000880A2B /* MainMenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA22FA65226284F000880A2B /* MainMenuScene.sks */; };
 		FA3923BD227CD9B00049791B /* SceneFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3923BC227CD9B00049791B /* SceneFieldView.swift */; };
 		FA3923BF227CD9BF0049791B /* SceneFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3923BE227CD9BF0049791B /* SceneFieldController.swift */; };
-		FA3923C2227CDA7C0049791B /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3923C1227CDA7C0049791B /* Timer.swift */; };
 		FA3923C4227CDAE20049791B /* StarsField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3923C3227CDAE20049791B /* StarsField.swift */; };
 		FA3923C6227CDB4D0049791B /* PointsField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3923C5227CDB4D0049791B /* PointsField.swift */; };
 		FA3923C8227CDBD30049791B /* TopMenuField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3923C7227CDBD30049791B /* TopMenuField.swift */; };
 		FA78CF72227A06A700383F65 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA78CF74227A06A700383F65 /* Localizable.strings */; };
-		FA78CF77227A2B4D00383F65 /* UDRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78CF76227A2B4D00383F65 /* UDRenderer.swift */; };
-		FA78CF79227A34AD00383F65 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78CF78227A34AD00383F65 /* UserData.swift */; };
-		FA78CF7C227A529D00383F65 /* UDPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78CF7B227A529D00383F65 /* UDPadding.swift */; };
-		FA78CF7E227A58B500383F65 /* UDDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78CF7D227A58B500383F65 /* UDDirection.swift */; };
 		FA859427226E177800E9C73E /* DependencyInjection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA859405226DD5D700E9C73E /* DependencyInjection.framework */; };
 		FA859428226E177800E9C73E /* DependencyInjection.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA859405226DD5D700E9C73E /* DependencyInjection.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA85942C226E177D00E9C73E /* Engine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA85940E226DD60400E9C73E /* Engine.framework */; };
@@ -53,7 +35,6 @@
 		FA859440226E75CC00E9C73E /* MenuConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85943F226E75CC00E9C73E /* MenuConfigService.swift */; };
 		FA859442226E763800E9C73E /* MenuConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA859441226E763800E9C73E /* MenuConfigModel.swift */; };
 		FA859444226E76AE00E9C73E /* MenuConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA859443226E76AE00E9C73E /* MenuConfig.plist */; };
-		FAA008C9226CA37D006E784B /* LibraryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA008C8226CA37D006E784B /* LibraryService.swift */; };
 		FAA008CC226CD1A7006E784B /* BlockMenuRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA008CB226CD1A7006E784B /* BlockMenuRenderer.swift */; };
 		FAA008CE226CD1D7006E784B /* LevelMenuRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA008CD226CD1D7006E784B /* LevelMenuRenderer.swift */; };
 		FABBBA7E225FE9E200245E00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABBBA7D225FE9E200245E00 /* AppDelegate.swift */; };
@@ -65,11 +46,7 @@
 		FABBBA8E225FE9E300245E00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FABBBA8C225FE9E300245E00 /* LaunchScreen.storyboard */; };
 		FAD8EF49226516F000D775FC /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8EF48226516F000D775FC /* MainMenuView.swift */; };
 		FAEF1844226624550071E050 /* MainMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF1843226624550071E050 /* MainMenuController.swift */; };
-		FAEF1846226624F80071E050 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF1845226624F80071E050 /* BaseView.swift */; };
-		FAEF1848226628590071E050 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF1847226628590071E050 /* BaseController.swift */; };
 		FAEF184A22667B2D0071E050 /* OptionsMenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FAEF184922667B2D0071E050 /* OptionsMenuScene.sks */; };
-		FAFB10FB2264F9FA00072C5A /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB10FA2264F9F900072C5A /* Button.swift */; };
-		FAFB11002264FCB100072C5A /* SKTexture.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB10FF2264FCB100072C5A /* SKTexture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +78,13 @@
 			remoteGlobalIDString = FA8593E6226DD4C500E9C73E;
 			remoteInfo = Engine;
 		};
+		FAEE9AB222838ABA008BC058 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAEE9AAE22838ABA008BC058 /* UI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FAEE9AA322838A90008BC058;
+			remoteInfo = UI;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -121,35 +105,21 @@
 /* Begin PBXFileReference section */
 		FA0D9D39226B16B0005C4AE2 /* OptionMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionMenuView.swift; sourceTree = "<group>"; };
 		FA0D9D3D226B16BF005C4AE2 /* OptionMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionMenuController.swift; sourceTree = "<group>"; };
-		FA0D9D3F226B185B005C4AE2 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
-		FA0D9D42226B1E42005C4AE2 /* ScenesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenesService.swift; sourceTree = "<group>"; };
-		FA0D9D46226B2D9C005C4AE2 /* SceneIterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneIterable.swift; sourceTree = "<group>"; };
 		FA0D9D4B226B3547005C4AE2 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
-		FA0D9D51226B625C005C4AE2 /* SKView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKView.swift; sourceTree = "<group>"; };
-		FA0D9D59226BC374005C4AE2 /* UIComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIComponent.swift; sourceTree = "<group>"; };
-		FA0DF2602265C8EF002CE10A /* SKNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKNode.swift; sourceTree = "<group>"; };
-		FA0EA7C2227AF2E900661348 /* GridList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridList.swift; sourceTree = "<group>"; };
-		FA0EA7C4227AFDF900661348 /* UDSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDSize.swift; sourceTree = "<group>"; };
 		FA0EA7C6227B734600661348 /* MenuLib.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuLib.sks; sourceTree = "<group>"; };
-		FA0EA7C8227B73C100661348 /* Sprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sprite.swift; sourceTree = "<group>"; };
 		FA1172AA22820FCF00E28C46 /* SceneField.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SceneField.sks; sourceTree = "<group>"; };
 		FA131D89226A44C800DCD0E8 /* EndGameMenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EndGameMenuScene.sks; sourceTree = "<group>"; };
 		FA131D8D226A4B2100DCD0E8 /* LevelsMenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelsMenuScene.sks; sourceTree = "<group>"; };
-		FA1536E7227F4BF5004EE2DE /* ListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDelegate.swift; sourceTree = "<group>"; };
-		FA1536E9227F5339004EE2DE /* ListItemDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemDelegate.swift; sourceTree = "<group>"; };
 		FA181804226C76E700FAA415 /* BlocksMenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BlocksMenuScene.sks; sourceTree = "<group>"; };
-		FA181808226C781E00FAA415 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		FA18180B226C7C0800FAA415 /* BlocksMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksMenuView.swift; sourceTree = "<group>"; };
 		FA18180D226C7C1700FAA415 /* BlocksMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksMenuController.swift; sourceTree = "<group>"; };
 		FA181810226C7CC900FAA415 /* LevelsMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsMenuView.swift; sourceTree = "<group>"; };
 		FA181812226C7CD400FAA415 /* LevelsMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsMenuController.swift; sourceTree = "<group>"; };
-		FA181814226C843200FAA415 /* ListItemRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemRenderer.swift; sourceTree = "<group>"; };
 		FA18181E226C8EFF00FAA415 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		FA181820226C8F9500FAA415 /* Bool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bool.swift; sourceTree = "<group>"; };
 		FA22FA65226284F000880A2B /* MainMenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainMenuScene.sks; sourceTree = "<group>"; };
 		FA3923BC227CD9B00049791B /* SceneFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneFieldView.swift; sourceTree = "<group>"; };
 		FA3923BE227CD9BF0049791B /* SceneFieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneFieldController.swift; sourceTree = "<group>"; };
-		FA3923C1227CDA7C0049791B /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		FA3923C3227CDAE20049791B /* StarsField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsField.swift; sourceTree = "<group>"; };
 		FA3923C5227CDB4D0049791B /* PointsField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsField.swift; sourceTree = "<group>"; };
 		FA3923C7227CDBD30049791B /* TopMenuField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMenuField.swift; sourceTree = "<group>"; };
@@ -157,16 +127,11 @@
 		FA78CF65227A04B500383F65 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		FA78CF73227A06A700383F65 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FA78CF75227A06A800383F65 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
-		FA78CF76227A2B4D00383F65 /* UDRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDRenderer.swift; sourceTree = "<group>"; };
-		FA78CF78227A34AD00383F65 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
-		FA78CF7B227A529D00383F65 /* UDPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPadding.swift; sourceTree = "<group>"; };
-		FA78CF7D227A58B500383F65 /* UDDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDDirection.swift; sourceTree = "<group>"; };
 		FA8593F2226DD4D800E9C73E /* Engine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Engine.xcodeproj; path = ../Engine.xcodeproj; sourceTree = "<group>"; };
 		FA859400226DD5D700E9C73E /* DependencyInjection.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = DependencyInjection.xcodeproj; sourceTree = SOURCE_ROOT; };
 		FA85943F226E75CC00E9C73E /* MenuConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuConfigService.swift; sourceTree = "<group>"; };
 		FA859441226E763800E9C73E /* MenuConfigModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuConfigModel.swift; sourceTree = "<group>"; };
 		FA859443226E76AE00E9C73E /* MenuConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MenuConfig.plist; sourceTree = "<group>"; };
-		FAA008C8226CA37D006E784B /* LibraryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryService.swift; sourceTree = "<group>"; };
 		FAA008CB226CD1A7006E784B /* BlockMenuRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockMenuRenderer.swift; sourceTree = "<group>"; };
 		FAA008CD226CD1D7006E784B /* LevelMenuRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelMenuRenderer.swift; sourceTree = "<group>"; };
 		FABBBA7A225FE9E200245E00 /* Tenner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tenner.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,12 +144,9 @@
 		FABBBA8D225FE9E300245E00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FABBBA8F225FE9E300245E00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAD8EF48226516F000D775FC /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainMenuView.swift; path = Tenner/scene/mainMenu/MainMenuView.swift; sourceTree = SOURCE_ROOT; };
+		FAEE9AAE22838ABA008BC058 /* UI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = UI.xcodeproj; sourceTree = SOURCE_ROOT; };
 		FAEF1843226624550071E050 /* MainMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; };
-		FAEF1845226624F80071E050 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
-		FAEF1847226628590071E050 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		FAEF184922667B2D0071E050 /* OptionsMenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = OptionsMenuScene.sks; sourceTree = "<group>"; };
-		FAFB10FA2264F9F900072C5A /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
-		FAFB10FF2264FCB100072C5A /* SKTexture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKTexture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,7 +166,6 @@
 			isa = PBXGroup;
 			children = (
 				FA0D9D45226B22AD005C4AE2 /* assets */,
-				FA0D9D42226B1E42005C4AE2 /* ScenesService.swift */,
 			);
 			path = scenes;
 			sourceTree = "<group>";
@@ -213,7 +174,6 @@
 			isa = PBXGroup;
 			children = (
 				FA0D9D4B226B3547005C4AE2 /* Scene.swift */,
-				FA0D9D46226B2D9C005C4AE2 /* SceneIterable.swift */,
 			);
 			path = assets;
 			sourceTree = "<group>";
@@ -224,15 +184,6 @@
 				FA0EA7C6227B734600661348 /* MenuLib.sks */,
 			);
 			path = assets;
-			sourceTree = "<group>";
-		};
-		FA1536E6227F4A27004EE2DE /* delegate */ = {
-			isa = PBXGroup;
-			children = (
-				FA1536E7227F4BF5004EE2DE /* ListDelegate.swift */,
-				FA1536E9227F5339004EE2DE /* ListItemDelegate.swift */,
-			);
-			path = delegate;
 			sourceTree = "<group>";
 		};
 		FA18180A226C792200FAA415 /* blockMenu */ = {
@@ -251,14 +202,6 @@
 				FA181812226C7CD400FAA415 /* LevelsMenuController.swift */,
 			);
 			path = levelsMenu;
-			sourceTree = "<group>";
-		};
-		FA181816226C846B00FAA415 /* list */ = {
-			isa = PBXGroup;
-			children = (
-				FA181814226C843200FAA415 /* ListItemRenderer.swift */,
-			);
-			path = list;
 			sourceTree = "<group>";
 		};
 		FA22FA642262835E00880A2B /* scenes */ = {
@@ -292,18 +235,6 @@
 				FA3923C7227CDBD30049791B /* TopMenuField.swift */,
 			);
 			path = sceneField;
-			sourceTree = "<group>";
-		};
-		FA78CF7A227A525B00383F65 /* userData */ = {
-			isa = PBXGroup;
-			children = (
-				FA78CF76227A2B4D00383F65 /* UDRenderer.swift */,
-				FA78CF7B227A529D00383F65 /* UDPadding.swift */,
-				FA0EA7C4227AFDF900661348 /* UDSize.swift */,
-				FA78CF7D227A58B500383F65 /* UDDirection.swift */,
-				FA78CF78227A34AD00383F65 /* UserData.swift */,
-			);
-			path = userData;
 			sourceTree = "<group>";
 		};
 		FA7AA1F82265061F00D394F5 /* Frameworks */ = {
@@ -353,31 +284,6 @@
 			path = configuration;
 			sourceTree = "<group>";
 		};
-		FAA008C5226CA366006E784B /* library */ = {
-			isa = PBXGroup;
-			children = (
-				FAA008C8226CA37D006E784B /* LibraryService.swift */,
-			);
-			path = library;
-			sourceTree = "<group>";
-		};
-		FAA008CA226CD18D006E784B /* core */ = {
-			isa = PBXGroup;
-			children = (
-				FA1536E6227F4A27004EE2DE /* delegate */,
-				FA78CF7A227A525B00383F65 /* userData */,
-				FA181816226C846B00FAA415 /* list */,
-				FAFB10FA2264F9F900072C5A /* Button.swift */,
-				FA0D9D3F226B185B005C4AE2 /* CheckBox.swift */,
-				FA181808226C781E00FAA415 /* List.swift */,
-				FA0EA7C2227AF2E900661348 /* GridList.swift */,
-				FA0EA7C8227B73C100661348 /* Sprite.swift */,
-				FA3923C1227CDA7C0049791B /* Timer.swift */,
-				FA0D9D59226BC374005C4AE2 /* UIComponent.swift */,
-			);
-			path = core;
-			sourceTree = "<group>";
-		};
 		FAA008CF226CD1F9006E784B /* menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -416,6 +322,7 @@
 				FABBBA7D225FE9E200245E00 /* AppDelegate.swift */,
 				FABBBA85225FE9E200245E00 /* GameViewController.swift */,
 				FABBBA8F225FE9E300245E00 /* Info.plist */,
+				FAEE9AAE22838ABA008BC058 /* UI.xcodeproj */,
 				FA859400226DD5D700E9C73E /* DependencyInjection.xcodeproj */,
 				FA8593F2226DD4D800E9C73E /* Engine.xcodeproj */,
 			);
@@ -431,12 +338,17 @@
 			path = storyboard;
 			sourceTree = "<group>";
 		};
+		FAEE9AAF22838ABA008BC058 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FAEE9AB322838ABA008BC058 /* UI.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		FAEF181F226601270071E050 /* extension */ = {
 			isa = PBXGroup;
 			children = (
-				FAFB10FF2264FCB100072C5A /* SKTexture.swift */,
-				FA0DF2602265C8EF002CE10A /* SKNode.swift */,
-				FA0D9D51226B625C005C4AE2 /* SKView.swift */,
 				FA18181E226C8EFF00FAA415 /* Int.swift */,
 				FA181820226C8F9500FAA415 /* Bool.swift */,
 			);
@@ -465,8 +377,6 @@
 				FA18180F226C7CAE00FAA415 /* levelsMenu */,
 				FA3923BB227CD9910049791B /* sceneField */,
 				FABBBA83225FE9E200245E00 /* GameScene.swift */,
-				FAEF1845226624F80071E050 /* BaseView.swift */,
-				FAEF1847226628590071E050 /* BaseController.swift */,
 			);
 			path = scene;
 			sourceTree = "<group>";
@@ -475,7 +385,6 @@
 			isa = PBXGroup;
 			children = (
 				FA859422226DEAA600E9C73E /* configuration */,
-				FAA008C5226CA366006E784B /* library */,
 				FA0D9D41226B1E21005C4AE2 /* scenes */,
 			);
 			path = service;
@@ -504,7 +413,6 @@
 			children = (
 				FAA008CF226CD1F9006E784B /* menu */,
 				FA3923C0227CDA4A0049791B /* sceneField */,
-				FAA008CA226CD18D006E784B /* core */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -568,6 +476,10 @@
 					ProductGroup = FA859408226DD60400E9C73E /* Products */;
 					ProjectRef = FA8593F2226DD4D800E9C73E /* Engine.xcodeproj */;
 				},
+				{
+					ProductGroup = FAEE9AAF22838ABA008BC058 /* Products */;
+					ProjectRef = FAEE9AAE22838ABA008BC058 /* UI.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -589,6 +501,13 @@
 			fileType = wrapper.framework;
 			path = Engine.framework;
 			remoteRef = FA85940D226DD60400E9C73E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FAEE9AB322838ABA008BC058 /* UI.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = UI.framework;
+			remoteRef = FAEE9AB222838ABA008BC058 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -622,48 +541,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA3923C4227CDAE20049791B /* StarsField.swift in Sources */,
-				FA3923C2227CDA7C0049791B /* Timer.swift in Sources */,
 				FABBBA84225FE9E200245E00 /* GameScene.swift in Sources */,
 				FA18181F226C8EFF00FAA415 /* Int.swift in Sources */,
 				FA3923BD227CD9B00049791B /* SceneFieldView.swift in Sources */,
-				FA78CF7E227A58B500383F65 /* UDDirection.swift in Sources */,
-				FA0D9D5A226BC374005C4AE2 /* UIComponent.swift in Sources */,
 				FAEF1844226624550071E050 /* MainMenuController.swift in Sources */,
-				FA78CF77227A2B4D00383F65 /* UDRenderer.swift in Sources */,
-				FA0D9D47226B2D9C005C4AE2 /* SceneIterable.swift in Sources */,
-				FAA008C9226CA37D006E784B /* LibraryService.swift in Sources */,
 				FABBBA86225FE9E200245E00 /* GameViewController.swift in Sources */,
-				FA78CF79227A34AD00383F65 /* UserData.swift in Sources */,
 				FA0D9D4C226B3547005C4AE2 /* Scene.swift in Sources */,
 				FA0D9D3E226B16BF005C4AE2 /* OptionMenuController.swift in Sources */,
-				FA0D9D43226B1E42005C4AE2 /* ScenesService.swift in Sources */,
-				FA0D9D52226B625C005C4AE2 /* SKView.swift in Sources */,
-				FA0DF2612265C8EF002CE10A /* SKNode.swift in Sources */,
 				FABBBA7E225FE9E200245E00 /* AppDelegate.swift in Sources */,
 				FA18180E226C7C1700FAA415 /* BlocksMenuController.swift in Sources */,
 				FA181811226C7CC900FAA415 /* LevelsMenuView.swift in Sources */,
 				FA3923BF227CD9BF0049791B /* SceneFieldController.swift in Sources */,
-				FAEF1848226628590071E050 /* BaseController.swift in Sources */,
-				FA0EA7C3227AF2E900661348 /* GridList.swift in Sources */,
 				FA181813226C7CD400FAA415 /* LevelsMenuController.swift in Sources */,
-				FAEF1846226624F80071E050 /* BaseView.swift in Sources */,
 				FAD8EF49226516F000D775FC /* MainMenuView.swift in Sources */,
 				FAA008CC226CD1A7006E784B /* BlockMenuRenderer.swift in Sources */,
-				FAFB11002264FCB100072C5A /* SKTexture.swift in Sources */,
-				FAFB10FB2264F9FA00072C5A /* Button.swift in Sources */,
-				FA181815226C843200FAA415 /* ListItemRenderer.swift in Sources */,
-				FA1536EA227F5339004EE2DE /* ListItemDelegate.swift in Sources */,
 				FA859440226E75CC00E9C73E /* MenuConfigService.swift in Sources */,
-				FA0EA7C9227B73C100661348 /* Sprite.swift in Sources */,
-				FA0EA7C5227AFDF900661348 /* UDSize.swift in Sources */,
-				FA0D9D40226B185B005C4AE2 /* CheckBox.swift in Sources */,
 				FAA008CE226CD1D7006E784B /* LevelMenuRenderer.swift in Sources */,
 				FA181821226C8F9500FAA415 /* Bool.swift in Sources */,
-				FA78CF7C227A529D00383F65 /* UDPadding.swift in Sources */,
 				FA3923C6227CDB4D0049791B /* PointsField.swift in Sources */,
 				FA18180C226C7C0800FAA415 /* BlocksMenuView.swift in Sources */,
-				FA1536E8227F4BF6004EE2DE /* ListDelegate.swift in Sources */,
-				FA181809226C781E00FAA415 /* List.swift in Sources */,
 				FA3923C8227CDBD30049791B /* TopMenuField.swift in Sources */,
 				FA0D9D3A226B16B0005C4AE2 /* OptionMenuView.swift in Sources */,
 				FA859442226E763800E9C73E /* MenuConfigModel.swift in Sources */,

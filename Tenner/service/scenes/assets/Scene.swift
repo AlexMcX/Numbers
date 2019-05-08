@@ -6,6 +6,7 @@
 //  Copyright © 2019 Alexey Oleksandrovich. All rights reserved.
 //
 
+import UI
 import DependencyInjection
 
 public enum Scene {
@@ -19,7 +20,7 @@ public enum Scene {
 extension Scene: SceneIterable, Signalable {
     public var data: Any { return self }
     
-    var fileName: String {
+    public var fileName: String {
         switch self {
             case .MainMenu: return "MainMenuScene"
             case .OptionMenu: return "OptionsMenuScene"
@@ -29,7 +30,7 @@ extension Scene: SceneIterable, Signalable {
         }
     }
     
-    var viewClass: BaseView.Type {
+    public var viewClass: BaseView.Type {
         switch self {
             case .MainMenu: return MainMenuView.self
             case .OptionMenu: return OptionMenuView.self
@@ -39,7 +40,7 @@ extension Scene: SceneIterable, Signalable {
         }
     }
     
-    var controllerClass: BaseController.Type {
+    public var controllerClass: BaseController.Type {
         switch self {
             case .MainMenu: return MainMenuController.self
             case .OptionMenu: return OptionMenuController.self

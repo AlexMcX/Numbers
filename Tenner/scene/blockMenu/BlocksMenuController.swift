@@ -7,6 +7,7 @@
 //
 import Foundation
 import Engine
+import UI
 
 class BlocksMenuController: BaseController, ListDelegate {
     @objc dynamic private var engine: Engine!
