@@ -22,51 +22,8 @@
 					<string>l_0_0</string>
 					<key>Title</key>
 					<string>1</string>
-					<key>Rows</key>
-					<integer>12</integer>
-					<key>Cols</key>
-					<integer>9</integer>
-				</dict>
-				<dict>
-					<key>ID</key>
-					<string>l_0_1</string>
-					<key>Title</key>
-					<string>2</string>
-					<key>Rows</key>
-					<integer>12</integer>
-					<key>Cols</key>
-					<integer>9</integer>
-				</dict>
-			</array>
-		</dict>
-		<dict>
-			<key>ID</key>
-			<string>b_1</string>
-			<key>Title</key>
-			<string>BLOCK_MENU_BLOCK_1_TITLE</string>
-			<key>Unlock stars</key>
-			<integer>50</integer>
-			<key>Levels</key>
-			<array>
-				<dict>
-					<key>ID</key>
-					<string>l_1_0</string>
-					<key>Title</key>
-					<string>1</string>
-					<key>Rows</key>
-					<integer>12</integer>
-					<key>Cols</key>
-					<integer>9</integer>
-				</dict>
-				<dict>
-					<key>ID</key>
-					<string>l_1_1</string>
-					<key>Title</key>
-					<string>2</string>
-					<key>Rows</key>
-					<integer>12</integer>
-					<key>Cols</key>
-					<integer>9</integer>
+					<key>Type</key>
+					<string>Tenner</string>
 				</dict>
 			</array>
 		</dict>

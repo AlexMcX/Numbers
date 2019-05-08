@@ -16,7 +16,7 @@ open class INJService: NSObject, INJInjectable, INJInjectableHandler {
         injection()
     }
     
-    #if DEBUG
+    #if DEINIT
     deinit {
         print("     ❇️ INJService::deinit \(self.className)")
     }

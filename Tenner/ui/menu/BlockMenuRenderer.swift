@@ -70,5 +70,4 @@ class BlockMenuRenderer: ListItemRenderer {
         
         needTxt?.text = needTitle.replacingOccurrences(of: "{value}", with: "\(String(describing: data.unlockStars))")
     }
-
 }

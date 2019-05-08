@@ -2,7 +2,9 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>map</key>
-	<data></data>
+	<key>Rows</key>
+	<integer>12</integer>
+	<key>Cols</key>
+	<string>9</string>
 </dict>
 </plist>

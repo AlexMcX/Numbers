@@ -13,7 +13,7 @@ import DependencyInjection
 class ScenesService: INJService {
     private var view:SKView!
     
-    private var current: SceneIterable?
+    private var current: SceneIterable!
     private var steps: [String] = []
     private var sequence:[String: (id: SceneIterable, controller: BaseController?)] = [:]
     

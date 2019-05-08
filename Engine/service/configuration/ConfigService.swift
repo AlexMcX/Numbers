@@ -22,14 +22,4 @@ internal class ConfigService: INJDecoderService {
     public func getBlocks() -> [ConfigModel.Block] {
         return configModel.blockConfig
     }
-    
-//    public func getLevels(id: String) -> [ConfigModel.Level]? {
-//        for block in getBlocks() {
-//            if block.id == id {
-//                return block.levels
-//            }
-//        }
-//        
-//        return nil
-//    }
 }

@@ -66,7 +66,7 @@ class INJInjectingManager: INJInjecting {
     }
     
     public func uninjection(injector: INJInjectable) {
-        print("   🔆 INJInjectingManager::uninjection \"\(injector.className)\"")
+//        print("   🔆 INJInjectingManager::uninjection \"\(injector.className)\"")
 
         let mirror = Mirror(reflecting: injector)
         

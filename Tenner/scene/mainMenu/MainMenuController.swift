@@ -7,14 +7,28 @@
 //
 
 import Foundation
+import Engine
 
 class MainMenuController: BaseController {
+    @objc dynamic private var engine: Engine!
     private lazy var _view: MainMenuView = { view as! MainMenuView }()
     
     override func listeners(access: Bool) {
         if (access) {
             _view.playBtn.onTouch.add {
-                self.sceneService.setScene(scene: Scene.BlocksMenu)
+                if (self.engine.isBlockProgress()) {
+                    self.sceneService.setScene(scene: Scene.BlocksMenu)
+                }else {
+                    self.engine.initBlockFirst()
+                    
+                    if (self.engine.isLevelsProgress()) {
+                        self.sceneService.setScene(scene: Scene.LevelsMenu)
+                    }else {
+                        self.engine.initLevelFirst()
+                        
+                        self.sceneService.setScene(scene: Scene.SceneField)
+                    }
+                }
             }
 
             _view.optionsBtn.onTouch.add {

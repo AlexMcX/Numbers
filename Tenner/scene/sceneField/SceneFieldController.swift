@@ -10,5 +10,11 @@ import Foundation
 import Engine
 
 class SceneFieldController: BaseController {
+    @objc dynamic private var engine: Engine!
     
+//    private lazy var level: GameMode? = { engine.getLevel() }()
+    
+    override func onInit() {        
+//        print(level)
+    }
 }

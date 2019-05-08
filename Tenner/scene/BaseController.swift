@@ -13,7 +13,7 @@ class BaseController: INJController {
     
     private lazy var _view: BaseView = { view as! BaseView }()
     
-    #if DEBUG    
+    #if DEINIT
     deinit {
         print("     ❇️ BaseController::deinit \(self.className)")
     }

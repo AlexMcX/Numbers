@@ -12,7 +12,7 @@ import CoreData
 class LevelsDataService: INJDataService {
     @objc dynamic private var configService: ConfigService!
     
-    internal var current: LevelModel?
+    internal var current: LevelModel!
     internal var currentBlock: BlockModel? {
         didSet {
             if (oldValue != currentBlock) {
@@ -29,7 +29,7 @@ class LevelsDataService: INJDataService {
         initModel(containerName: "Progress", entityName: "Level", managedObjectClass: Level.self)
     }
     
-    public func updateLevels() {
+    private func updateLevels() {
         levels.removeAll()
         levelsData = nil
         
@@ -79,4 +79,14 @@ class LevelsDataService: INJDataService {
         
         return result
     }
+    
+//    private func updateLevelMode() {
+//        switch current.config.type {
+//            case "Tenner":
+//                _currentMode = Tenner(data: current)
+//            case "Swap":
+//                _currentMode = Swap(data: current)
+//            default: break            
+//        }
+//    }
 }

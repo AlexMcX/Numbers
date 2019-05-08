@@ -31,7 +31,7 @@ class UIComponent: SKSpriteNode, INJInjectableInstance, INJInjection {
     private var currentState: STATE = .NONE
     private var assetName: String = ""
     
-    #if DEBUG
+    #if DEINIT
     deinit {
         var text = "     ❇️ UIComponent::deinit \"\(self.className)\""
         text += name != nil ? ", with name:\"\(String(describing: name!))\"" : ""

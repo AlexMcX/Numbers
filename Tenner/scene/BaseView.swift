@@ -12,7 +12,7 @@ import DependencyInjection
 class BaseView: SKScene, INJInjectableInstance, INJInjectableHandler {
     @objc dynamic weak internal private(set) var backBtn: Button?
     
-    #if DEBUG
+    #if DEINIT
     deinit {
         print("     ❇️ BaseView::deinit \(self.className)")
     }

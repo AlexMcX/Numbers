@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA1297FC2270A5E40099356D /* GameConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA1297FB2270A5E40099356D /* GameConfig.plist */; };
 		FA1CD216226F896600B4CF38 /* BlockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CD215226F896600B4CF38 /* BlockModel.swift */; };
 		FA1CD218226F8AA700B4CF38 /* LevelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CD217226F8AA700B4CF38 /* LevelModel.swift */; };
 		FA1CD21E226F9C5A00B4CF38 /* BlocksDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CD21D226F9C5A00B4CF38 /* BlocksDataService.swift */; };
@@ -15,6 +14,7 @@
 		FA1CD24C226FA28F00B4CF38 /* Block+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CD24A226FA28F00B4CF38 /* Block+CoreDataClass.swift */; };
 		FA1CD27A226FC14D00B4CF38 /* Progress.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA1CD276226FC14D00B4CF38 /* Progress.xcdatamodeld */; };
 		FA3923CB227CDE1E0049791B /* l_0_0.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA3923CA227CDE1E0049791B /* l_0_0.plist */; };
+		FA72FC072283217200C2D951 /* GameConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA72FC062283217200C2D951 /* GameConfig.plist */; };
 		FA78CF552279EEFA00383F65 /* Settings.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA78CF532279EEFA00383F65 /* Settings.xcdatamodeld */; };
 		FA78CF5C2279EF2900383F65 /* Level+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78CF5A2279EF2900383F65 /* Level+CoreDataProperties.swift */; };
 		FA78CF5D2279EF2900383F65 /* Level+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78CF5B2279EF2900383F65 /* Level+CoreDataClass.swift */; };
@@ -26,7 +26,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FA1297FB2270A5E40099356D /* GameConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GameConfig.plist; sourceTree = "<group>"; };
 		FA1CD215226F896600B4CF38 /* BlockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockModel.swift; sourceTree = "<group>"; };
 		FA1CD217226F8AA700B4CF38 /* LevelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelModel.swift; sourceTree = "<group>"; };
 		FA1CD21D226F9C5A00B4CF38 /* BlocksDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksDataService.swift; sourceTree = "<group>"; };
@@ -34,6 +33,7 @@
 		FA1CD24A226FA28F00B4CF38 /* Block+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Block+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FA1CD277226FC14D00B4CF38 /* Progress.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Progress.xcdatamodel; sourceTree = "<group>"; };
 		FA3923CA227CDE1E0049791B /* l_0_0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = l_0_0.plist; sourceTree = "<group>"; };
+		FA72FC062283217200C2D951 /* GameConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GameConfig.plist; sourceTree = "<group>"; };
 		FA78CF542279EEFA00383F65 /* Settings.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Settings.xcdatamodel; sourceTree = "<group>"; };
 		FA78CF5A2279EF2900383F65 /* Level+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Level+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FA78CF5B2279EF2900383F65 /* Level+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Level+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -69,7 +69,7 @@
 		FA1CD224226F9D7D00B4CF38 /* Content */ = {
 			isa = PBXGroup;
 			children = (
-				FA1297FB2270A5E40099356D /* GameConfig.plist */,
+				FA72FC062283217200C2D951 /* GameConfig.plist */,
 				FA78CF532279EEFA00383F65 /* Settings.xcdatamodeld */,
 				FA1CD276226FC14D00B4CF38 /* Progress.xcdatamodeld */,
 				FA3923C9227CDE1E0049791B /* levels */,
@@ -222,7 +222,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA1297FC2270A5E40099356D /* GameConfig.plist in Resources */,
+				FA72FC072283217200C2D951 /* GameConfig.plist in Resources */,
 				FA3923CB227CDE1E0049791B /* l_0_0.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

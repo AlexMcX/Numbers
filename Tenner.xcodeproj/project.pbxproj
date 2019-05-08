@@ -20,6 +20,7 @@
 		FA0EA7C5227AFDF900661348 /* UDSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0EA7C4227AFDF900661348 /* UDSize.swift */; };
 		FA0EA7C7227B734600661348 /* MenuLib.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA0EA7C6227B734600661348 /* MenuLib.sks */; };
 		FA0EA7C9227B73C100661348 /* Sprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0EA7C8227B73C100661348 /* Sprite.swift */; };
+		FA1172AC22820FCF00E28C46 /* SceneField.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA1172AA22820FCF00E28C46 /* SceneField.sks */; };
 		FA131D8C226A44C800DCD0E8 /* EndGameMenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA131D89226A44C800DCD0E8 /* EndGameMenuScene.sks */; };
 		FA131D8E226A4B2100DCD0E8 /* LevelsMenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA131D8D226A4B2100DCD0E8 /* LevelsMenuScene.sks */; };
 		FA1536E8227F4BF6004EE2DE /* ListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1536E7227F4BF5004EE2DE /* ListDelegate.swift */; };
@@ -34,7 +35,6 @@
 		FA18181F226C8EFF00FAA415 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18181E226C8EFF00FAA415 /* Int.swift */; };
 		FA181821226C8F9500FAA415 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA181820226C8F9500FAA415 /* Bool.swift */; };
 		FA22FA66226284F000880A2B /* MainMenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA22FA65226284F000880A2B /* MainMenuScene.sks */; };
-		FA3923BA227CCAEA0049791B /* SceneField.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA3923B9227CCAEA0049791B /* SceneField.sks */; };
 		FA3923BD227CD9B00049791B /* SceneFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3923BC227CD9B00049791B /* SceneFieldView.swift */; };
 		FA3923BF227CD9BF0049791B /* SceneFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3923BE227CD9BF0049791B /* SceneFieldController.swift */; };
 		FA3923C2227CDA7C0049791B /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3923C1227CDA7C0049791B /* Timer.swift */; };
@@ -132,6 +132,7 @@
 		FA0EA7C4227AFDF900661348 /* UDSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDSize.swift; sourceTree = "<group>"; };
 		FA0EA7C6227B734600661348 /* MenuLib.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuLib.sks; sourceTree = "<group>"; };
 		FA0EA7C8227B73C100661348 /* Sprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sprite.swift; sourceTree = "<group>"; };
+		FA1172AA22820FCF00E28C46 /* SceneField.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SceneField.sks; sourceTree = "<group>"; };
 		FA131D89226A44C800DCD0E8 /* EndGameMenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EndGameMenuScene.sks; sourceTree = "<group>"; };
 		FA131D8D226A4B2100DCD0E8 /* LevelsMenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelsMenuScene.sks; sourceTree = "<group>"; };
 		FA1536E7227F4BF5004EE2DE /* ListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDelegate.swift; sourceTree = "<group>"; };
@@ -146,7 +147,6 @@
 		FA18181E226C8EFF00FAA415 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		FA181820226C8F9500FAA415 /* Bool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bool.swift; sourceTree = "<group>"; };
 		FA22FA65226284F000880A2B /* MainMenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainMenuScene.sks; sourceTree = "<group>"; };
-		FA3923B9227CCAEA0049791B /* SceneField.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SceneField.sks; sourceTree = "<group>"; };
 		FA3923BC227CD9B00049791B /* SceneFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneFieldView.swift; sourceTree = "<group>"; };
 		FA3923BE227CD9BF0049791B /* SceneFieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneFieldController.swift; sourceTree = "<group>"; };
 		FA3923C1227CDA7C0049791B /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
@@ -218,13 +218,6 @@
 			path = assets;
 			sourceTree = "<group>";
 		};
-		FA0D9D53226B6837005C4AE2 /* utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = utils;
-			sourceTree = "<group>";
-		};
 		FA131D8F226A504600DCD0E8 /* assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,7 +270,7 @@
 				FA131D89226A44C800DCD0E8 /* EndGameMenuScene.sks */,
 				FA131D8D226A4B2100DCD0E8 /* LevelsMenuScene.sks */,
 				FA181804226C76E700FAA415 /* BlocksMenuScene.sks */,
-				FA3923B9227CCAEA0049791B /* SceneField.sks */,
+				FA1172AA22820FCF00E28C46 /* SceneField.sks */,
 			);
 			path = scenes;
 			sourceTree = "<group>";
@@ -415,7 +408,6 @@
 			isa = PBXGroup;
 			children = (
 				FAEF1820226601960071E050 /* Content */,
-				FA0D9D53226B6837005C4AE2 /* utils */,
 				FAEF181F226601270071E050 /* extension */,
 				FAFB10F92264F9E400072C5A /* ui */,
 				FA85941A226DE56800E9C73E /* model */,
@@ -610,11 +602,11 @@
 				FA859444226E76AE00E9C73E /* MenuConfig.plist in Resources */,
 				FA131D8E226A4B2100DCD0E8 /* LevelsMenuScene.sks in Resources */,
 				FABBBA89225FE9E200245E00 /* Main.storyboard in Resources */,
-				FA3923BA227CCAEA0049791B /* SceneField.sks in Resources */,
 				FAEF184A22667B2D0071E050 /* OptionsMenuScene.sks in Resources */,
 				FA22FA66226284F000880A2B /* MainMenuScene.sks in Resources */,
 				FABBBA8B225FE9E300245E00 /* Assets.xcassets in Resources */,
 				FABBBA8E225FE9E300245E00 /* LaunchScreen.storyboard in Resources */,
+				FA1172AC22820FCF00E28C46 /* SceneField.sks in Resources */,
 				FABBBA82225FE9E200245E00 /* Actions.sks in Resources */,
 				FA131D8C226A44C800DCD0E8 /* EndGameMenuScene.sks in Resources */,
 				FA0EA7C7227B734600661348 /* MenuLib.sks in Resources */,
@@ -858,8 +850,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = ak.Tenner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -881,6 +875,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = ak.Tenner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

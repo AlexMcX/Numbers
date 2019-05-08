@@ -37,14 +37,12 @@ open class ConfigModel: INJInstanceModel, Codable {
     public struct Level: Codable {
         public let id: String
         public let title: String
-        public let rows: Int
-        public let cols: Int
+        public let type: String
         
         enum CodingKeys : String, CodingKey {
             case id = "ID"
             case title = "Title"
-            case rows = "Rows"
-            case cols = "Cols"
+            case type = "Type"
         }
     }
 }

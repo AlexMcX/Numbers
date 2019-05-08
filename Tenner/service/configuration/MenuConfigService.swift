@@ -14,5 +14,4 @@ class MenuConfigService: INJDecoderService {
     override func onInit() {
         configModel = create(plist: "MenuConfig", type: MenuConfigModel.self) as? MenuConfigModel
     }
-    
 }
