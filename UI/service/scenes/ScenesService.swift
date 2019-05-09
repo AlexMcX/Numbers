@@ -72,6 +72,8 @@ public class ScenesService: INJService {
     }
     
     private func addSequance(_ scene: SceneIterable, _ controller: BaseController) {
+        if (steps.count > 0 && steps[steps.count - 1] == scene.fileName) { return }
+        
         steps.append(scene.fileName)
         
         sequence[scene.fileName] = (scene, controller)

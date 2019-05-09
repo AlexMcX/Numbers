@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class INJService: NSObject, INJInjectable, INJInjectableHandler {
+open class INJService: NSObject, INJInjectable, INJInjectableHandler, INJSave {
     
     override public init() {
         super.init()
@@ -52,4 +52,6 @@ open class INJService: NSObject, INJInjectable, INJInjectableHandler {
     open func onInjection() {
         
     }
+    
+    open func save() {}
 }

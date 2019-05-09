@@ -81,7 +81,7 @@ open class INJDataService: INJService {
     
     public func create(data: NSManagedObject) {
         guard let description = NSEntityDescription.entity(forEntityName: entityName, in: persistentContainer.viewContext) else { return }
-//
+
         let manager = NSManagedObject(entity: description, insertInto: persistentContainer.viewContext)
         
         for (key, value) in data.changedValues() {
@@ -113,7 +113,7 @@ open class INJDataService: INJService {
         return (managedObjectClass.init(context: persistentContainer.viewContext))
     }
     
-    public func save() {
+    open override func save() {
         let context = persistentContainer.viewContext
         if context.hasChanges {
             do {

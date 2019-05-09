@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		FA0D9D56226B6C1E005C4AE2 /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D9D55226B6C1E005C4AE2 /* Signal.swift */; };
 		FA0D9D58226B6D42005C4AE2 /* Signalable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D9D57226B6D42005C4AE2 /* Signalable.swift */; };
+		FA0EA643228480F600D501BC /* INJSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0EA642228480F600D501BC /* INJSave.swift */; };
+		FA0EA6452284817C00D501BC /* DependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0EA6442284817C00D501BC /* DependencyInjection.swift */; };
 		FA1457FB225FE1E500A3A576 /* INJInjecting.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1457FA225FE1E500A3A576 /* INJInjecting.swift */; };
 		FA1536E3227F2B62004EE2DE /* NSObjectProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1536E2227F2B62004EE2DE /* NSObjectProperty.swift */; };
 		FA1536E5227F3AE6004EE2DE /* NSObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1536E4227F3AE6004EE2DE /* NSObjectProtocol.swift */; };
@@ -37,6 +39,8 @@
 /* Begin PBXFileReference section */
 		FA0D9D55226B6C1E005C4AE2 /* Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
 		FA0D9D57226B6D42005C4AE2 /* Signalable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signalable.swift; sourceTree = "<group>"; };
+		FA0EA642228480F600D501BC /* INJSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INJSave.swift; sourceTree = "<group>"; };
+		FA0EA6442284817C00D501BC /* DependencyInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjection.swift; sourceTree = "<group>"; };
 		FA1457FA225FE1E500A3A576 /* INJInjecting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INJInjecting.swift; sourceTree = "<group>"; };
 		FA1536E2227F2B62004EE2DE /* NSObjectProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectProperty.swift; sourceTree = "<group>"; };
 		FA1536E4227F3AE6004EE2DE /* NSObjectProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectProtocol.swift; sourceTree = "<group>"; };
@@ -84,6 +88,15 @@
 			path = signal;
 			sourceTree = "<group>";
 		};
+		FA0EA641228480E400D501BC /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				FA0EA642228480F600D501BC /* INJSave.swift */,
+				FA60F375225E6AB5002B7751 /* INJInjectable.swift */,
+			);
+			path = protocol;
+			sourceTree = "<group>";
+		};
 		FA1536E1227F2B62004EE2DE /* data */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +132,7 @@
 				FA60F372225E6AB5002B7751 /* dependency */,
 				FA60F36A225E6A9E002B7751 /* DependencyInjection.h */,
 				FA60F36B225E6A9E002B7751 /* Info.plist */,
+				FA0EA6442284817C00D501BC /* DependencyInjection.swift */,
 			);
 			path = DependencyInjection;
 			sourceTree = "<group>";
@@ -126,7 +140,7 @@
 		FA60F372225E6AB5002B7751 /* dependency */ = {
 			isa = PBXGroup;
 			children = (
-				FA60F375225E6AB5002B7751 /* INJInjectable.swift */,
+				FA0EA641228480E400D501BC /* protocol */,
 				FA1457FA225FE1E500A3A576 /* INJInjecting.swift */,
 				FA60F376225E6AB5002B7751 /* INJInjectingManager.swift */,
 			);
@@ -292,9 +306,11 @@
 			files = (
 				FAEF183B2266189F0071E050 /* INJView.swift in Sources */,
 				FA60F385225E6ADE002B7751 /* StringProtocol.swift in Sources */,
+				FA0EA6452284817C00D501BC /* DependencyInjection.swift in Sources */,
 				FA1457FB225FE1E500A3A576 /* INJInjecting.swift in Sources */,
 				FA1536E5227F3AE6004EE2DE /* NSObjectProtocol.swift in Sources */,
 				FA1536E3227F2B62004EE2DE /* NSObjectProperty.swift in Sources */,
+				FA0EA643228480F600D501BC /* INJSave.swift in Sources */,
 				FA60F386225E6ADE002B7751 /* Bool.swift in Sources */,
 				FAEF182F226602E10071E050 /* INJHTTPRequest.swift in Sources */,
 				FA60F387225E6ADE002B7751 /* Optional.swift in Sources */,

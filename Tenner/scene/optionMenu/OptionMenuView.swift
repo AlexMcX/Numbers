@@ -10,10 +10,11 @@ import UI
 import Foundation
 
 class OptionMenuView: BaseView {
-    @objc dynamic weak var soundBtn:Button!
-    @objc dynamic weak var effectBtn:Button!
+    @objc dynamic weak var soundCb:CheckBox!
+    @objc dynamic weak var effectCb:CheckBox!
     @objc dynamic weak var helpCb:CheckBox!
     @objc dynamic weak var languageBtn:Button!
     @objc dynamic weak var resetBtn:Button!
+    
     
 }

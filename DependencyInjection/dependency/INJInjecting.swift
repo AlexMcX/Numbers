@@ -13,4 +13,5 @@ protocol INJInjecting {
     func uninjection(injector:INJInjectable)
     func register(injection:INJInjectable)
     func unregister(injection:INJInjectable)
+    func save()
 }

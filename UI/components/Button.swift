@@ -6,7 +6,6 @@
 //  Copyright © 2019 Alexey Oleksandrovich. All rights reserved.
 //
 
-import Foundation
 import SpriteKit
 import DependencyInjection
 

@@ -10,6 +10,10 @@
 		FA0D9D3A226B16B0005C4AE2 /* OptionMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D9D39226B16B0005C4AE2 /* OptionMenuView.swift */; };
 		FA0D9D3E226B16BF005C4AE2 /* OptionMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D9D3D226B16BF005C4AE2 /* OptionMenuController.swift */; };
 		FA0D9D4C226B3547005C4AE2 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D9D4B226B3547005C4AE2 /* Scene.swift */; };
+		FA0EA616228434B200D501BC /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0EA615228434B200D501BC /* SettingsService.swift */; };
+		FA0EA63222843F2800D501BC /* SettingsData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA0EA63022843F2800D501BC /* SettingsData.xcdatamodeld */; };
+		FA0EA63D228444AC00D501BC /* Settings+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0EA63B228444AC00D501BC /* Settings+CoreDataClass.swift */; };
+		FA0EA63E228444AC00D501BC /* Settings+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0EA63C228444AC00D501BC /* Settings+CoreDataProperties.swift */; };
 		FA0EA7C7227B734600661348 /* MenuLib.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA0EA7C6227B734600661348 /* MenuLib.sks */; };
 		FA1172AC22820FCF00E28C46 /* SceneField.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA1172AA22820FCF00E28C46 /* SceneField.sks */; };
 		FA131D8C226A44C800DCD0E8 /* EndGameMenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA131D89226A44C800DCD0E8 /* EndGameMenuScene.sks */; };
@@ -106,6 +110,10 @@
 		FA0D9D39226B16B0005C4AE2 /* OptionMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionMenuView.swift; sourceTree = "<group>"; };
 		FA0D9D3D226B16BF005C4AE2 /* OptionMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionMenuController.swift; sourceTree = "<group>"; };
 		FA0D9D4B226B3547005C4AE2 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		FA0EA615228434B200D501BC /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
+		FA0EA63122843F2800D501BC /* SettingsData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SettingsData.xcdatamodel; sourceTree = "<group>"; };
+		FA0EA63B228444AC00D501BC /* Settings+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FA0EA63C228444AC00D501BC /* Settings+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FA0EA7C6227B734600661348 /* MenuLib.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuLib.sks; sourceTree = "<group>"; };
 		FA1172AA22820FCF00E28C46 /* SceneField.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SceneField.sks; sourceTree = "<group>"; };
 		FA131D89226A44C800DCD0E8 /* EndGameMenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EndGameMenuScene.sks; sourceTree = "<group>"; };
@@ -165,17 +173,26 @@
 		FA0D9D41226B1E21005C4AE2 /* scenes */ = {
 			isa = PBXGroup;
 			children = (
-				FA0D9D45226B22AD005C4AE2 /* assets */,
+				FA0D9D4B226B3547005C4AE2 /* Scene.swift */,
 			);
 			path = scenes;
 			sourceTree = "<group>";
 		};
-		FA0D9D45226B22AD005C4AE2 /* assets */ = {
+		FA0EA60C228431F600D501BC /* coreData */ = {
 			isa = PBXGroup;
 			children = (
-				FA0D9D4B226B3547005C4AE2 /* Scene.swift */,
+				FA0EA63B228444AC00D501BC /* Settings+CoreDataClass.swift */,
+				FA0EA63C228444AC00D501BC /* Settings+CoreDataProperties.swift */,
 			);
-			path = assets;
+			path = coreData;
+			sourceTree = "<group>";
+		};
+		FA0EA6172284353C00D501BC /* settings */ = {
+			isa = PBXGroup;
+			children = (
+				FA0EA615228434B200D501BC /* SettingsService.swift */,
+			);
+			path = settings;
 			sourceTree = "<group>";
 		};
 		FA131D8F226A504600DCD0E8 /* assets */ = {
@@ -264,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				FA859443226E76AE00E9C73E /* MenuConfig.plist */,
+				FA0EA63022843F2800D501BC /* SettingsData.xcdatamodeld */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -271,6 +289,7 @@
 		FA85941A226DE56800E9C73E /* model */ = {
 			isa = PBXGroup;
 			children = (
+				FA0EA60C228431F600D501BC /* coreData */,
 				FA859441226E763800E9C73E /* MenuConfigModel.swift */,
 			);
 			path = model;
@@ -384,6 +403,7 @@
 		FAEF183F226623510071E050 /* service */ = {
 			isa = PBXGroup;
 			children = (
+				FA0EA6172284353C00D501BC /* settings */,
 				FA859422226DEAA600E9C73E /* configuration */,
 				FA0D9D41226B1E21005C4AE2 /* scenes */,
 			);
@@ -540,20 +560,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA0EA616228434B200D501BC /* SettingsService.swift in Sources */,
 				FA3923C4227CDAE20049791B /* StarsField.swift in Sources */,
 				FABBBA84225FE9E200245E00 /* GameScene.swift in Sources */,
 				FA18181F226C8EFF00FAA415 /* Int.swift in Sources */,
 				FA3923BD227CD9B00049791B /* SceneFieldView.swift in Sources */,
 				FAEF1844226624550071E050 /* MainMenuController.swift in Sources */,
+				FA0EA63222843F2800D501BC /* SettingsData.xcdatamodeld in Sources */,
 				FABBBA86225FE9E200245E00 /* GameViewController.swift in Sources */,
 				FA0D9D4C226B3547005C4AE2 /* Scene.swift in Sources */,
 				FA0D9D3E226B16BF005C4AE2 /* OptionMenuController.swift in Sources */,
 				FABBBA7E225FE9E200245E00 /* AppDelegate.swift in Sources */,
+				FA0EA63E228444AC00D501BC /* Settings+CoreDataProperties.swift in Sources */,
 				FA18180E226C7C1700FAA415 /* BlocksMenuController.swift in Sources */,
 				FA181811226C7CC900FAA415 /* LevelsMenuView.swift in Sources */,
 				FA3923BF227CD9BF0049791B /* SceneFieldController.swift in Sources */,
 				FA181813226C7CD400FAA415 /* LevelsMenuController.swift in Sources */,
 				FAD8EF49226516F000D775FC /* MainMenuView.swift in Sources */,
+				FA0EA63D228444AC00D501BC /* Settings+CoreDataClass.swift in Sources */,
 				FAA008CC226CD1A7006E784B /* BlockMenuRenderer.swift in Sources */,
 				FA859440226E75CC00E9C73E /* MenuConfigService.swift in Sources */,
 				FAA008CE226CD1D7006E784B /* LevelMenuRenderer.swift in Sources */,
@@ -801,6 +825,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FA0EA63022843F2800D501BC /* SettingsData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FA0EA63122843F2800D501BC /* SettingsData.xcdatamodel */,
+			);
+			currentVersion = FA0EA63122843F2800D501BC /* SettingsData.xcdatamodel */;
+			path = SettingsData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FABBBA72225FE9E200245E00 /* Project object */;
 }

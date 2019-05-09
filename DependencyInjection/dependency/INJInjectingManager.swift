@@ -25,6 +25,8 @@ class INJInjectingManager: INJInjecting {
     // [className:wait this class [forKey:InjectionProtocol]]
     private var dataWait:[String: [(String, INJInjectable)]] = [:]
     
+    
+    
     public func injection(injector:INJInjectable) {
         var isInjection:Bool = true
         
@@ -110,6 +112,14 @@ class INJInjectingManager: INJInjecting {
     
     public func unregister(injection:INJInjectable) {
         print(" TODO !!!!!! unregistration \(injection)")
+    }
+    
+    public func save() {
+        for (_, injData) in data {
+            if (injData.inst is INJSave) {
+                (injData.inst as! INJSave).save()
+            }
+        }
     }
     
     private func getInjection(_ opt: Any.Type) -> ProtocolStatus {

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Settings" representedClassName=".Settings" syncable="YES">
+        <attribute name="effect" optional="YES" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="help" optional="YES" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="language" optional="YES" attributeType="String" defaultValueString="en" syncable="YES"/>
+        <attribute name="sound" optional="YES" attributeType="Boolean" minValueString="0" maxValueString="100" defaultValueString="YES" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Settings" positionX="-24819.94140625" positionY="-6515.62109375" width="128" height="105"/>
+    </elements>
+</model>

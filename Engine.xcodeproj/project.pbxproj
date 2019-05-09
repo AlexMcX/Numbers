@@ -15,7 +15,6 @@
 		FA1CD27A226FC14D00B4CF38 /* Progress.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA1CD276226FC14D00B4CF38 /* Progress.xcdatamodeld */; };
 		FA3923CB227CDE1E0049791B /* l_0_0.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA3923CA227CDE1E0049791B /* l_0_0.plist */; };
 		FA72FC072283217200C2D951 /* GameConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA72FC062283217200C2D951 /* GameConfig.plist */; };
-		FA78CF552279EEFA00383F65 /* Settings.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA78CF532279EEFA00383F65 /* Settings.xcdatamodeld */; };
 		FA78CF5C2279EF2900383F65 /* Level+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78CF5A2279EF2900383F65 /* Level+CoreDataProperties.swift */; };
 		FA78CF5D2279EF2900383F65 /* Level+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78CF5B2279EF2900383F65 /* Level+CoreDataClass.swift */; };
 		FA78CF632279F88200383F65 /* LevelsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78CF622279F88200383F65 /* LevelsDataService.swift */; };
@@ -34,7 +33,6 @@
 		FA1CD277226FC14D00B4CF38 /* Progress.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Progress.xcdatamodel; sourceTree = "<group>"; };
 		FA3923CA227CDE1E0049791B /* l_0_0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = l_0_0.plist; sourceTree = "<group>"; };
 		FA72FC062283217200C2D951 /* GameConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GameConfig.plist; sourceTree = "<group>"; };
-		FA78CF542279EEFA00383F65 /* Settings.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Settings.xcdatamodel; sourceTree = "<group>"; };
 		FA78CF5A2279EF2900383F65 /* Level+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Level+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FA78CF5B2279EF2900383F65 /* Level+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Level+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FA78CF622279F88200383F65 /* LevelsDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsDataService.swift; sourceTree = "<group>"; };
@@ -70,7 +68,6 @@
 			isa = PBXGroup;
 			children = (
 				FA72FC062283217200C2D951 /* GameConfig.plist */,
-				FA78CF532279EEFA00383F65 /* Settings.xcdatamodeld */,
 				FA1CD276226FC14D00B4CF38 /* Progress.xcdatamodeld */,
 				FA3923C9227CDE1E0049791B /* levels */,
 			);
@@ -240,7 +237,6 @@
 				FA1CD27A226FC14D00B4CF38 /* Progress.xcdatamodeld in Sources */,
 				FA78CF632279F88200383F65 /* LevelsDataService.swift in Sources */,
 				FA78CF5D2279EF2900383F65 /* Level+CoreDataClass.swift in Sources */,
-				FA78CF552279EEFA00383F65 /* Settings.xcdatamodeld in Sources */,
 				FA1CD24B226FA28F00B4CF38 /* Block+CoreDataProperties.swift in Sources */,
 				FA1CD21E226F9C5A00B4CF38 /* BlocksDataService.swift in Sources */,
 				FA78CF5C2279EF2900383F65 /* Level+CoreDataProperties.swift in Sources */,
@@ -460,16 +456,6 @@
 			);
 			currentVersion = FA1CD277226FC14D00B4CF38 /* Progress.xcdatamodel */;
 			path = Progress.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-		FA78CF532279EEFA00383F65 /* Settings.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				FA78CF542279EEFA00383F65 /* Settings.xcdatamodel */,
-			);
-			currentVersion = FA78CF542279EEFA00383F65 /* Settings.xcdatamodel */;
-			path = Settings.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
