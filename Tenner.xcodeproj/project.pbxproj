@@ -15,6 +15,10 @@
 		FA0EA63D228444AC00D501BC /* Settings+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0EA63B228444AC00D501BC /* Settings+CoreDataClass.swift */; };
 		FA0EA63E228444AC00D501BC /* Settings+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0EA63C228444AC00D501BC /* Settings+CoreDataProperties.swift */; };
 		FA0EA7C7227B734600661348 /* MenuLib.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA0EA7C6227B734600661348 /* MenuLib.sks */; };
+		FA0FEBB222878BD3002F8D68 /* Engine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA85104D22861D4500BECA52 /* Engine.framework */; };
+		FA0FEBB322878BD3002F8D68 /* Engine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA85104D22861D4500BECA52 /* Engine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FA0FEBB722878BD7002F8D68 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAEE9AB322838ABA008BC058 /* UI.framework */; };
+		FA0FEBB822878BD7002F8D68 /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FAEE9AB322838ABA008BC058 /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA1172AC22820FCF00E28C46 /* SceneField.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA1172AA22820FCF00E28C46 /* SceneField.sks */; };
 		FA131D8C226A44C800DCD0E8 /* EndGameMenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA131D89226A44C800DCD0E8 /* EndGameMenuScene.sks */; };
 		FA131D8E226A4B2100DCD0E8 /* LevelsMenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA131D8D226A4B2100DCD0E8 /* LevelsMenuScene.sks */; };
@@ -23,8 +27,6 @@
 		FA18180E226C7C1700FAA415 /* BlocksMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18180D226C7C1700FAA415 /* BlocksMenuController.swift */; };
 		FA181811226C7CC900FAA415 /* LevelsMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA181810226C7CC900FAA415 /* LevelsMenuView.swift */; };
 		FA181813226C7CD400FAA415 /* LevelsMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA181812226C7CD400FAA415 /* LevelsMenuController.swift */; };
-		FA18181F226C8EFF00FAA415 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18181E226C8EFF00FAA415 /* Int.swift */; };
-		FA181821226C8F9500FAA415 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA181820226C8F9500FAA415 /* Bool.swift */; };
 		FA22FA66226284F000880A2B /* MainMenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA22FA65226284F000880A2B /* MainMenuScene.sks */; };
 		FA3923BD227CD9B00049791B /* SceneFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3923BC227CD9B00049791B /* SceneFieldView.swift */; };
 		FA3923BF227CD9BF0049791B /* SceneFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3923BE227CD9BF0049791B /* SceneFieldController.swift */; };
@@ -32,10 +34,6 @@
 		FA3923C6227CDB4D0049791B /* PointsField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3923C5227CDB4D0049791B /* PointsField.swift */; };
 		FA3923C8227CDBD30049791B /* TopMenuField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3923C7227CDBD30049791B /* TopMenuField.swift */; };
 		FA78CF72227A06A700383F65 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA78CF74227A06A700383F65 /* Localizable.strings */; };
-		FA859427226E177800E9C73E /* DependencyInjection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA859405226DD5D700E9C73E /* DependencyInjection.framework */; };
-		FA859428226E177800E9C73E /* DependencyInjection.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA859405226DD5D700E9C73E /* DependencyInjection.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FA85942C226E177D00E9C73E /* Engine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA85940E226DD60400E9C73E /* Engine.framework */; };
-		FA85942D226E177D00E9C73E /* Engine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA85940E226DD60400E9C73E /* Engine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA859440226E75CC00E9C73E /* MenuConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85943F226E75CC00E9C73E /* MenuConfigService.swift */; };
 		FA859442226E763800E9C73E /* MenuConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA859441226E763800E9C73E /* MenuConfigModel.swift */; };
 		FA859444226E76AE00E9C73E /* MenuConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA859443226E76AE00E9C73E /* MenuConfig.plist */; };
@@ -54,32 +52,25 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		FA859404226DD5D700E9C73E /* PBXContainerItemProxy */ = {
+		FA0FEBB422878BD3002F8D68 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = FA859400226DD5D700E9C73E /* DependencyInjection.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = FA60F367225E6A9E002B7751;
-			remoteInfo = DependencyInjection;
-		};
-		FA85940D226DD60400E9C73E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FA8593F2226DD4D800E9C73E /* Engine.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = FA8593E7226DD4C500E9C73E;
-			remoteInfo = Engine;
-		};
-		FA859429226E177800E9C73E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FA859400226DD5D700E9C73E /* DependencyInjection.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = FA60F366225E6A9E002B7751;
-			remoteInfo = DependencyInjection;
-		};
-		FA85942E226E177D00E9C73E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FA8593F2226DD4D800E9C73E /* Engine.xcodeproj */;
+			containerPortal = FA85103C2286189C00BECA52 /* Engine.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = FA8593E6226DD4C500E9C73E;
+			remoteInfo = Engine;
+		};
+		FA0FEBB922878BD7002F8D68 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAEE9AAE22838ABA008BC058 /* UI.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = FAEE9AA222838A90008BC058;
+			remoteInfo = UI;
+		};
+		FA85104C22861D4500BECA52 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA85103C2286189C00BECA52 /* Engine.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FA8593E7226DD4C500E9C73E;
 			remoteInfo = Engine;
 		};
 		FAEE9AB222838ABA008BC058 /* PBXContainerItemProxy */ = {
@@ -92,14 +83,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		FA85942B226E177800E9C73E /* Embed Frameworks */ = {
+		FA0FEBB622878BD3002F8D68 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				FA85942D226E177D00E9C73E /* Engine.framework in Embed Frameworks */,
-				FA859428226E177800E9C73E /* DependencyInjection.framework in Embed Frameworks */,
+				FA0FEBB822878BD7002F8D68 /* UI.framework in Embed Frameworks */,
+				FA0FEBB322878BD3002F8D68 /* Engine.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,6 +98,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3EE08314CE6BC6BFE12AD216 /* Pods-Tenner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tenner.release.xcconfig"; path = "Target Support Files/Pods-Tenner/Pods-Tenner.release.xcconfig"; sourceTree = "<group>"; };
+		417E76959DAE707883D3E7BA /* Pods_Tenner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tenner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA0D9D39226B16B0005C4AE2 /* OptionMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionMenuView.swift; sourceTree = "<group>"; };
 		FA0D9D3D226B16BF005C4AE2 /* OptionMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionMenuController.swift; sourceTree = "<group>"; };
 		FA0D9D4B226B3547005C4AE2 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
@@ -123,8 +116,6 @@
 		FA18180D226C7C1700FAA415 /* BlocksMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksMenuController.swift; sourceTree = "<group>"; };
 		FA181810226C7CC900FAA415 /* LevelsMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsMenuView.swift; sourceTree = "<group>"; };
 		FA181812226C7CD400FAA415 /* LevelsMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsMenuController.swift; sourceTree = "<group>"; };
-		FA18181E226C8EFF00FAA415 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
-		FA181820226C8F9500FAA415 /* Bool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bool.swift; sourceTree = "<group>"; };
 		FA22FA65226284F000880A2B /* MainMenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainMenuScene.sks; sourceTree = "<group>"; };
 		FA3923BC227CD9B00049791B /* SceneFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneFieldView.swift; sourceTree = "<group>"; };
 		FA3923BE227CD9BF0049791B /* SceneFieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneFieldController.swift; sourceTree = "<group>"; };
@@ -135,8 +126,7 @@
 		FA78CF65227A04B500383F65 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		FA78CF73227A06A700383F65 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FA78CF75227A06A800383F65 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
-		FA8593F2226DD4D800E9C73E /* Engine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Engine.xcodeproj; path = ../Engine.xcodeproj; sourceTree = "<group>"; };
-		FA859400226DD5D700E9C73E /* DependencyInjection.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = DependencyInjection.xcodeproj; sourceTree = SOURCE_ROOT; };
+		FA85103C2286189C00BECA52 /* Engine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Engine.xcodeproj; path = ../Engine.xcodeproj; sourceTree = "<group>"; };
 		FA85943F226E75CC00E9C73E /* MenuConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuConfigService.swift; sourceTree = "<group>"; };
 		FA859441226E763800E9C73E /* MenuConfigModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuConfigModel.swift; sourceTree = "<group>"; };
 		FA859443226E76AE00E9C73E /* MenuConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MenuConfig.plist; sourceTree = "<group>"; };
@@ -155,6 +145,7 @@
 		FAEE9AAE22838ABA008BC058 /* UI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = UI.xcodeproj; sourceTree = SOURCE_ROOT; };
 		FAEF1843226624550071E050 /* MainMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; };
 		FAEF184922667B2D0071E050 /* OptionsMenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = OptionsMenuScene.sks; sourceTree = "<group>"; };
+		FFBD338D091CCAFC6D3F3C57 /* Pods-Tenner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tenner.debug.xcconfig"; path = "Target Support Files/Pods-Tenner/Pods-Tenner.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,14 +153,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA85942C226E177D00E9C73E /* Engine.framework in Frameworks */,
-				FA859427226E177800E9C73E /* DependencyInjection.framework in Frameworks */,
+				FA0FEBB722878BD7002F8D68 /* UI.framework in Frameworks */,
+				FA0FEBB222878BD3002F8D68 /* Engine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A2AF6E04160BA16B8BFA42A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FFBD338D091CCAFC6D3F3C57 /* Pods-Tenner.debug.xcconfig */,
+				3EE08314CE6BC6BFE12AD216 /* Pods-Tenner.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FA0D9D41226B1E21005C4AE2 /* scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,22 +257,15 @@
 		FA7AA1F82265061F00D394F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				417E76959DAE707883D3E7BA /* Pods_Tenner.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FA859401226DD5D700E9C73E /* Products */ = {
+		FA85104922861D4500BECA52 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FA859405226DD5D700E9C73E /* DependencyInjection.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		FA859408226DD60400E9C73E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				FA85940E226DD60400E9C73E /* Engine.framework */,
+				FA85104D22861D4500BECA52 /* Engine.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -318,6 +311,7 @@
 				FABBBA7C225FE9E200245E00 /* Tenner */,
 				FABBBA7B225FE9E200245E00 /* Products */,
 				FA7AA1F82265061F00D394F5 /* Frameworks */,
+				8A2AF6E04160BA16B8BFA42A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -333,7 +327,6 @@
 			isa = PBXGroup;
 			children = (
 				FAEF1820226601960071E050 /* Content */,
-				FAEF181F226601270071E050 /* extension */,
 				FAFB10F92264F9E400072C5A /* ui */,
 				FA85941A226DE56800E9C73E /* model */,
 				FAEF183E2266233F0071E050 /* scene */,
@@ -342,8 +335,7 @@
 				FABBBA85225FE9E200245E00 /* GameViewController.swift */,
 				FABBBA8F225FE9E300245E00 /* Info.plist */,
 				FAEE9AAE22838ABA008BC058 /* UI.xcodeproj */,
-				FA859400226DD5D700E9C73E /* DependencyInjection.xcodeproj */,
-				FA8593F2226DD4D800E9C73E /* Engine.xcodeproj */,
+				FA85103C2286189C00BECA52 /* Engine.xcodeproj */,
 			);
 			path = Tenner;
 			sourceTree = "<group>";
@@ -363,15 +355,6 @@
 				FAEE9AB322838ABA008BC058 /* UI.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		FAEF181F226601270071E050 /* extension */ = {
-			isa = PBXGroup;
-			children = (
-				FA18181E226C8EFF00FAA415 /* Int.swift */,
-				FA181820226C8F9500FAA415 /* Bool.swift */,
-			);
-			path = extension;
 			sourceTree = "<group>";
 		};
 		FAEF1820226601960071E050 /* Content */ = {
@@ -444,16 +427,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FABBBA92225FE9E300245E00 /* Build configuration list for PBXNativeTarget "Tenner" */;
 			buildPhases = (
+				296DBDE6A6FBCECBFF0958FB /* [CP] Check Pods Manifest.lock */,
 				FABBBA76225FE9E200245E00 /* Sources */,
 				FABBBA77225FE9E200245E00 /* Frameworks */,
 				FABBBA78225FE9E200245E00 /* Resources */,
-				FA85942B226E177800E9C73E /* Embed Frameworks */,
+				FA0FEBB622878BD3002F8D68 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				FA85942A226E177800E9C73E /* PBXTargetDependency */,
-				FA85942F226E177D00E9C73E /* PBXTargetDependency */,
+				FA0FEBB522878BD3002F8D68 /* PBXTargetDependency */,
+				FA0FEBBA22878BD7002F8D68 /* PBXTargetDependency */,
 			);
 			name = Tenner;
 			productName = Tenner;
@@ -489,12 +473,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = FA859401226DD5D700E9C73E /* Products */;
-					ProjectRef = FA859400226DD5D700E9C73E /* DependencyInjection.xcodeproj */;
-				},
-				{
-					ProductGroup = FA859408226DD60400E9C73E /* Products */;
-					ProjectRef = FA8593F2226DD4D800E9C73E /* Engine.xcodeproj */;
+					ProductGroup = FA85104922861D4500BECA52 /* Products */;
+					ProjectRef = FA85103C2286189C00BECA52 /* Engine.xcodeproj */;
 				},
 				{
 					ProductGroup = FAEE9AAF22838ABA008BC058 /* Products */;
@@ -509,18 +489,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		FA859405226DD5D700E9C73E /* DependencyInjection.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = DependencyInjection.framework;
-			remoteRef = FA859404226DD5D700E9C73E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		FA85940E226DD60400E9C73E /* Engine.framework */ = {
+		FA85104D22861D4500BECA52 /* Engine.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Engine.framework;
-			remoteRef = FA85940D226DD60400E9C73E /* PBXContainerItemProxy */;
+			remoteRef = FA85104C22861D4500BECA52 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		FAEE9AB322838ABA008BC058 /* UI.framework */ = {
@@ -555,6 +528,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		296DBDE6A6FBCECBFF0958FB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tenner-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FABBBA76225FE9E200245E00 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -563,7 +561,6 @@
 				FA0EA616228434B200D501BC /* SettingsService.swift in Sources */,
 				FA3923C4227CDAE20049791B /* StarsField.swift in Sources */,
 				FABBBA84225FE9E200245E00 /* GameScene.swift in Sources */,
-				FA18181F226C8EFF00FAA415 /* Int.swift in Sources */,
 				FA3923BD227CD9B00049791B /* SceneFieldView.swift in Sources */,
 				FAEF1844226624550071E050 /* MainMenuController.swift in Sources */,
 				FA0EA63222843F2800D501BC /* SettingsData.xcdatamodeld in Sources */,
@@ -581,7 +578,6 @@
 				FAA008CC226CD1A7006E784B /* BlockMenuRenderer.swift in Sources */,
 				FA859440226E75CC00E9C73E /* MenuConfigService.swift in Sources */,
 				FAA008CE226CD1D7006E784B /* LevelMenuRenderer.swift in Sources */,
-				FA181821226C8F9500FAA415 /* Bool.swift in Sources */,
 				FA3923C6227CDB4D0049791B /* PointsField.swift in Sources */,
 				FA18180C226C7C0800FAA415 /* BlocksMenuView.swift in Sources */,
 				FA3923C8227CDBD30049791B /* TopMenuField.swift in Sources */,
@@ -593,15 +589,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		FA85942A226E177800E9C73E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = DependencyInjection;
-			targetProxy = FA859429226E177800E9C73E /* PBXContainerItemProxy */;
-		};
-		FA85942F226E177D00E9C73E /* PBXTargetDependency */ = {
+		FA0FEBB522878BD3002F8D68 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Engine;
-			targetProxy = FA85942E226E177D00E9C73E /* PBXContainerItemProxy */;
+			targetProxy = FA0FEBB422878BD3002F8D68 /* PBXContainerItemProxy */;
+		};
+		FA0FEBBA22878BD7002F8D68 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = UI;
+			targetProxy = FA0FEBB922878BD7002F8D68 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -756,6 +752,7 @@
 		};
 		FABBBA93225FE9E300245E00 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFBD338D091CCAFC6D3F3C57 /* Pods-Tenner.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -770,7 +767,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_SWIFT_FLAGS = "";
+				OTHER_SWIFT_FLAGS = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = ak.Tenner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -781,6 +778,7 @@
 		};
 		FABBBA94225FE9E300245E00 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EE08314CE6BC6BFE12AD216 /* Pods-Tenner.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -795,7 +793,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_SWIFT_FLAGS = "";
+				OTHER_SWIFT_FLAGS = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = ak.Tenner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

@@ -7,9 +7,8 @@
 //
 
 import Foundation
-import DependencyInjection
 
-open class ConfigModel: INJInstanceModel, Codable {
+public class ConfigModel: Codable {
     public let levelStarsMax: Int
     public let blockStarsMax: Int
     public let blockConfig: [Block]

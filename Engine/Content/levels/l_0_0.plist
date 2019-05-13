@@ -5,6 +5,12 @@
 	<key>Rows</key>
 	<integer>12</integer>
 	<key>Cols</key>
-	<string>9</string>
+	<integer>9</integer>
+	<key>Comparison</key>
+	<integer>10</integer>
+	<key>Maximum value</key>
+	<integer>9</integer>
+	<key>Minimum value</key>
+	<integer>1</integer>
 </dict>
 </plist>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class INJHTTPService: INJService {
+open class INJHTTPService: INJService {
     
     // PUBLIC
     public func request(with: INJHTTPRequest, completionHandler: @escaping (Any?, Error?) -> Void) {

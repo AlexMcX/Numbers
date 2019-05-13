@@ -18,7 +18,7 @@ class LevelsMenuController: BaseController, ListDelegate {
     override func onInit() {
         _view.levels.delegate = self
         
-        _view.levels.validate(provider: engine.getLevels())
+        _view.levels.validate(provider: engine.levels)
         
         _view.setTotalStars(value: engine.totalStars)
     }

@@ -14,15 +14,15 @@ public extension SKNode {
     func initialize() {
         let props = properties()
         
-        if (self is INJInjectable) {
-            (self as! INJInjectable).injection()
-        }
-        
         injectionChild(props, false)
         
         injectUserData(props, false)
         
         initChild()
+        
+        if (self is INJInjectable) {
+            (self as! INJInjectable).injection()
+        }
         
         onInitialize()
     }

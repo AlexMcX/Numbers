@@ -30,7 +30,6 @@ class GameViewController: UIViewController, INJInjection {
             view.showsFPS = true
             view.showsNodeCount = true
             
-            injection()
 //            #if TENNER
 //            print(String(utf8String: getenv("GAME_MODE")) )
 //            #else
@@ -46,8 +45,6 @@ class GameViewController: UIViewController, INJInjection {
         super.viewDidLoad()
 
         injection()
-        
-        onInitialize()
     }
 
     override var shouldAutorotate: Bool {

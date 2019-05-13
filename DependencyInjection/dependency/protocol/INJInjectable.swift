@@ -32,7 +32,6 @@ public extension INJInjectable {
     append to base injection protocol when register instance this protocol
  */
 public protocol INJInjectableInstance: INJInjectable {
-    func <#name#>()
     func register()
     func unregistration()
 }

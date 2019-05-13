@@ -9,10 +9,15 @@
 import DependencyInjection
 import CoreData
 
-class LevelsDataService: INJDataService {
+public class LevelsDataService: INJDataService {
     @objc dynamic private var configService: ConfigService!
     
-    internal var current: LevelModel!
+    internal var current: LevelModel! {didSet {
+            if (oldValue != current) {
+                field = ClassicField(fileName: current.config.id)
+            }
+        }
+    }
     internal var currentBlock: BlockModel? {
         didSet {
             if (oldValue != currentBlock) {
@@ -21,6 +26,7 @@ class LevelsDataService: INJDataService {
         }
     }
     
+    public private(set) var field: Field!
     public private(set) var levels: [LevelModel] = []
     private var levelsData: [ConfigModel.Level]?
     

@@ -17,12 +17,12 @@ class MainMenuController: BaseController {
     override func listeners(access: Bool) {
         if (access) {
             _view.playBtn.onTouch.add {
-                if (self.engine.isBlockProgress()) {
+                if (self.engine.isBlockProgress) {
                     self.sceneService.setScene(scene: Scene.BlocksMenu)
                 }else {
                     self.engine.initBlockFirst()
                     
-                    if (self.engine.isLevelsProgress()) {
+                    if (self.engine.isLevelsProgress) {
                         self.sceneService.setScene(scene: Scene.LevelsMenu)
                     }else {
                         self.engine.initLevelFirst()

@@ -13,9 +13,9 @@ import UI
 class SceneFieldController: BaseController {
     @objc dynamic private var engine: Engine!
     
-//    private lazy var level: GameMode? = { engine.getLevel() }()
+    private lazy var field: Field = { engine.field }()
     
     override func onInit() {        
-//        print(level)
+        
     }
 }

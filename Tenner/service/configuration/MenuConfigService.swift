@@ -8,10 +8,10 @@
 
 import DependencyInjection
 
-class MenuConfigService: INJDecoderService {
+class MenuConfigService: INJFileService {
     @objc dynamic var configModel: MenuConfigModel!
     
     override func onInit() {
-        configModel = create(plist: "MenuConfig", type: MenuConfigModel.self) as? MenuConfigModel
+        configModel = read(plistFile: "MenuConfig", to: MenuConfigModel.self)
     }
 }

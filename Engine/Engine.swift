@@ -15,15 +15,20 @@ open class Engine: NSObject, INJInjectable {
     @objc dynamic private var configService: ConfigService!
     
     public var totalStars: Int { return blockDataService.totalStars }
+    public var blocks: [BlockModel] { return blockDataService.blocks }
+    public var levels: [LevelModel] { return levelsDataService.levels }
+    public var field: Field { return levelsDataService.field }
+    public var isBlockProgress: Bool { return blockDataService.blocks.count > 1 }
+    public var isLevelsProgress: Bool { return levelsDataService.levels.count > 1 }
     
     override init() {
         super.init()
         
         injection()
-        #if TENNER
-        print(String(utf8String: getenv("GAME_MODE")) )
-        #else
-        #endif
+//        #if TENNER
+//        print(String(utf8String: getenv("GAME_MODE")) )
+//        #else
+//        #endif
     }
     
     public func onInitialize() {}
@@ -52,51 +57,28 @@ open class Engine: NSObject, INJInjectable {
         levelsDataService.current = level
     }
     
-    
-    public func getBlocks() -> [BlockModel] {
-        return blockDataService.blocks
-    }
-    
-    public func getLevels() -> [LevelModel] {
-        return levelsDataService.levels
-    }
-    
-//    public func getLevel() -> GameMode {
-//        return levelsDataService.mode
+//    #if DEBUG
+//    public func initBlock(id: String?) {
+//        for block in blocks {
+//            if block.data.id == id {
+//                initBlock(block: block)
+//            }
+//        }
 //    }
-    
-    
-    public func isBlockProgress() -> Bool {
-        return blockDataService.blocks.count > 1
-    }
-    
-    public func isLevelsProgress() -> Bool {
-        return levelsDataService.levels.count > 1
-    }
-    
-    
-    #if DEBUG
-    public func initBlock(id: String?) {
-        for block in getBlocks() {
-            if block.data.id == id {
-                initBlock(block: block)
-            }
-        }
-    }
-
-    public func initLevel(id: String?) {
-        for level in levelsDataService.levels {
-            if level.data.id == id {
-                initLevel(level: level)
-            }
-        }
-    }
-    
-    public func initLevel(block: String?, level: String?) {
-        initBlock(id: block)
-        
-        initLevel(id: level)
-    }
-    #else
-    #endif
+//
+//    public func initLevel(id: String?) {
+//        for level in levelsDataService.levels {
+//            if level.data.id == id {
+//                initLevel(level: level)
+//            }
+//        }
+//    }
+//
+//    public func initLevel(block: String?, level: String?) {
+//        initBlock(id: block)
+//
+//        initLevel(id: level)
+//    }
+//    #else
+//    #endif
 }

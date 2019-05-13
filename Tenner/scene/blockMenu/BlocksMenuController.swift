@@ -17,7 +17,7 @@ class BlocksMenuController: BaseController, ListDelegate {
     override func onInit() {
         _view.blocks.delegate = self
         
-        _view.blocks.validate(provider: engine.getBlocks())
+        _view.blocks.validate(provider: engine.blocks)
         
         _view.setTotalStars(value: engine.totalStars)
     }

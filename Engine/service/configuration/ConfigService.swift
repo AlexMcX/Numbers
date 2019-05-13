@@ -8,15 +8,15 @@
 
 import DependencyInjection
 
-internal class ConfigService: INJDecoderService {
-    @objc dynamic private var configModel: ConfigModel!
+internal class ConfigService: INJFileService {    
+    private var configModel: ConfigModel!
     
     override public func onInit() {
         
     }
     
     public func initConfig(fileName: String) {
-        configModel = create(plist: fileName, type: ConfigModel.self) as? ConfigModel
+        configModel = read(plistFile: fileName, to: ConfigModel.self)
     }
     
     public func getBlocks() -> [ConfigModel.Block] {

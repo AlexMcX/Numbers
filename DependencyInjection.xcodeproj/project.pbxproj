@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA0B5DD82289D93300F8DEC5 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B5DD72289D93300F8DEC5 /* Array.swift */; };
 		FA0D9D56226B6C1E005C4AE2 /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D9D55226B6C1E005C4AE2 /* Signal.swift */; };
 		FA0D9D58226B6D42005C4AE2 /* Signalable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D9D57226B6D42005C4AE2 /* Signalable.swift */; };
 		FA0EA643228480F600D501BC /* INJSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0EA642228480F600D501BC /* INJSave.swift */; };
 		FA0EA6452284817C00D501BC /* DependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0EA6442284817C00D501BC /* DependencyInjection.swift */; };
+		FA0FEBA222875366002F8D68 /* INJFileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0FEBA122875366002F8D68 /* INJFileService.swift */; };
 		FA1457FB225FE1E500A3A576 /* INJInjecting.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1457FA225FE1E500A3A576 /* INJInjecting.swift */; };
 		FA1536E3227F2B62004EE2DE /* NSObjectProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1536E2227F2B62004EE2DE /* NSObjectProperty.swift */; };
 		FA1536E5227F3AE6004EE2DE /* NSObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1536E4227F3AE6004EE2DE /* NSObjectProtocol.swift */; };
+		FA46AD2F228A096A0006DA82 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46AD2E228A096A0006DA82 /* Int.swift */; };
 		FA60F36C225E6A9E002B7751 /* DependencyInjection.h in Headers */ = {isa = PBXBuildFile; fileRef = FA60F36A225E6A9E002B7751 /* DependencyInjection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FA60F378225E6AB5002B7751 /* INJInjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA60F375225E6AB5002B7751 /* INJInjectable.swift */; };
 		FA60F379225E6AB5002B7751 /* INJInjectingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA60F376225E6AB5002B7751 /* INJInjectingManager.swift */; };
@@ -25,7 +28,6 @@
 		FA60F387225E6ADE002B7751 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA60F382225E6ADE002B7751 /* Optional.swift */; };
 		FA60F38A225E6AE5002B7751 /* INJModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA60F389225E6AE5002B7751 /* INJModel.swift */; };
 		FA85941E226DE66500E9C73E /* INJInstanceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85941D226DE66500E9C73E /* INJInstanceModel.swift */; };
-		FA859434226E64FB00E9C73E /* INJDecoderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA859433226E64FB00E9C73E /* INJDecoderService.swift */; };
 		FAE49BE72270FD1600C55512 /* Mirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE49BE62270FD1600C55512 /* Mirror.swift */; };
 		FAEF1826226602090071E050 /* INJDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF1822226602090071E050 /* INJDataService.swift */; };
 		FAEF182C226602A40071E050 /* INJHTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF182B226602A40071E050 /* INJHTTPService.swift */; };
@@ -37,13 +39,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA0B5DD72289D93300F8DEC5 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		FA0D9D55226B6C1E005C4AE2 /* Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
 		FA0D9D57226B6D42005C4AE2 /* Signalable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signalable.swift; sourceTree = "<group>"; };
 		FA0EA642228480F600D501BC /* INJSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INJSave.swift; sourceTree = "<group>"; };
 		FA0EA6442284817C00D501BC /* DependencyInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjection.swift; sourceTree = "<group>"; };
+		FA0FEBA122875366002F8D68 /* INJFileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INJFileService.swift; sourceTree = "<group>"; };
 		FA1457FA225FE1E500A3A576 /* INJInjecting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INJInjecting.swift; sourceTree = "<group>"; };
 		FA1536E2227F2B62004EE2DE /* NSObjectProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectProperty.swift; sourceTree = "<group>"; };
 		FA1536E4227F3AE6004EE2DE /* NSObjectProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectProtocol.swift; sourceTree = "<group>"; };
+		FA46AD2E228A096A0006DA82 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		FA60F367225E6A9E002B7751 /* DependencyInjection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DependencyInjection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA60F36A225E6A9E002B7751 /* DependencyInjection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DependencyInjection.h; sourceTree = "<group>"; };
 		FA60F36B225E6A9E002B7751 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,7 +62,6 @@
 		FA60F382225E6ADE002B7751 /* Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
 		FA60F389225E6AE5002B7751 /* INJModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INJModel.swift; sourceTree = "<group>"; };
 		FA85941D226DE66500E9C73E /* INJInstanceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INJInstanceModel.swift; sourceTree = "<group>"; };
-		FA859433226E64FB00E9C73E /* INJDecoderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INJDecoderService.swift; sourceTree = "<group>"; };
 		FAE49BE62270FD1600C55512 /* Mirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mirror.swift; sourceTree = "<group>"; };
 		FAEF1822226602090071E050 /* INJDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INJDataService.swift; sourceTree = "<group>"; };
 		FAEF182B226602A40071E050 /* INJHTTPService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INJHTTPService.swift; sourceTree = "<group>"; };
@@ -95,6 +99,14 @@
 				FA60F375225E6AB5002B7751 /* INJInjectable.swift */,
 			);
 			path = protocol;
+			sourceTree = "<group>";
+		};
+		FA0FEBA022875349002F8D68 /* file */ = {
+			isa = PBXGroup;
+			children = (
+				FA0FEBA122875366002F8D68 /* INJFileService.swift */,
+			);
+			path = file;
 			sourceTree = "<group>";
 		};
 		FA1536E1227F2B62004EE2DE /* data */ = {
@@ -150,9 +162,9 @@
 		FA60F37A225E6ABE002B7751 /* service */ = {
 			isa = PBXGroup;
 			children = (
+				FA0FEBA022875349002F8D68 /* file */,
 				FAEF182A2266028E0071E050 /* http */,
 				FAEF1821226602090071E050 /* data */,
-				FA859431226E64D500E9C73E /* decoder */,
 				FA60F37B225E6AD2002B7751 /* INJService.swift */,
 			);
 			path = service;
@@ -167,18 +179,12 @@
 				FA60F37F225E6ADE002B7751 /* String.swift */,
 				FA60F380225E6ADE002B7751 /* StringProtocol.swift */,
 				FA60F381225E6ADE002B7751 /* Bool.swift */,
+				FA46AD2E228A096A0006DA82 /* Int.swift */,
 				FA60F382225E6ADE002B7751 /* Optional.swift */,
 				FAE49BE62270FD1600C55512 /* Mirror.swift */,
+				FA0B5DD72289D93300F8DEC5 /* Array.swift */,
 			);
 			path = extension;
-			sourceTree = "<group>";
-		};
-		FA859431226E64D500E9C73E /* decoder */ = {
-			isa = PBXGroup;
-			children = (
-				FA859433226E64FB00E9C73E /* INJDecoderService.swift */,
-			);
-			path = decoder;
 			sourceTree = "<group>";
 		};
 		FAEF1821226602090071E050 /* data */ = {
@@ -307,18 +313,19 @@
 				FAEF183B2266189F0071E050 /* INJView.swift in Sources */,
 				FA60F385225E6ADE002B7751 /* StringProtocol.swift in Sources */,
 				FA0EA6452284817C00D501BC /* DependencyInjection.swift in Sources */,
+				FA46AD2F228A096A0006DA82 /* Int.swift in Sources */,
 				FA1457FB225FE1E500A3A576 /* INJInjecting.swift in Sources */,
 				FA1536E5227F3AE6004EE2DE /* NSObjectProtocol.swift in Sources */,
 				FA1536E3227F2B62004EE2DE /* NSObjectProperty.swift in Sources */,
 				FA0EA643228480F600D501BC /* INJSave.swift in Sources */,
 				FA60F386225E6ADE002B7751 /* Bool.swift in Sources */,
 				FAEF182F226602E10071E050 /* INJHTTPRequest.swift in Sources */,
+				FA0B5DD82289D93300F8DEC5 /* Array.swift in Sources */,
 				FA60F387225E6ADE002B7751 /* Optional.swift in Sources */,
 				FAEF183D226618A50071E050 /* INJController.swift in Sources */,
 				FAEF18332266032B0071E050 /* INJRoute.swift in Sources */,
 				FA85941E226DE66500E9C73E /* INJInstanceModel.swift in Sources */,
 				FA60F384225E6ADE002B7751 /* String.swift in Sources */,
-				FA859434226E64FB00E9C73E /* INJDecoderService.swift in Sources */,
 				FAEF1826226602090071E050 /* INJDataService.swift in Sources */,
 				FA60F38A225E6AE5002B7751 /* INJModel.swift in Sources */,
 				FA60F37C225E6AD2002B7751 /* INJService.swift in Sources */,
@@ -330,6 +337,7 @@
 				FAEF18342266032B0071E050 /* INJRest.swift in Sources */,
 				FA60F379225E6AB5002B7751 /* INJInjectingManager.swift in Sources */,
 				FAEF182C226602A40071E050 /* INJHTTPService.swift in Sources */,
+				FA0FEBA222875366002F8D68 /* INJFileService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
