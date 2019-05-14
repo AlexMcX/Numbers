@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class SceneModel: Codable {
+class SceneModel: Codable {
     @objc dynamic public var id:Int
 //    @objc dynamic public var totalTime:Int
 //    @objc dynamic public var currentTime:Int
@@ -22,7 +22,7 @@ public class SceneModel: Codable {
     @objc dynamic public var view:Array<Int>        // visible rows indexes
     @objc dynamic public var tilesIDS:Int           // last created tile id
     
-    public var field:Array<Array<TileModel?>>
+    var field:Array<Array<TileModel?>>
     
     init() {
         id = 0

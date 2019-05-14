@@ -31,14 +31,13 @@ open class UIComponent: SKSpriteNode, INJInjectableInstance, INJInjection {
     private var currentState: STATE = .NONE
     private var assetName: String = ""
     
-    #if DEINIT
+//    #if DEINIT
     deinit {
         var text = "     ❇️ UIComponent::deinit \"\(self.className)\""
         text += name != nil ? ", with name:\"\(String(describing: name!))\"" : ""
         print(text)
     }
-    #else
-    #endif
+//    #endif
     
     override public func onInitialize() {
         updateAssetName("")

@@ -16,7 +16,7 @@ class MainMenuController: BaseController {
     
     override func listeners(access: Bool) {
         if (access) {
-            _view.playBtn.onTouch.add {
+            _view.playBtn.onTouch.add {  [unowned self] in
                 if (self.engine.isBlockProgress) {
                     self.sceneService.setScene(scene: Scene.BlocksMenu)
                 }else {
@@ -32,13 +32,9 @@ class MainMenuController: BaseController {
                 }
             }
 
-            _view.optionsBtn.onTouch.add {
+            _view.optionsBtn.onTouch.add { [unowned self] in
                 self.sceneService.setScene(scene: Scene.OptionMenu)
             }
-        }else {
-            _view.playBtn.onTouch.clear()
-            
-            _view.optionsBtn.onTouch.clear()
         }
     }
 }

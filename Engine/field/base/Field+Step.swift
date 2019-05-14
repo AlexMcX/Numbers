@@ -12,6 +12,8 @@ extension Field {
         
         var tiles = tiles
         
+        delegatePrice(add: fieldModel.priceTile)
+        
         successTiles(&tiles)
         
         removeFromHelp(tiles: tiles)
@@ -51,6 +53,8 @@ extension Field {
             }
             
             sceneModel.view.removeSafe(index)
+            
+            delegatePrice(add: fieldModel.priceRow)
             
             delegateRemoveTiles(row)
         }

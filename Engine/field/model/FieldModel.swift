@@ -8,12 +8,14 @@
 
 import Foundation
 
-public class FieldModel: Codable {
+class FieldModel: Codable {
     public let rows: Int
     public let cols: Int
     public let comparison: Int
     public let minimum: Int
     public let maximum: Int
+    public let priceTile: Int
+    public let priceRow: Int
     
     enum CodingKeys: String, CodingKey {
         case rows = "Rows"
@@ -21,5 +23,7 @@ public class FieldModel: Codable {
         case comparison = "Comparison"
         case minimum = "Minimum value"
         case maximum = "Maximum value"
+        case priceTile = "Price tile"
+        case priceRow = "Price row"
     }
 }

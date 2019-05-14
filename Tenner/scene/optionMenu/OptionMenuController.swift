@@ -22,27 +22,21 @@ class OptionMenuController: BaseController {
     
     override func listeners(access: Bool) {
         if access {
-            _view.soundCb.onTouch.add {
+            _view.soundCb.onTouch.add { [unowned self] in
                 self.settingsModel.sound = !self.settingsModel.sound
             }
-            _view.effectCb.onTouch.add {
+            _view.effectCb.onTouch.add { [unowned self] in
                 self.settingsModel.effect = !self.settingsModel.effect
             }
-            _view.helpCb.onTouch.add {
+            _view.helpCb.onTouch.add { [unowned self] in
                 self.settingsModel.help = !self.settingsModel.help
             }
-            _view.languageBtn.onTouch.add {
+            _view.languageBtn.onTouch.add { /*[unowned self] in*/
                 print("OptionMenuController::change language")
             }
-            _view.resetBtn.onTouch.add {
+            _view.resetBtn.onTouch.add { /*[unowned self] in*/
                 print("OptionMenuController:: reset game")
             }
-        }else {
-            _view.soundCb.onTouch.clear()
-            _view.effectCb.onTouch.clear()
-            _view.helpCb.onTouch.clear()
-            _view.languageBtn.onTouch.clear()
-            _view.resetBtn.onTouch.clear()
         }
     }
 }
