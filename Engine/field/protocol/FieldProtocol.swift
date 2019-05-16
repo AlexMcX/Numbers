@@ -9,5 +9,6 @@
 public protocol FieldProtocol {
     associatedtype Tile: TileModel
     
+    func step(tiles: [Tile])
     func help() -> [Tile]
 }

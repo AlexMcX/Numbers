@@ -15,12 +15,14 @@ extension Field {
     }
     
     private func simulateStep() {
+        if isEndGame { return }
+        
         let tiles = help()
         
         if tiles.count > 0 {
             step(tiles: tiles)
             
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
                 self.simulateStep()
             }
         }
@@ -45,30 +47,30 @@ extension Field {
         
         positions = ""
         
-        for i in 0..<sceneModel.view.count {
-            viewRow = sceneModel.view[i];
+        for i in 0..<sceneBaseModel.view.count {
+            viewRow = sceneBaseModel.view[i];
             
             result += "\n";
-            result += i < 10 ? "\(i)) " : "\(i))"
+            result += "v:\(i)|f:\(sceneBaseModel.view[i])) "
             
-            if viewRow < sceneModel.field.count {
-                row = sceneModel.field[viewRow];
+            if viewRow < sceneBaseModel.field.count {
+                row = sceneBaseModel.field[viewRow];
                 
                 
                 
                 for j in 0..<row!.count {
                     if row![j] != nil {
                         if (row![j]!.isSuccess) {
-                            result += "|✅id:\(row![j]!.id) index:\(row![j]!.index)"
+                            result += "|✅id:\(row![j]!.id) idx:\(row![j]!.index) (\(row![j]!.position.row),\(row![j]!.position.col))"
                         }else{
-                             result += "|  id:\(row![j]!.id) index:\(row![j]!.index)"
+                             result += "|  id:\(row![j]!.id) idx:\(row![j]!.index) (\(row![j]!.position.row),\(row![j]!.position.col))"
                         }
                         
                         result += row![j]!.id < 10 ? " |" : "|"
                         
                         positions += "{id:\(row![j]!.id), r:\(row![j]!.position.row), c:\(row![j]!.position.col)}, ";
                     }else{
-                        result += "|     null      |";
+                        result += "|       null        |";
                     }
                 }
             }else {
@@ -82,7 +84,7 @@ extension Field {
     }
     
     internal func printView(_ prefix: String = "") {        
-        print("\(prefix) FieldEngine::view: \(sceneModel.view.description)");
+        print("\(prefix) FieldEngine::view: \(sceneBaseModel.view.description)");
     }
     
     internal func prinHelp(_ prefix: String = "") {

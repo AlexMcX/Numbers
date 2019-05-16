@@ -28,7 +28,7 @@ extension Field {
             total += tile.index
         }
         
-        return total == fieldModel.comparison
+        return total == fieldBaseModel.comparison
     }
     
     internal func isSuccess(equatable: [Tile]) -> Bool {

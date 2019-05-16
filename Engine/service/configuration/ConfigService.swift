@@ -9,7 +9,8 @@
 import DependencyInjection
 
 internal class ConfigService: INJFileService {    
-    private var configModel: ConfigModel!
+//    private var configModel: ConfigModel!
+    @objc dynamic private var configModel: ConfigModel!
     
     override public func onInit() {
         
@@ -17,9 +18,11 @@ internal class ConfigService: INJFileService {
     
     public func initConfig(fileName: String) {
         configModel = read(plistFile: fileName, to: ConfigModel.self)
+        
+        configModel.register()
     }
     
-    public func getBlocks() -> [ConfigModel.Block] {
-        return configModel.blockConfig
-    }
+//    public func getBlocks() -> [ConfigModel.Block] {
+//        return configModel.blockConfig
+//    }
 }

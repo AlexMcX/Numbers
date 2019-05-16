@@ -10,7 +10,7 @@ import DependencyInjection
 import CoreData
 
 open class BlocksDataService: INJDataService {
-    @objc dynamic private var configService: ConfigService!
+    @objc dynamic private var configModel: ConfigModel!
     
     private lazy var blocksData: [Block] = { return fetch() as! [Block] }()
     lazy var blocks: [BlockModel] = { return getBlocks() }()
@@ -26,7 +26,7 @@ open class BlocksDataService: INJDataService {
         var blockModel: BlockModel
         var result: [BlockModel] = []
         
-        for config in configService.getBlocks() {
+        for config in configModel.blockConfig {
             blockModel = BlockModel()
             
             blockModel.config = config

@@ -15,6 +15,5 @@ class ClassicField: Field, ClassicFieldProtocol {
     
     override func generateScene(value: [[Int]]?) {
         super.generateScene(value: startIndex)
-    }    
-    
+    }
 }

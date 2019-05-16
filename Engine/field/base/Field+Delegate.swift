@@ -40,9 +40,15 @@ extension Field {
     }
     
     internal func delegatePrice(add: Int) {
-        sceneModel.price += add
-//        передати кілкість зірок
-//        blockModel.progressStars = Int(blockModel.data.receivedStars)  / config.levels.count
+        sceneBaseModel.price += add
+        
+        let stars = Int(sceneBaseModel.price * configModel.levelStarsMax / fieldBaseModel.priceComplete)
+        
+        delegate?.onUpdatePrice(stars: stars)
+        
+        #if DEBUG
+        printDelegate(tiles: nil, prefix: "price: \(stars),  | \(fieldBaseModel.priceComplete),  \(sceneBaseModel.price)")
+        #endif
     }
     
     internal func delegateCrowdedField() {
@@ -53,6 +59,8 @@ extension Field {
     }
     
     internal func delegateEndGame() {
+        isEndGame = true
+        
         #if DEBUG
         printDelegate(tiles: nil, prefix: "endGame")
         #endif

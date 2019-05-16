@@ -9,6 +9,7 @@
 import Foundation
 
 public protocol FieldDelegate {
+    func onUpdatePrice(stars: Int)
     func onSuccessTiles(tiles: [TileModel])
     func onAddTiles(tiles: [TileModel])
     func onRemoveTiles(tiles: [TileModel])

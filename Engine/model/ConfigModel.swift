@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import DependencyInjection
 
-public class ConfigModel: Codable {
+public class ConfigModel: NSObject, Codable, INJInjectableInstance {
     public let levelStarsMax: Int
     public let blockStarsMax: Int
     public let blockConfig: [Block]
@@ -36,12 +37,15 @@ public class ConfigModel: Codable {
     public struct Level: Codable {
         public let id: String
         public let title: String
-        public let type: String
+        public let gamePlay: String
         
         enum CodingKeys : String, CodingKey {
             case id = "ID"
             case title = "Title"
-            case type = "Type"
+            case gamePlay = "Gameplay type"
         }
     }
+    
+    public func onInitialize(){}
+    public func onDeinitialize(){}
 }

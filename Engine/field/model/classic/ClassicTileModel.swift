@@ -6,8 +6,6 @@
 //  Copyright © 2019 Alexey Oleksandrovich. All rights reserved.
 //
 
-import Foundation
-
 class ClassicTileModel: TileModel {
     
 }

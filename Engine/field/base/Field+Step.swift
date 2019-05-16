@@ -8,23 +8,23 @@
 
 extension Field {
     public func step(tiles: [Tile]) {
-        if (isSuccess(tiles: tiles) == false) { return }
+        if (isEndGame || isSuccess(tiles: tiles) == false) { return }
         
         var tiles = tiles
         
-        delegatePrice(add: fieldModel.priceTile)
+        delegatePrice(add: fieldBaseModel.priceTile)
         
         successTiles(&tiles)
         
         removeFromHelp(tiles: tiles)
         
-        removeSuccessRow(tiles)
-        
         delegateSuccessTiles(tiles)
         
-        verificationNext()
+        removeSuccessRow(tiles)
         
-        printFull("STEP - [\(tiles[0].id), \(tiles[1].id)]")
+        verification()
+        
+//        printFull("STEP - [\(tiles[0].id), \(tiles[1].id)]")
     }
     
     internal func successTiles( _ tiles: inout [Tile]) {
@@ -33,11 +33,15 @@ extension Field {
     
     private func removeSuccessRow(_ tiles: [Tile]) {
         var row: [Tile] = []
-        var rowsIndex = Set<Int>()
+        var rowsIndex: [Int] = []
+        var removeIndex: [Int] = []
+        var removeTiles: [Tile] = []
         
         for tile in tiles {
-            rowsIndex.insert(tile.position.row)
+            rowsIndex.appendUnigue(tile.position.row)
         }
+        
+        rowsIndex = rowsIndex.sorted(by: {$0 < $1})
         
         base: for index in rowsIndex {
             row.removeAll()
@@ -52,21 +56,44 @@ extension Field {
                 }
             }
             
-            sceneModel.view.removeSafe(index)
+            removeIndex.append(index)
             
-            delegatePrice(add: fieldModel.priceRow)
-            
-            delegateRemoveTiles(row)
+            removeTiles += row
         }
+        
+        if (removeIndex.count == 0) { return }
+        
+        for index in removeIndex {
+            sceneBaseModel.view.removeSafe(sceneBaseModel.view[index])
+            
+            shiftTiles(toRemovedRow: index)
+        }
+        
+        delegatePrice(add: fieldBaseModel.priceRow * removeIndex.count)
+        
+        delegateRemoveTiles(removeTiles)
+        
+    }
+    
+    private func verification() {
+        // win max count price
+        if (sceneBaseModel.price >= fieldBaseModel.priceComplete) {
+            delegateEndGame()
+            
+            return
+        }
+        
+        if (success.value.count > 0) { return }
+        
+        verificationNext()
     }
     
     private func verificationNext() {
-        if (success.value.count > 0) { return }
-        
         var newTiles: [Tile] = []
         let tiles = getTiles(isSuccess: false)
         
-        var newTile: Tile
+        var newTile: Tile       
+
         var position = getLastCoord()
         
         for tile in tiles {
@@ -76,7 +103,7 @@ extension Field {
             newTile.position = position
             
             if addToField(tile: newTile) {
-                if (position.col == fieldModel.cols - 1) {
+                if (position.col == fieldBaseModel.cols - 1) {
                     position.col = 0
                     position.row += 1
                 }else {
@@ -96,7 +123,7 @@ extension Field {
                 return
             }
         }
-        
+
         delegateAddTiles(newTiles)
     }
 }

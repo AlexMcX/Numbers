@@ -12,12 +12,6 @@ extension Field {
     public func help() -> [Tile] {
         return success.value.count > 0 ? success.value[Int.randomRange(min: 0, max: success.value.count - 1)] : []
     }
-        
-    internal func initHelp() {
-        for row in sceneModel.field {
-            appendToHelp(tiles: row)
-        }
-    }
     
     internal func appendToHelp(tiles: [Tile?]) {
         for tile in tiles {
@@ -28,8 +22,8 @@ extension Field {
     }
     
     internal func appendToHelp(tile: Tile) {
-        let neighbors = getNeighborTiles(tile.position.row, tile.position.col)
-        
+        let neighbors = getNeighborTiles(tile.position.row, tile.position.col)       
+                
         base: for neighbor in neighbors {
             if (isSuccess(tiles: [tile, neighbor])) {
                 for group in success.value {

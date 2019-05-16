@@ -18,12 +18,12 @@
 			<key>Levels</key>
 			<array>
 				<dict>
+					<key>Gameplay type</key>
+					<string>Random</string>
 					<key>ID</key>
-					<string>l_0_0</string>
+					<string>l_0_1</string>
 					<key>Title</key>
 					<string>1</string>
-					<key>Type</key>
-					<string>Tenner</string>
 				</dict>
 			</array>
 		</dict>

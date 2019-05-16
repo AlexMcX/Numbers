@@ -10,11 +10,12 @@ import DependencyInjection
 import CoreData
 
 public class LevelsDataService: INJDataService {
-    @objc dynamic private var configService: ConfigService!
+    @objc dynamic internal var fileService: INJFileService!
+//    @objc dynamic private var configService: ConfigService!
     
     internal var current: LevelModel! {didSet {
             if (oldValue != current) {
-                field = ClassicField(fileName: current.config.id)
+                field = createField(id: current.config.id, gamePlay: current.config.gamePlay)
             }
         }
     }
@@ -84,6 +85,14 @@ public class LevelsDataService: INJDataService {
         result.id = id
         
         return result
+    }
+    
+    private func createField(id: String, gamePlay: String) -> Field {
+        let gp = GamePlay(rawValue: gamePlay)
+        
+        let field = gp!.field.init(id: id, gamePlay: gp!)
+        
+        return field
     }
     
 //    private func updateLevelMode() {

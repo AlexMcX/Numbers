@@ -57,11 +57,14 @@ extension Field {
     }
     
     internal func getTile(row: Int, col: Int) -> Tile? {
-        if (row >= 0 && col >= 0) {
-            if (row < sceneModel.field.count) {
-                if (col < sceneModel.field[row].count) {
-                    return sceneModel.field[row][col];
-                }
+        if (row < 0 || col < 0 || row >= sceneBaseModel.view.count) { return nil }
+        
+        let fieldRow = sceneBaseModel.view[row]
+    
+    
+        if (row < sceneBaseModel.field.count) {
+            if (col < sceneBaseModel.field[fieldRow].count) {
+                return sceneBaseModel.field[fieldRow][col];
             }
         }
         
@@ -69,19 +72,19 @@ extension Field {
     }
     
     internal func getRow(fieldIndex index: Int) -> [Tile?] {
-        return sceneModel.field[index]
+        return sceneBaseModel.field[index]
     }
     
     internal func getRow(viewIndex index: Int) -> [Tile?] {
-        return getRow(fieldIndex: sceneModel.view[index])
+        return getRow(fieldIndex: sceneBaseModel.view[index])
     }
     
     internal func getTiles(isSuccess: Bool) -> [Tile] {
         var row: [Tile?]
         var result: [Tile] = []
         
-        for rowIndex in sceneModel.view {
-            row = getRow(viewIndex: rowIndex)
+        for rowIndex in sceneBaseModel.view {
+            row = getRow(fieldIndex: rowIndex)
             
             for tile in row {
                 if (tile?.isSuccess == isSuccess) {
@@ -94,16 +97,15 @@ extension Field {
     }
     
     internal func getLastCoord() -> EGPosition {
-        var result: EGPosition = EGPosition(row: sceneModel.view[sceneModel.view.count - 1] + 1, col: 0)
+        var result: EGPosition = EGPosition(row: sceneBaseModel.view.count, col: 0)
         
-        base: for rowIndex in sceneModel.view.reversed() {
-            let row = getRow(viewIndex: rowIndex)
+        base: for (viewIndex, fieldIndex) in sceneBaseModel.view.reversed().enumerated() {
+            let row = getRow(fieldIndex: fieldIndex)
             
             for (colIndex, tile) in row.reversed().enumerated() {
-                
                 if tile == nil {
-                    result.row = rowIndex
-                    result.col = fieldModel.cols - colIndex - 1
+                    result.row = viewIndex
+                    result.col = fieldBaseModel.cols - colIndex - 1
                 }else {
                     break base
                 }
