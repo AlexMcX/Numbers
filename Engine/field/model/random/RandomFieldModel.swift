@@ -10,7 +10,7 @@ import Foundation
 
 class RandomFieldModel: FieldModel {
     public var startRows: Int = 0
-    public var rangeValue: [ProbabilityModel]?
+    public var rangeValue: [RangeProbabilityModel]?    
 
     private enum CodingKeys: String, CodingKey {
         case startRows = "Start rows"
@@ -21,24 +21,40 @@ class RandomFieldModel: FieldModel {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
         self.startRows = try container.decode(Int.self, forKey: .startRows)
-        self.rangeValue = try container.decode([ProbabilityModel].self, forKey: .rangeValue)
+        self.rangeValue = try container.decode([RangeProbabilityModel].self, forKey: .rangeValue)
 
         try super.init(from: decoder)
+    }
+    
+    func generateIndex() -> Int {
+        if let types = rangeValue {
+            if let result = randomProbability(value: types) {
+                return (result as! RangeProbabilityModel).value
+            }
+        }
         
-        self.rangeValue = self.rangeValue?.sorted(by: {$0.probability < $1.probability})
+        return Int.randomRange(min: minimum, max: maximum)
     }
 }
 
-class ProbabilityModel: Codable {
+
+
+class RangeProbabilityModel: ProbabilityModel {
     public let value: Int
-    public let probability: Int
     
     private enum CodingKeys: String, CodingKey {
         case value = "Value"
-        case probability = "Probability"
+    }
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        self.value = try container.decode(Int.self, forKey: .value)
+        
+        try super.init(from: decoder)
     }
     
     public var description: String {
-        return "[ProbabilityModel: value:\(value), probability:\(probability)]"
+        return "[RangeProbabilityModel: value:\(value), probability:\(probability)]"
     }
 }

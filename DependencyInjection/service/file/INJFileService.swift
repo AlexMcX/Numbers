@@ -23,7 +23,7 @@ open class INJFileService: INJService {
         return nil
     }
     
-    public func read<T: Codable>(jsonFile: String, to: T.Type) -> T? {
+    public func read<T: Decodable>(jsonFile: String, to: T.Type) -> T? {
         if let str = readString(fileName: jsonFile) {
             let decoder = JSONDecoder()
             let data = Data(str.utf8)
@@ -44,7 +44,7 @@ open class INJFileService: INJService {
         return nil
     }
     
-    public func read<T: Codable>(plistFile: String, to: T.Type) -> T? {
+    public func read<T: Decodable>(plistFile: String, to: T.Type) -> T? {
         let bundle = Bundle(for: to as! AnyClass)
         
         if let url: URL = bundle.url(forResource: plistFile, withExtension: "plist") {
@@ -64,7 +64,7 @@ open class INJFileService: INJService {
         return nil
     }
         
-    public func save<T: Codable>(jsonFile: String, codable: T) {
+    public func save<T: Encodable>(jsonFile: String, codable: T) {
         if let path = getPath(fileName: jsonFile) {
             let encoder = JSONEncoder()
             

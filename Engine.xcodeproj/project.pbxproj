@@ -34,6 +34,7 @@
 		FA1CD24B226FA28F00B4CF38 /* Block+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CD249226FA28F00B4CF38 /* Block+CoreDataProperties.swift */; };
 		FA1CD24C226FA28F00B4CF38 /* Block+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CD24A226FA28F00B4CF38 /* Block+CoreDataClass.swift */; };
 		FA1CD27A226FC14D00B4CF38 /* Progress.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA1CD276226FC14D00B4CF38 /* Progress.xcdatamodeld */; };
+		FA2ED668228EFE73008CEA6F /* EGField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2ED667228EFE73008CEA6F /* EGField.swift */; };
 		FA46AD31228A10FB0006DA82 /* Field+Success.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46AD30228A10FB0006DA82 /* Field+Success.swift */; };
 		FA46AD34228A13AA0006DA82 /* Field+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46AD33228A13AA0006DA82 /* Field+Delegate.swift */; };
 		FA72FC072283217200C2D951 /* GameConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA72FC062283217200C2D951 /* GameConfig.plist */; };
@@ -87,6 +88,7 @@
 		FA1CD249226FA28F00B4CF38 /* Block+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Block+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FA1CD24A226FA28F00B4CF38 /* Block+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Block+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FA1CD277226FC14D00B4CF38 /* Progress.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Progress.xcdatamodel; sourceTree = "<group>"; };
+		FA2ED667228EFE73008CEA6F /* EGField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EGField.swift; sourceTree = "<group>"; };
 		FA46AD30228A10FB0006DA82 /* Field+Success.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Field+Success.swift"; sourceTree = "<group>"; };
 		FA46AD33228A13AA0006DA82 /* Field+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Field+Delegate.swift"; sourceTree = "<group>"; };
 		FA72FC062283217200C2D951 /* GameConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GameConfig.plist; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 				FA0B5DD42289C55700F8DEC5 /* protocol */,
 				FA0FEB95228722A3002F8D68 /* ClassicField.swift */,
 				FA0CD8D4228C976000DB7FDA /* RandomField.swift */,
+				FA2ED667228EFE73008CEA6F /* EGField.swift */,
 			);
 			path = field;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				FAAD014D2286220000FF143A /* FieldModel.swift in Sources */,
 				FA78CF632279F88200383F65 /* LevelsDataService.swift in Sources */,
 				FA1BCDEC228892DD0058ED91 /* Field+Help.swift in Sources */,
+				FA2ED668228EFE73008CEA6F /* EGField.swift in Sources */,
 				FA78CF5D2279EF2900383F65 /* Level+CoreDataClass.swift in Sources */,
 				FA0FEB9422872063002F8D68 /* TileModel.swift in Sources */,
 				FA0FEB98228727B2002F8D68 /* FieldProtocol.swift in Sources */,

@@ -9,7 +9,7 @@
 extension Field {
     internal func isSuccess(tiles: [Tile]) -> Bool {
         for tile in tiles {
-            if (tile.isSuccess) { return false }
+            if (tile.isSuccess || tile.type == .lock) { return false }
         }
         
         if (isNeighbors(tiles: tiles) == false) { return false }

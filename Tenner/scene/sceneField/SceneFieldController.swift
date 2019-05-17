@@ -13,7 +13,7 @@ import UI
 class SceneFieldController: BaseController {
     @objc dynamic private var engine: Engine!
     
-    private lazy var field: Field = { engine.field }()
+    private lazy var field: EGField = { engine.field }()
     
     override func onInit() {        
         

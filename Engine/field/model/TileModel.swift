@@ -13,9 +13,11 @@ public class TileModel: Codable, Equatable {
     public var isSuccess: Bool = false
     public var index: Int = 0
     public var position: EGPosition = EGPosition()
+    public var type: EGTypeProbabilityValue
     
-    required init(id: Int) {
+    required init(id: Int, type: EGTypeProbabilityValue) {
         self.id = id
+        self.type = type
     }
     
     

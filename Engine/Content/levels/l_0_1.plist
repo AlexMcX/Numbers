@@ -2,13 +2,34 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Range type</key>
+	<array>
+		<dict>
+			<key>Value</key>
+			<string>Normal</string>
+			<key>Probability</key>
+			<integer>80</integer>
+		</dict>
+		<dict>
+			<key>Value</key>
+			<string>Empty</string>
+			<key>Probability</key>
+			<integer>80</integer>
+		</dict>
+		<dict>
+			<key>Value</key>
+			<string>Lock</string>
+			<key>Probability</key>
+			<integer>5</integer>
+		</dict>
+	</array>
 	<key>Range value</key>
 	<array>
 		<dict>
 			<key>Value</key>
 			<integer>5</integer>
 			<key>Probability</key>
-			<integer>100</integer>
+			<integer>25</integer>
 		</dict>
 		<dict>
 			<key>Value</key>

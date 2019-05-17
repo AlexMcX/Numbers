@@ -2,6 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Range type</key>
+	<array>
+		<dict>
+			<key>Value</key>
+			<string>Normal</string>
+			<key>Probability</key>
+			<integer>100</integer>
+		</dict>
+	</array>
 	<key>Price to complete</key>
 	<integer>100</integer>
 	<key>Price row</key>

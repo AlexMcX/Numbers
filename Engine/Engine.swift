@@ -17,7 +17,7 @@ open class Engine: NSObject, INJInjectable {
     public var totalStars: Int { return blockDataService.totalStars }
     public var blocks: [BlockModel] { return blockDataService.blocks }
     public var levels: [LevelModel] { return levelsDataService.levels }
-    public var field: Field { return levelsDataService.field }
+    public var field: EGField { return levelsDataService.field }
     public var isBlockProgress: Bool { return blockDataService.blocks.count > 1 }
     public var isLevelsProgress: Bool { return levelsDataService.levels.count > 1 }
     

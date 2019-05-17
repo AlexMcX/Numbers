@@ -11,7 +11,7 @@ import Foundation
 #if DEBUG
 extension Field {
     internal func startDebug() {
-        simulateStep()
+//        simulateStep()
     }
     
     private func simulateStep() {
@@ -42,7 +42,6 @@ extension Field {
         var positions:String
         var result:String
         var row:Array<Tile?>
-        var viewRow:Int
         
         result = "************* Field Engine *************";
         result += prefix != "" ? "\n \(prefix)" : "";

@@ -9,7 +9,7 @@
 import Foundation
 import DependencyInjection
 
-public class Field: NSObject, INJInjection, FieldProtocol {
+public class Field: NSObject, INJInjection, FieldProtocol, EGField {
     public typealias Tile = TileModel
     @objc dynamic private var fileService: INJFileService!
     @objc dynamic internal var configModel: ConfigModel!
@@ -19,6 +19,7 @@ public class Field: NSObject, INJInjection, FieldProtocol {
     
     public var delegate: FieldDelegate?
     
+    private var TYRY_STEPS_GENERATE_SCENE = 25
     private var levelID: String!
     private var fileName: String!
     private var gamePlay: GamePlay!
@@ -58,24 +59,42 @@ public class Field: NSObject, INJInjection, FieldProtocol {
     internal func generateScene(value: [[Int]]?) {
         guard let idx = value else { return }
         
-        for (rowIndex, row) in idx.enumerated() {
-            for (colIndex, index) in row.enumerated() {
-                if let tile = createTile(index) {
-                    tile.position.row = rowIndex
-                    tile.position.col = colIndex
-                    
-                    addToField(tile: tile)
-                } else {
-                    addToField(tile: nil, row: rowIndex, col: colIndex)
+        while TYRY_STEPS_GENERATE_SCENE > 0 {
+            for (rowIndex, row) in idx.enumerated() {
+                for (colIndex, index) in row.enumerated() {
+                    if let tile = createTile(index) {
+                        tile.position.row = rowIndex
+                        tile.position.col = colIndex
+                        
+                        addToField(tile: tile)
+                    } else {
+                        addToField(tile: nil, row: rowIndex, col: colIndex)
+                    }
                 }
             }
-        }   
+            
+            if (success.value.count > 0) {
+                break
+            }
+            
+            clear()
+            
+            TYRY_STEPS_GENERATE_SCENE -= 1
+            
+            generateScene(value: nil)
+            
+            return
+        }
+        
+        printFull("\(TYRY_STEPS_GENERATE_SCENE)")
     }
     
     // MARK: create tile
-    internal func createTile(_ index: Int) -> Tile? {
-        if (index > 0) {
-            let result = Tile.init(id: sceneBaseModel.tilesIDS);
+    internal func createTile(_ index: Int) -> Tile? {        
+        let tileType = fieldBaseModel.generateType()
+            
+        if tileType != .empty {
+            let result = Tile.init(id: sceneBaseModel.tilesIDS, type: tileType);
             
             sceneBaseModel.tilesIDS += 1
             
@@ -89,22 +108,6 @@ public class Field: NSObject, INJInjection, FieldProtocol {
     
     @discardableResult
     internal func addToField(tile: Tile) -> Bool {
-//        if (tile.position.row >= fieldBaseModel.rows) { return false }
-//
-//        if (tile.position.row >= sceneBaseModel.view.count) {
-//            for _ in sceneBaseModel.view.count..<tile.position.row + 1 {
-//                sceneBaseModel.field.append(Array(repeating: nil, count: fieldBaseModel.cols))
-//            }
-//
-//            sceneBaseModel.field[sceneBaseModel.field.count - 1][tile.position.col] = tile
-//
-//            sceneBaseModel.view.appendUnigue(sceneBaseModel.field.count - 1)
-//        }else {
-//            let fieldIndex = sceneBaseModel.view[tile.position.row]
-//
-//            sceneBaseModel.field[fieldIndex][tile.position.col] = tile
-//        }
-        
         let result = addToField(tile: tile, row: tile.position.row, col: tile.position.col)
         
         if (result == true){
@@ -132,44 +135,12 @@ public class Field: NSObject, INJInjection, FieldProtocol {
             sceneBaseModel.field[fieldIndex][col] = tile
         }
         
-//        appendToHelp(tile: tile)
-        
         return true
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    /*@discardableResult
-    internal func addToField(tile: Tile) -> Bool {
-        if (tile.position.row >= fieldBaseModel.rows) { return false }
-        
-        if (tile.position.row >= sceneBaseModel.view.count) {
-            for _ in sceneBaseModel.view.count..<tile.position.row + 1 {
-                sceneBaseModel.field.append(Array(repeating: nil, count: fieldBaseModel.cols))
-            }
-            
-            sceneBaseModel.field[sceneBaseModel.field.count - 1][tile.position.col] = tile
-            
-            sceneBaseModel.view.appendUnigue(sceneBaseModel.field.count - 1)
-        }else {
-            let fieldIndex = sceneBaseModel.view[tile.position.row]
-            
-            sceneBaseModel.field[fieldIndex][tile.position.col] = tile
-        }
-        
-        appendToHelp(tile: tile)
-        
-        return true
-    }*/
-    
-    
+    private func clear() {
+        sceneBaseModel.field.removeAll()
+        sceneBaseModel.view.removeAll()
+        success.value.removeAll()
+    }
 }
