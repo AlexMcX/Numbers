@@ -18,13 +18,28 @@ class RandomField: Field, ClassicFieldProtocol {
             startIndex.append([])
             
             for _ in 0..<fieldModel.cols {
-                index = fieldModel.rangeValue != nil ? fieldModel.rangeValue![Int.randomRange(min: 0, max: fieldModel.rangeValue!.count - 1)] : Int.randomRange(min: fieldModel.minimum, max: fieldModel.maximum)
-                    
+                index = randomIndex()
                 
                 startIndex[rowIndex].append(index)
             }
         }
         
         super.generateScene(value: startIndex)
+    }
+    
+    private func randomIndex() -> Int {
+        guard let ranges = fieldModel.rangeValue else {
+            return Int.randomRange(min: fieldModel.minimum, max: fieldModel.maximum)
+        }
+        
+        let random = Int.randomRange(min: 0, max: 100)
+        
+        for probability in ranges {
+            if (probability.probability > random) {
+                return probability.value
+            }
+        }
+        
+        return -1
     }
 }

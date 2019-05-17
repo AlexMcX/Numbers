@@ -4,8 +4,18 @@
 <dict>
 	<key>Range value</key>
 	<array>
-		<integer>5</integer>
-		<integer>5</integer>
+		<dict>
+			<key>Value</key>
+			<integer>5</integer>
+			<key>Probability</key>
+			<integer>100</integer>
+		</dict>
+		<dict>
+			<key>Value</key>
+			<integer>2</integer>
+			<key>Probability</key>
+			<integer>25</integer>
+		</dict>
 	</array>
 	<key>Start rows</key>
 	<integer>4</integer>

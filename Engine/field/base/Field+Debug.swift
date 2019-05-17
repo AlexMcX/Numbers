@@ -25,6 +25,8 @@ extension Field {
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
                 self.simulateStep()
             }
+            
+            printFull("STEP - [\(tiles[0].id), \(tiles[1].id)]")
         }
     }
     
@@ -39,7 +41,7 @@ extension Field {
     internal func printField(_ prefix: String = "") {
         var positions:String
         var result:String
-        var row:Array<Tile?>?
+        var row:Array<Tile?>
         var viewRow:Int
         
         result = "************* Field Engine *************";
@@ -47,34 +49,33 @@ extension Field {
         
         positions = ""
         
-        for i in 0..<sceneBaseModel.view.count {
-            viewRow = sceneBaseModel.view[i];
+        for i in 0..<sceneBaseModel.field.count {
+             result += "\n";
             
-            result += "\n";
-            result += "v:\(i)|f:\(sceneBaseModel.view[i])) "
-            
-            if viewRow < sceneBaseModel.field.count {
-                row = sceneBaseModel.field[viewRow];
-                
-                
-                
-                for j in 0..<row!.count {
-                    if row![j] != nil {
-                        if (row![j]!.isSuccess) {
-                            result += "|✅id:\(row![j]!.id) idx:\(row![j]!.index) (\(row![j]!.position.row),\(row![j]!.position.col))"
-                        }else{
-                             result += "|  id:\(row![j]!.id) idx:\(row![j]!.index) (\(row![j]!.position.row),\(row![j]!.position.col))"
-                        }
-                        
-                        result += row![j]!.id < 10 ? " |" : "|"
-                        
-                        positions += "{id:\(row![j]!.id), r:\(row![j]!.position.row), c:\(row![j]!.position.col)}, ";
-                    }else{
-                        result += "|       null        |";
-                    }
-                }
+            if let viewRow = sceneBaseModel.view.firstIndex(of: i) {
+                result += "v:\(viewRow)"
             }else {
-                result += "NULL IN FIELD";
+                result += "v:-"
+            }
+            
+            result += "|f:\(i)"
+            
+            row = sceneBaseModel.field[i]
+            
+            for tile in row {
+                if tile != nil {
+                    if (tile!.isSuccess) {
+                        result += "|✅id:\(tile!.id) idx:\(tile!.index) (\(tile!.position.row),\(tile!.position.col))"
+                    }else{
+                        result += "|  id:\(tile!.id) idx:\(tile!.index) (\(tile!.position.row),\(tile!.position.col))"
+                    }
+                    
+                    result += tile!.id < 10 ? " |" : "|"
+                    
+                    positions += "{id:\(tile!.id), r:\(tile!.position.row), c:\(tile!.position.col)}, ";
+                }else{
+                    result += "|       null        |";
+                }
             }
         }
         
@@ -82,6 +83,60 @@ extension Field {
         
         print(result);
     }
+
+    
+    
+    
+    
+    
+    
+    
+//    internal func printField(_ prefix: String = "") {
+//        var positions:String
+//        var result:String
+//        var row:Array<Tile?>?
+//        var viewRow:Int
+//
+//        result = "************* Field Engine *************";
+//        result += prefix != "" ? "\n \(prefix)" : "";
+//
+//        positions = ""
+//
+//        for i in 0..<sceneBaseModel.view.count {
+//            viewRow = sceneBaseModel.view[i];
+//
+//            result += "\n";
+//            result += "v:\(i)|f:\(sceneBaseModel.view[i])) "
+//
+//            if viewRow < sceneBaseModel.field.count {
+//                row = sceneBaseModel.field[viewRow];
+//
+//
+//
+//                for j in 0..<row!.count {
+//                    if row![j] != nil {
+//                        if (row![j]!.isSuccess) {
+//                            result += "|✅id:\(row![j]!.id) idx:\(row![j]!.index) (\(row![j]!.position.row),\(row![j]!.position.col))"
+//                        }else{
+//                             result += "|  id:\(row![j]!.id) idx:\(row![j]!.index) (\(row![j]!.position.row),\(row![j]!.position.col))"
+//                        }
+//
+//                        result += row![j]!.id < 10 ? " |" : "|"
+//
+//                        positions += "{id:\(row![j]!.id), r:\(row![j]!.position.row), c:\(row![j]!.position.col)}, ";
+//                    }else{
+//                        result += "|       null        |";
+//                    }
+//                }
+//            }else {
+//                result += "NULL IN FIELD";
+//            }
+//        }
+//
+//        result += "\n*****************************************";
+//
+//        print(result);
+//    }
     
     internal func printView(_ prefix: String = "") {        
         print("\(prefix) FieldEngine::view: \(sceneBaseModel.view.description)");

@@ -28,18 +28,4 @@ class FieldModel: Codable {
         case priceRow = "Price row"
         case priceComplete = "Price to complete"
     }
-    
-//    required init(from decoder: Decoder) throws {
-//
-//        let container = try decoder.container(keyedBy: CodingKeys.self)
-//
-//        rows = try container.decode(Int.self, forKey: .rows)
-//        cols = try container.decode(Int.self, forKey: .cols)
-//        comparison = try container.decode(Int.self, forKey: .comparison)
-//        minimum = try container.decode(Int.self, forKey: .minimum)
-//        maximum = try container.decode(Int.self, forKey: .maximum)
-//        priceTile = try container.decode(Int.self, forKey: .priceTile)
-//        priceRow = try container.decode(Int.self, forKey: .priceRow)
-//        priceComplete = try container.decode(Int.self, forKey: .priceComplete)
-//    }
 }

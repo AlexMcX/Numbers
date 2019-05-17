@@ -10,7 +10,7 @@ import Foundation
 
 class RandomFieldModel: FieldModel {
     public var startRows: Int = 0
-    public var rangeValue: [Int]?
+    public var rangeValue: [ProbabilityModel]?
 
     private enum CodingKeys: String, CodingKey {
         case startRows = "Start rows"
@@ -21,8 +21,24 @@ class RandomFieldModel: FieldModel {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
         self.startRows = try container.decode(Int.self, forKey: .startRows)
-        self.rangeValue = try container.decode([Int].self, forKey: .rangeValue)
+        self.rangeValue = try container.decode([ProbabilityModel].self, forKey: .rangeValue)
 
         try super.init(from: decoder)
+        
+        self.rangeValue = self.rangeValue?.sorted(by: {$0.probability < $1.probability})
+    }
+}
+
+class ProbabilityModel: Codable {
+    public let value: Int
+    public let probability: Int
+    
+    private enum CodingKeys: String, CodingKey {
+        case value = "Value"
+        case probability = "Probability"
+    }
+    
+    public var description: String {
+        return "[ProbabilityModel: value:\(value), probability:\(probability)]"
     }
 }

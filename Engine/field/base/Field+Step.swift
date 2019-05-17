@@ -23,8 +23,6 @@ extension Field {
         removeSuccessRow(tiles)
         
         verification()
-        
-//        printFull("STEP - [\(tiles[0].id), \(tiles[1].id)]")
     }
     
     internal func successTiles( _ tiles: inout [Tile]) {
@@ -91,36 +89,34 @@ extension Field {
     private func verificationNext() {
         var newTiles: [Tile] = []
         let tiles = getTiles(isSuccess: false)
-        
-        var newTile: Tile       
+   
 
         var position = getLastCoord()
         
         for tile in tiles {
-            newTile = createTile()
-            
-            newTile.index = tile.index
-            newTile.position = position
-            
-            if addToField(tile: newTile) {
-                if (position.col == fieldBaseModel.cols - 1) {
-                    position.col = 0
-                    position.row += 1
+            if let newTile = createTile(tile.index) {
+                newTile.position = position
+                
+                if addToField(tile: newTile) {
+                    if (position.col == fieldBaseModel.cols - 1) {
+                        position.col = 0
+                        position.row += 1
+                    }else {
+                        position.col += 1
+                    }
+                    
+                    newTiles.append(newTile)
                 }else {
-                    position.col += 1
+                    delegateAddTiles(newTiles)
+                    
+                    if (success.value.count > 0) {
+                        delegateCrowdedField()
+                    }else {
+                        delegateEndGame()
+                    }
+                    
+                    return
                 }
-                
-                newTiles.append(newTile)
-            }else {
-                delegateAddTiles(newTiles)
-                
-                if (success.value.count > 0) {
-                    delegateCrowdedField()
-                }else {
-                    delegateEndGame()
-                }
-                
-                return
             }
         }
 

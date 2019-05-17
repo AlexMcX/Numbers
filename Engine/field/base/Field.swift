@@ -58,31 +58,97 @@ public class Field: NSObject, INJInjection, FieldProtocol {
     internal func generateScene(value: [[Int]]?) {
         guard let idx = value else { return }
         
-        var tile: Tile
-        
         for (rowIndex, row) in idx.enumerated() {
             for (colIndex, index) in row.enumerated() {
-                tile = createTile()
-                
-                tile.position.row = rowIndex
-                tile.position.col = colIndex
-                tile.index = index
-                
-                addToField(tile: tile)
+                if let tile = createTile(index) {
+                    tile.position.row = rowIndex
+                    tile.position.col = colIndex
+                    
+                    addToField(tile: tile)
+                } else {
+                    addToField(tile: nil, row: rowIndex, col: colIndex)
+                }
             }
         }   
     }
     
     // MARK: create tile
-    internal func createTile() -> Tile {
-        let result = Tile.init(id: sceneBaseModel.tilesIDS);
+    internal func createTile(_ index: Int) -> Tile? {
+        if (index > 0) {
+            let result = Tile.init(id: sceneBaseModel.tilesIDS);
+            
+            sceneBaseModel.tilesIDS += 1
+            
+            result.index = index
+            
+            return result
+        }
         
-        sceneBaseModel.tilesIDS += 1
+        return nil
+    }
+    
+    @discardableResult
+    internal func addToField(tile: Tile) -> Bool {
+//        if (tile.position.row >= fieldBaseModel.rows) { return false }
+//
+//        if (tile.position.row >= sceneBaseModel.view.count) {
+//            for _ in sceneBaseModel.view.count..<tile.position.row + 1 {
+//                sceneBaseModel.field.append(Array(repeating: nil, count: fieldBaseModel.cols))
+//            }
+//
+//            sceneBaseModel.field[sceneBaseModel.field.count - 1][tile.position.col] = tile
+//
+//            sceneBaseModel.view.appendUnigue(sceneBaseModel.field.count - 1)
+//        }else {
+//            let fieldIndex = sceneBaseModel.view[tile.position.row]
+//
+//            sceneBaseModel.field[fieldIndex][tile.position.col] = tile
+//        }
+        
+        let result = addToField(tile: tile, row: tile.position.row, col: tile.position.col)
+        
+        if (result == true){
+            appendToHelp(tile: tile)
+        }
         
         return result
     }
     
     @discardableResult
+    private func addToField(tile: Tile?, row: Int, col: Int) -> Bool {
+        if (row >= fieldBaseModel.rows) { return false }
+        
+        if (row >= sceneBaseModel.view.count) {
+            for _ in sceneBaseModel.view.count..<row + 1 {
+                sceneBaseModel.field.append(Array(repeating: nil, count: fieldBaseModel.cols))
+            }
+            
+            sceneBaseModel.field[sceneBaseModel.field.count - 1][col] = tile
+            
+            sceneBaseModel.view.appendUnigue(sceneBaseModel.field.count - 1)
+        }else {
+            let fieldIndex = sceneBaseModel.view[row]
+            
+            sceneBaseModel.field[fieldIndex][col] = tile
+        }
+        
+//        appendToHelp(tile: tile)
+        
+        return true
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /*@discardableResult
     internal func addToField(tile: Tile) -> Bool {
         if (tile.position.row >= fieldBaseModel.rows) { return false }
         
@@ -103,5 +169,7 @@ public class Field: NSObject, INJInjection, FieldProtocol {
         appendToHelp(tile: tile)
         
         return true
-    }
+    }*/
+    
+    
 }

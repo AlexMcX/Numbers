@@ -99,12 +99,12 @@ extension Field {
     internal func getLastCoord() -> EGPosition {
         var result: EGPosition = EGPosition(row: sceneBaseModel.view.count, col: 0)
         
-        base: for (viewIndex, fieldIndex) in sceneBaseModel.view.reversed().enumerated() {
+        base: for (index, fieldIndex) in sceneBaseModel.view.reversed().enumerated() {
             let row = getRow(fieldIndex: fieldIndex)
             
             for (colIndex, tile) in row.reversed().enumerated() {
                 if tile == nil {
-                    result.row = viewIndex
+                    result.row = sceneBaseModel.view.count - index - 1
                     result.col = fieldBaseModel.cols - colIndex - 1
                 }else {
                     break base

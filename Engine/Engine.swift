@@ -56,29 +56,4 @@ open class Engine: NSObject, INJInjectable {
     public func initLevel(level: LevelModel?) {
         levelsDataService.current = level
     }
-    
-//    #if DEBUG
-//    public func initBlock(id: String?) {
-//        for block in blocks {
-//            if block.data.id == id {
-//                initBlock(block: block)
-//            }
-//        }
-//    }
-//
-//    public func initLevel(id: String?) {
-//        for level in levelsDataService.levels {
-//            if level.data.id == id {
-//                initLevel(level: level)
-//            }
-//        }
-//    }
-//
-//    public func initLevel(block: String?, level: String?) {
-//        initBlock(id: block)
-//
-//        initLevel(id: level)
-//    }
-//    #else
-//    #endif
 }
