@@ -20,9 +20,13 @@ open class Button: UIComponent {
         isUserInteractionEnabled = true;
     }
     
-    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        onTouch.fire()
+//        
+////        print("   🖱 Button::touchesBegan - \(self.name)")
+//    }
+    
+    open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         onTouch.fire()
-        
-//        print("   🖱 Button::touchesBegan - \(self.name)")
     }
 }

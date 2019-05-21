@@ -39,7 +39,6 @@ public class ScenesService: INJService {
         
         // init controller to injection
         let controller: BaseController = (scene.controllerClass as BaseController.Type).init(view: skScene as! BaseView)
-        controller.onInitialize()
         
         addSequance(scene, controller)
         

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class TileModel: Codable, Equatable {
+public class EGTileModel: Codable, Equatable {
     public var id: Int = 0
     public var isSuccess: Bool = false
     public var index: Int = 0
@@ -20,12 +20,11 @@ public class TileModel: Codable, Equatable {
         self.type = type
     }
     
-    
     public var description: String {
         return "[TileModel: id:\(id), index:\(index)]"
     }
     
-    public static func == (lhs: TileModel, rhs: TileModel) -> Bool {
+    public static func == (lhs: EGTileModel, rhs: EGTileModel) -> Bool {
         return lhs.id == rhs.id
     }
 }

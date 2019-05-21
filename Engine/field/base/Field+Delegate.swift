@@ -7,23 +7,36 @@
 //
 
 extension Field {
-    internal func delegateSuccessTiles(_ tiles: [Tile]) {
-        #if DEBUG
-        printDelegate(tiles: tiles, prefix: "successTiles")
-        #endif
+    internal func delegateStart() {
+        //#if DEBUG
+        //printDelegate(tiles: nil, prefix: "startView")
+        //#endif
         
-        for tile in tiles {
-            tile.isSuccess = true
+        let result = sceneBaseModel.view.map{ (fieldIndex) -> [Tile?] in
+            return getRow(fieldIndex: fieldIndex)
         }
         
-        delegate?.onSuccessTiles(tiles: tiles)
+        delegate?.onStart(view: result)
+    }
+    
+    internal func delegateStep(_ tiles: [Tile], _ result: Bool) {
+//        #if DEBUG
+//        printDelegate(tiles: tiles, prefix: "successTiles")
+//        #endif
+        if (result == true) {
+            for tile in tiles {
+                tile.isSuccess = true
+            }
+        }
+        
+        delegate?.onStep(tiles: tiles, result: result)
     }
     
     internal func delegateRemoveTiles(_ tiles: [Tile]) {
         if (tiles.count > 0) {
-            #if DEBUG
-            printDelegate(tiles: tiles, prefix: "removeTiles")
-            #endif
+//            #if DEBUG
+//            printDelegate(tiles: tiles, prefix: "removeTiles")
+//            #endif
             
             delegate?.onRemoveTiles(tiles: tiles)
         }
@@ -31,9 +44,9 @@ extension Field {
     
     internal func delegateAddTiles(_ tiles: [Tile]) {
         if (tiles.count > 0) {
-            #if DEBUG
-            printDelegate(tiles: tiles, prefix: "addTiles")
-            #endif
+//            #if DEBUG
+//            printDelegate(tiles: tiles, prefix: "addTiles")
+//            #endif
             
             delegate?.onAddTiles(tiles: tiles)
         }
@@ -44,26 +57,28 @@ extension Field {
         
         let stars = Int(sceneBaseModel.price * configModel.levelStarsMax / fieldBaseModel.priceComplete)
         
-        delegate?.onUpdatePrice(stars: stars)
+        delegate?.onUpdatePrice(stars: stars, price: sceneBaseModel.price, maxPrice: fieldBaseModel.priceComplete)
         
-        #if DEBUG
-        printDelegate(tiles: nil, prefix: "price: \(stars),  | \(fieldBaseModel.priceComplete),  \(sceneBaseModel.price)")
-        #endif
+//        #if DEBUG
+//        printDelegate(tiles: nil, prefix: "price: \(stars),  | \(fieldBaseModel.priceComplete),  \(sceneBaseModel.price)")
+//        #endif
     }
     
     internal func delegateCrowdedField() {
-        #if DEBUG
-        printDelegate(tiles: nil, prefix: "crowdedField")
-        #endif
+//        #if DEBUG
+//        printDelegate(tiles: nil, prefix: "crowdedField")
+//        #endif
+        
         delegate?.onCrowdedField()
     }
     
     internal func delegateEndGame() {
         isEndGame = true
         
-        #if DEBUG
-        printDelegate(tiles: nil, prefix: "endGame")
-        #endif
+//        #if DEBUG
+//        printDelegate(tiles: nil, prefix: "endGame")
+//        #endif
+        
         delegate?.onEndGame()
     }
     

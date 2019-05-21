@@ -13,7 +13,7 @@ import Engine
 class MainMenuController: BaseController {
     @objc dynamic private var engine: Engine!
     private lazy var _view: MainMenuView = { view as! MainMenuView }()
-    
+        
     override func listeners(access: Bool) {
         if (access) {
             _view.playBtn.onTouch.add {  [unowned self] in

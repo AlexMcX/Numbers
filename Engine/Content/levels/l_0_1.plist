@@ -20,7 +20,7 @@
 			<key>Value</key>
 			<string>Lock</string>
 			<key>Probability</key>
-			<integer>5</integer>
+			<integer>80</integer>
 		</dict>
 	</array>
 	<key>Range value</key>

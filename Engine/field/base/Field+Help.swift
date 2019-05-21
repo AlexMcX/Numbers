@@ -10,7 +10,7 @@ extension Field {
     internal struct success{ static var value: [[Tile]] = [] }
     
     public func help() -> [Tile] {
-        return success.value.count > 0 ? success.value[Int.randomRange(min: 0, max: success.value.count - 1)] : []
+        return success.value.count > 0 ? success.value[Int.random(in: 0...success.value.count - 1)] : []
     }
     
     internal func appendToHelp(tiles: [Tile?]) {

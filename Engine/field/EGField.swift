@@ -6,8 +6,12 @@
 //  Copyright © 2019 Alexey Oleksandrovich. All rights reserved.
 //
 
-public protocol EGField {
-    func help() -> [TileModel]
+public protocol EGField: class {
+//    associatedtype Tile
     
-    func step(tiles: [TileModel])
+    var delegate: EGFieldDelegate? { get set }
+    
+    func help() -> [EGTileModel]
+    
+    func step(tiles: [EGTileModel])
 }

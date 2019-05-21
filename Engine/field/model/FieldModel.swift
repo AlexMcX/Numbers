@@ -59,16 +59,16 @@ class FieldModel: Decodable {
         if (value.count == 0) { return nil}
         
         var filterRanges: [ProbabilityModel] = []
-        let sorted = value.sorted(by: {$0.probability < $1.probability})
-        let random = Int.randomRange(min: sorted[0].probability, max: sorted[sorted.count - 1].probability)
+        let sorted = value.sorted(by: {$0.probability < $1.probability})        
+        let random = Int.random(in:  sorted[0].probability...sorted[sorted.count - 1].probability)
         
         filterRanges = sorted.filter({$0.probability >= random})
         
         if (filterRanges.count > 0) {
-            return filterRanges[Int.randomRange(min: 0, max: filterRanges.count - 1)]
-        }        
+            return filterRanges[Int.random(in: 0...filterRanges.count - 1)]
+        }
 
-        return sorted[Int.randomRange(min: 0, max: sorted.count - 1)]
+        return sorted[Int.random(in: 0...sorted.count - 1)]
     }
 }
 

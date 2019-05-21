@@ -16,7 +16,7 @@ public class LibraryService: INJService {
     
     private var scenes: [String:(state: STATE, scene: SKScene?)] = [:]
     
-    public func getChild(library: String, renderer: String) -> SKNode? {
+    public func getChild(library: String, renderer: String) -> SKNode? {        
         var lib: SKScene?
         
         if (renderer.isEmpty) { return nil }
@@ -42,6 +42,9 @@ public class LibraryService: INJService {
         result.initialize()
         
         result.position = CGPoint(x: 0, y: 0)
+        
+        (result as? UIComponent)?.setValue(library, forKey: "libName")
+        (result as? UIComponent)?.setValue(renderer, forKey: "renderName")
         
         return result
     }

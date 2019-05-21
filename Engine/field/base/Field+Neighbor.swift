@@ -79,19 +79,10 @@ extension Field {
         return getRow(fieldIndex: sceneBaseModel.view[index])
     }
     
-    internal func getTiles(isSuccess: Bool) -> [Tile] {
-        var row: [Tile?]
-        var result: [Tile] = []
-        
-        for rowIndex in sceneBaseModel.view {
-            row = getRow(fieldIndex: rowIndex)
-            
-            for tile in row {
-                if (tile?.isSuccess == isSuccess) {
-                    result.append(tile!)
-                }
-            }
-        }
+    internal func getTiles(isSuccess: Bool) -> [Tile] {        
+        let result = sceneBaseModel.view.map({ (fieldIndex) -> [Tile] in return
+            getRow(fieldIndex: fieldIndex).compactMap{ $0 }.filter{ $0.isSuccess == isSuccess }
+        }).flatMap{ $0 }        
         
         return result
     }

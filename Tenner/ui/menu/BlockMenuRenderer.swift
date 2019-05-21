@@ -10,18 +10,16 @@ import SpriteKit
 import Engine
 import UI
 
-class BlockMenuRenderer: ListItemRenderer {    
+class BlockMenuRenderer: ListItemRenderer {
+    typealias State = CheckBoxState
+    
     @objc dynamic weak public private(set) var playBtn: Button?
     @objc dynamic weak public private(set) var titleTxt: SKLabelNode!
     @objc dynamic weak public private(set) var needTxt: SKLabelNode?
     @objc dynamic weak public private(set) var starImg_0: SKSpriteNode!
     @objc dynamic weak public private(set) var starImg_1: SKSpriteNode!
     @objc dynamic weak public private(set) var starImg_2: SKSpriteNode!
-    
-    override func updateAssetName(_ name: String) {
-        super.updateAssetName("block_{state}")
-    }
-    
+       
     override func setData(data: Any?) {
         super.setData(data: data)
         
@@ -49,7 +47,7 @@ class BlockMenuRenderer: ListItemRenderer {
     }
     
     private func setNormalState(_ data: BlockModel) {
-        setState(state: .NORMAL)
+        setState(UIComponentState.normal)
         
         if var textureStar: String = starImg_0.texture?.name {
             let starImg = [starImg_0, starImg_1, starImg_2]
@@ -57,7 +55,7 @@ class BlockMenuRenderer: ListItemRenderer {
             textureStar = textureStar.slice(to: "_")
             
             for (index, star) in starImg.enumerated() {                
-                star?.texture = SKTexture(imageNamed: "\(textureStar)_\(index < data.progressStars ? STATE.ON.rawValue: STATE.OFF.rawValue)")
+                star?.texture = SKTexture(imageNamed: "\(textureStar)_\(index < data.progressStars ? State.on.rawValue: State.off.rawValue)")
             }
         }
         
@@ -67,7 +65,7 @@ class BlockMenuRenderer: ListItemRenderer {
     private func setDisableState(_ data: BlockModel) {
         let needTitle: String = NSLocalizedString("BLOC_MENU_NEED_STARS", comment: "")
         
-        setState(state: .DISABLE)
+        disable = true
         
         needTxt?.text = needTitle.replacingOccurrences(of: "{value}", with: "\(String(describing: data.unlockStars))")
     }

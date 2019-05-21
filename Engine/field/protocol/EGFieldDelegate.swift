@@ -8,11 +8,12 @@
 
 import Foundation
 
-public protocol FieldDelegate {
-    func onUpdatePrice(stars: Int)
-    func onSuccessTiles(tiles: [TileModel])
-    func onAddTiles(tiles: [TileModel])
-    func onRemoveTiles(tiles: [TileModel])
+public protocol EGFieldDelegate: class {
+    func onStart(view: [[EGTileModel?]])
+    func onStep(tiles: [EGTileModel], result: Bool)
+    func onUpdatePrice(stars: Int, price: Int, maxPrice: Int)
+    func onAddTiles(tiles: [EGTileModel])
+    func onRemoveTiles(tiles: [EGTileModel])
     func onShiftTiles()
     func onCrowdedField()                       // some tiles not add to field, but is success steps
     func onEndGame()

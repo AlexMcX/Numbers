@@ -7,13 +7,9 @@
 //
 
 open class ListItemRenderer: UIComponent {
-    public var delegate: ListItemDelegate?
+    public weak var delegate: ListItemDelegate?
     
     override open func validate() {
         
-    }
-    
-    override open func onDispose() {
-        delegate = nil
     }
 }

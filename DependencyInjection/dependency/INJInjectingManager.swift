@@ -66,7 +66,7 @@ class INJInjectingManager: INJInjecting {
             (injector as? INJInjectableHandler)?.onInjection()
         }
         
-        (injector as? INJInjection)?.onInitialize()
+        injector.onInitialize()
     }
     
     public func uninjection(injector: INJInjectable) {

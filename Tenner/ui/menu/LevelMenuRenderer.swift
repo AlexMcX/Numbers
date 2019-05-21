@@ -11,16 +11,14 @@ import Engine
 import UI
 
 class LevelMenuRenderer: ListItemRenderer {
+    typealias State = CheckBoxState
+    
     @objc dynamic weak public private(set) var playBtn: Button?
     @objc dynamic weak public private(set) var titleTxt: SKLabelNode!
     @objc dynamic weak public private(set) var starImg_0: SKSpriteNode!
     @objc dynamic weak public private(set) var starImg_1: SKSpriteNode!
     @objc dynamic weak public private(set) var starImg_2: SKSpriteNode!
-    
-    override func updateAssetName(_ name: String) {
-        super.updateAssetName("level_{state}")
-    }
-    
+        
     override func setData(data: Any?) {
         super.setData(data: data)
         
@@ -31,7 +29,7 @@ class LevelMenuRenderer: ListItemRenderer {
                 return
             }
             
-            setState(state: .DISABLE)
+            disable = true
         }
     }
     
@@ -46,7 +44,7 @@ class LevelMenuRenderer: ListItemRenderer {
     }
     
     private func setNormalState(_ data: LevelModel) {
-        setState(state: .NORMAL)
+        setState(UIComponentState.normal)
         
         titleTxt.text = NSLocalizedString(data.config.title, comment: "")
         
@@ -56,7 +54,7 @@ class LevelMenuRenderer: ListItemRenderer {
             textureStar = textureStar.slice(to: "_")
             
             for (index, star) in starImg.enumerated() {
-                star?.texture = SKTexture(imageNamed: "\(textureStar)_\(index < data.progressStars ? STATE.ON.rawValue: STATE.OFF.rawValue)")
+                star?.texture = SKTexture(imageNamed: "\(textureStar)_\(index < data.progressStars ? State.on.rawValue: State.off.rawValue)")
             }
         }
         

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA0B5DD22289BE9E00F8DEC5 /* FieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B5DD12289BE9E00F8DEC5 /* FieldDelegate.swift */; };
+		FA0B5DD22289BE9E00F8DEC5 /* EGFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B5DD12289BE9E00F8DEC5 /* EGFieldDelegate.swift */; };
 		FA0CD8D5228C976000DB7FDA /* RandomField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0CD8D4228C976000DB7FDA /* RandomField.swift */; };
 		FA0CD8D8228CA74300DB7FDA /* GamePlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0CD8D7228CA74300DB7FDA /* GamePlay.swift */; };
 		FA0CD8DA228CB37E00DB7FDA /* l_0_1.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA0CD8D9228CB37E00DB7FDA /* l_0_1.plist */; };
@@ -16,10 +16,8 @@
 		FA0CD8E3228CB60800DB7FDA /* RandomSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0CD8E2228CB60800DB7FDA /* RandomSceneModel.swift */; };
 		FA0CD8E5228CB62600DB7FDA /* ClassicFieldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0CD8E4228CB62600DB7FDA /* ClassicFieldModel.swift */; };
 		FA0CD8E7228CB63F00DB7FDA /* RandomFieldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0CD8E6228CB63F00DB7FDA /* RandomFieldModel.swift */; };
-		FA0FEB9422872063002F8D68 /* TileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0FEB9322872063002F8D68 /* TileModel.swift */; };
+		FA0FEB9422872063002F8D68 /* EGTileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0FEB9322872063002F8D68 /* EGTileModel.swift */; };
 		FA0FEB96228722A3002F8D68 /* ClassicField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0FEB95228722A3002F8D68 /* ClassicField.swift */; };
-		FA0FEB98228727B2002F8D68 /* FieldProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0FEB97228727B2002F8D68 /* FieldProtocol.swift */; };
-		FA0FEB9A228727E6002F8D68 /* ClassicFieldProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0FEB99228727E6002F8D68 /* ClassicFieldProtocol.swift */; };
 		FA0FEB9E22874891002F8D68 /* SceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0FEB9D22874891002F8D68 /* SceneModel.swift */; };
 		FA0FEBC322879777002F8D68 /* ClassicTileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0FEBC222879777002F8D68 /* ClassicTileModel.swift */; };
 		FA11DC81228D8102009C5F14 /* Field+RemoveTiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11DC80228D8102009C5F14 /* Field+RemoveTiles.swift */; };
@@ -61,7 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FA0B5DD12289BE9E00F8DEC5 /* FieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldDelegate.swift; sourceTree = "<group>"; };
+		FA0B5DD12289BE9E00F8DEC5 /* EGFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EGFieldDelegate.swift; sourceTree = "<group>"; };
 		FA0CD8D4228C976000DB7FDA /* RandomField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomField.swift; sourceTree = "<group>"; };
 		FA0CD8D7228CA74300DB7FDA /* GamePlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlay.swift; sourceTree = "<group>"; };
 		FA0CD8D9228CB37E00DB7FDA /* l_0_1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = l_0_1.plist; sourceTree = "<group>"; };
@@ -70,10 +68,8 @@
 		FA0CD8E2228CB60800DB7FDA /* RandomSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSceneModel.swift; sourceTree = "<group>"; };
 		FA0CD8E4228CB62600DB7FDA /* ClassicFieldModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicFieldModel.swift; sourceTree = "<group>"; };
 		FA0CD8E6228CB63F00DB7FDA /* RandomFieldModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomFieldModel.swift; sourceTree = "<group>"; };
-		FA0FEB9322872063002F8D68 /* TileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileModel.swift; sourceTree = "<group>"; };
+		FA0FEB9322872063002F8D68 /* EGTileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EGTileModel.swift; sourceTree = "<group>"; };
 		FA0FEB95228722A3002F8D68 /* ClassicField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicField.swift; sourceTree = "<group>"; };
-		FA0FEB97228727B2002F8D68 /* FieldProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldProtocol.swift; sourceTree = "<group>"; };
-		FA0FEB99228727E6002F8D68 /* ClassicFieldProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicFieldProtocol.swift; sourceTree = "<group>"; };
 		FA0FEB9D22874891002F8D68 /* SceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneModel.swift; sourceTree = "<group>"; };
 		FA0FEBC222879777002F8D68 /* ClassicTileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicTileModel.swift; sourceTree = "<group>"; };
 		FA11DC80228D8102009C5F14 /* Field+RemoveTiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Field+RemoveTiles.swift"; sourceTree = "<group>"; };
@@ -121,9 +117,7 @@
 		FA0B5DD42289C55700F8DEC5 /* protocol */ = {
 			isa = PBXGroup;
 			children = (
-				FA0FEB97228727B2002F8D68 /* FieldProtocol.swift */,
-				FA0FEB99228727E6002F8D68 /* ClassicFieldProtocol.swift */,
-				FA0B5DD12289BE9E00F8DEC5 /* FieldDelegate.swift */,
+				FA0B5DD12289BE9E00F8DEC5 /* EGFieldDelegate.swift */,
 			);
 			path = protocol;
 			sourceTree = "<group>";
@@ -161,7 +155,7 @@
 			children = (
 				FA0CD8DD228CB5A900DB7FDA /* classic */,
 				FA0CD8DE228CB5B400DB7FDA /* random */,
-				FA0FEB9322872063002F8D68 /* TileModel.swift */,
+				FA0FEB9322872063002F8D68 /* EGTileModel.swift */,
 				FA0FEB9D22874891002F8D68 /* SceneModel.swift */,
 				FAAD014C2286220000FF143A /* FieldModel.swift */,
 				FA1BCDF12288AFFB0058ED91 /* EGPosition.swift */,
@@ -414,7 +408,6 @@
 				FA1BCDF02288A2AD0058ED91 /* Field+Debug.swift in Sources */,
 				FA46AD31228A10FB0006DA82 /* Field+Success.swift in Sources */,
 				FA0CD8DC228CB4EF00DB7FDA /* RandomTileModel.swift in Sources */,
-				FA0FEB9A228727E6002F8D68 /* ClassicFieldProtocol.swift in Sources */,
 				FA85943B226E72A200E9C73E /* ConfigService.swift in Sources */,
 				FA0CD8D5228C976000DB7FDA /* RandomField.swift in Sources */,
 				FA46AD34228A13AA0006DA82 /* Field+Delegate.swift in Sources */,
@@ -427,8 +420,7 @@
 				FA1BCDEC228892DD0058ED91 /* Field+Help.swift in Sources */,
 				FA2ED668228EFE73008CEA6F /* EGField.swift in Sources */,
 				FA78CF5D2279EF2900383F65 /* Level+CoreDataClass.swift in Sources */,
-				FA0FEB9422872063002F8D68 /* TileModel.swift in Sources */,
-				FA0FEB98228727B2002F8D68 /* FieldProtocol.swift in Sources */,
+				FA0FEB9422872063002F8D68 /* EGTileModel.swift in Sources */,
 				FA1BCDF22288AFFB0058ED91 /* EGPosition.swift in Sources */,
 				FA0CD8E1228CB5E200DB7FDA /* ClassicSceneModel.swift in Sources */,
 				FA11DC81228D8102009C5F14 /* Field+RemoveTiles.swift in Sources */,
@@ -437,7 +429,7 @@
 				FA1CD21E226F9C5A00B4CF38 /* BlocksDataService.swift in Sources */,
 				FA0FEBC322879777002F8D68 /* ClassicTileModel.swift in Sources */,
 				FA0FEB9E22874891002F8D68 /* SceneModel.swift in Sources */,
-				FA0B5DD22289BE9E00F8DEC5 /* FieldDelegate.swift in Sources */,
+				FA0B5DD22289BE9E00F8DEC5 /* EGFieldDelegate.swift in Sources */,
 				FA78CF5C2279EF2900383F65 /* Level+CoreDataProperties.swift in Sources */,
 				FA0CD8E5228CB62600DB7FDA /* ClassicFieldModel.swift in Sources */,
 				FA1BCDEE22889FBA0058ED91 /* Field+Neighbor.swift in Sources */,

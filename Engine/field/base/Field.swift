@@ -9,15 +9,19 @@
 import Foundation
 import DependencyInjection
 
-public class Field: NSObject, INJInjection, FieldProtocol, EGField {
-    public typealias Tile = TileModel
+public class Field: NSObject, INJInjection, EGField {
+    public typealias Tile = EGTileModel
     @objc dynamic private var fileService: INJFileService!
     @objc dynamic internal var configModel: ConfigModel!
     
     internal var fieldBaseModel: FieldModel!
     internal var sceneBaseModel: SceneModel!
     
-    public var delegate: FieldDelegate?
+    public weak var delegate: EGFieldDelegate? {
+        didSet {
+            delegateStart()
+        }
+    }
     
     private var TYRY_STEPS_GENERATE_SCENE = 25
     private var levelID: String!
@@ -55,7 +59,7 @@ public class Field: NSObject, INJInjection, FieldProtocol, EGField {
     public func onDeinitialize(){
         sceneBaseModel = nil
     }
-    
+        
     internal func generateScene(value: [[Int]]?) {
         guard let idx = value else { return }
         
@@ -85,8 +89,6 @@ public class Field: NSObject, INJInjection, FieldProtocol, EGField {
             
             return
         }
-        
-        printFull("\(TYRY_STEPS_GENERATE_SCENE)")
     }
     
     // MARK: create tile

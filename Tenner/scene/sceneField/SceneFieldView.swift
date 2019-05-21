@@ -11,4 +11,5 @@ import SpriteKit
 
 class SceneFieldView: BaseView {
     @objc dynamic weak private var topMenu: TopMenuField!
+    @objc dynamic weak private var field: Field!   
 }

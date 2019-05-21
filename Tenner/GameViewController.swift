@@ -16,7 +16,7 @@ import Engine
 class GameViewController: UIViewController, INJInjection {
     @objc dynamic weak var sceneService: ScenesService!
     @objc dynamic weak var engige: Engine!
-        
+    
     public func onInitialize() {
         if let view = self.view as! SKView? {
             engige.initConfig(fileName: "GameConfig")

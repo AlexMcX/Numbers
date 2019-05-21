@@ -33,7 +33,7 @@ class RandomFieldModel: FieldModel {
             }
         }
         
-        return Int.randomRange(min: minimum, max: maximum)
+        return Int.random(in: minimum...maximum)
     }
 }
 

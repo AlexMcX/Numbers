@@ -9,8 +9,8 @@
 import Foundation
 
 public struct EGPosition: Codable, Equatable {
-    var row: Int
-    var col: Int
+    public var row: Int
+    public var col: Int
     
     init(row: Int, col: Int) {
         self.row = row

@@ -6,7 +6,7 @@
 //  Copyright © 2019 Alexey Oleksandrovich. All rights reserved.
 //
 
-class RandomField: Field, ClassicFieldProtocol {
+class RandomField: Field {
     
     private var fieldModel: RandomFieldModel { return fieldBaseModel as! RandomFieldModel }
     

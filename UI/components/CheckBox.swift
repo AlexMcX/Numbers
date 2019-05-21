@@ -9,10 +9,10 @@
 import SpriteKit
 import DependencyInjection
 
-open class CheckBox: UIComponent {
+open class CheckBox: UIComponent {    
     @objc dynamic weak public private(set) var icon: SKSpriteNode!
     
-    public private(set) var onTouch:Signal!;
+    public private(set) var onTouch:Signal!
     
     public var value:Bool = false {
         didSet {
@@ -34,7 +34,7 @@ open class CheckBox: UIComponent {
         if var textureIcon: String = icon.texture?.name {
             textureIcon = textureIcon.slice(to: "_")
             
-            icon!.texture = SKTexture(imageNamed: "\(textureIcon)_\(value ? STATE.ON.rawValue: STATE.OFF.rawValue)")
+            icon!.texture = SKTexture(imageNamed: "\(textureIcon)_\(value ? CheckBoxState.on.rawValue  : CheckBoxState.off.rawValue)")
         }
     }
     
@@ -43,4 +43,9 @@ open class CheckBox: UIComponent {
         
         onTouch.fire()
     }
+}
+
+public enum CheckBoxState: String {
+    case on
+    case off
 }

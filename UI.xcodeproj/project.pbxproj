@@ -73,6 +73,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA0CE56C2291EC100069E8CA /* core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
 		FAEE9A9922838A90008BC058 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +131,7 @@
 		FAEE9ABB22838B8B008BC058 /* components */ = {
 			isa = PBXGroup;
 			children = (
+				FA0CE56C2291EC100069E8CA /* core */,
 				FAEE9ABE22838B8B008BC058 /* delegate */,
 				FAEE9AC322838B8B008BC058 /* list */,
 				FAEE9AC722838B8B008BC058 /* userData */,

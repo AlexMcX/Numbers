@@ -6,6 +6,6 @@
 //  Copyright © 2019 Alexey Oleksandrovich. All rights reserved.
 //
 
-public protocol ListDelegate {
+public protocol ListDelegate: class {
     func selectItem(data: Any)
 }

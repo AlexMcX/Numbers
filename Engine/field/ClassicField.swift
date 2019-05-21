@@ -6,7 +6,7 @@
 //  Copyright © 2019 Alexey Oleksandrovich. All rights reserved.
 //
 
-class ClassicField: Field, ClassicFieldProtocol {
+class ClassicField: Field {
     typealias Tile = ClassicTileModel
     
     private let startIndex = [[1,2,3,4,5,6,7,8,9],

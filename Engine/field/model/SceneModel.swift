@@ -22,7 +22,7 @@ class SceneModel: Codable {
     @objc dynamic public var view:Array<Int>        // visible rows indexes
     @objc dynamic public var tilesIDS:Int           // last created tile id
     
-    var field:Array<Array<TileModel?>>
+    var field:Array<Array<EGTileModel?>>
     
     init() {
         id = 0

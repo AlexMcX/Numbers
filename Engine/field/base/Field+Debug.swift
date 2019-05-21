@@ -26,7 +26,7 @@ extension Field {
                 self.simulateStep()
             }
             
-            printFull("STEP - [\(tiles[0].id), \(tiles[1].id)]")
+//            printFull("STEP - [\(tiles[0].id), \(tiles[1].id)]")
         }
     }
     
@@ -82,60 +82,6 @@ extension Field {
         
         print(result);
     }
-
-    
-    
-    
-    
-    
-    
-    
-//    internal func printField(_ prefix: String = "") {
-//        var positions:String
-//        var result:String
-//        var row:Array<Tile?>?
-//        var viewRow:Int
-//
-//        result = "************* Field Engine *************";
-//        result += prefix != "" ? "\n \(prefix)" : "";
-//
-//        positions = ""
-//
-//        for i in 0..<sceneBaseModel.view.count {
-//            viewRow = sceneBaseModel.view[i];
-//
-//            result += "\n";
-//            result += "v:\(i)|f:\(sceneBaseModel.view[i])) "
-//
-//            if viewRow < sceneBaseModel.field.count {
-//                row = sceneBaseModel.field[viewRow];
-//
-//
-//
-//                for j in 0..<row!.count {
-//                    if row![j] != nil {
-//                        if (row![j]!.isSuccess) {
-//                            result += "|✅id:\(row![j]!.id) idx:\(row![j]!.index) (\(row![j]!.position.row),\(row![j]!.position.col))"
-//                        }else{
-//                             result += "|  id:\(row![j]!.id) idx:\(row![j]!.index) (\(row![j]!.position.row),\(row![j]!.position.col))"
-//                        }
-//
-//                        result += row![j]!.id < 10 ? " |" : "|"
-//
-//                        positions += "{id:\(row![j]!.id), r:\(row![j]!.position.row), c:\(row![j]!.position.col)}, ";
-//                    }else{
-//                        result += "|       null        |";
-//                    }
-//                }
-//            }else {
-//                result += "NULL IN FIELD";
-//            }
-//        }
-//
-//        result += "\n*****************************************";
-//
-//        print(result);
-//    }
     
     internal func printView(_ prefix: String = "") {        
         print("\(prefix) FieldEngine::view: \(sceneBaseModel.view.description)");

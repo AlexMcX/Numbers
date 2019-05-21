@@ -22,26 +22,18 @@ extension Field {
     }
     
     internal func isSuccess(comparison: [Tile]) -> Bool {
-        var total: Int = 0
-        
-        for tile in comparison {
-            total += tile.index
+        let total = comparison.reduce(0) { (current, next) -> Int in
+            return current + next.index
         }
         
         return total == fieldBaseModel.comparison
     }
     
-    internal func isSuccess(equatable: [Tile]) -> Bool {
-        var prev: Tile?
-        
-        for tile in equatable {
-            if (prev != nil) {
-                if (prev!.index != tile.index) { return false }
-            }
-            
-            prev = tile
+    internal func isSuccess(equatable: [Tile]) -> Bool {    
+        if (equatable.count > 0) {
+            return equatable.filter{$0.index != equatable[0].index}.count == 0
         }
         
-        return true
+        return false
     }
 }

@@ -22,10 +22,6 @@ class BlocksMenuController: BaseController, ListDelegate {
         _view.setTotalStars(value: engine.totalStars)
     }
     
-    override func onDispose() {
-        _view.blocks.delegate = nil
-    }
-    
     internal func selectItem(data: Any) {
         engine.initBlock(block: data as? BlockModel)
         

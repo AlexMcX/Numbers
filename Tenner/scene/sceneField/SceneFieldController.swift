@@ -6,16 +6,8 @@
 //  Copyright © 2019 Alexey Oleksandrovich. All rights reserved.
 //
 
-import Foundation
-import Engine
-import UI
+import  UI
 
 class SceneFieldController: BaseController {
-    @objc dynamic private var engine: Engine!
-    
-    private lazy var field: EGField = { engine.field }()
-    
-    override func onInit() {        
-        
-    }
+
 }

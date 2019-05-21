@@ -15,7 +15,7 @@ open class List: UIComponent, ListItemDelegate {
     @objc dynamic private(set) var udRenderer: UDRenderer!
     @objc dynamic private(set) var udSize: UDSize!
     
-    public var delegate: ListDelegate?
+    public weak var delegate: ListDelegate?
     public var borderSize: CGSize = CGSize()
     public var direction: UDDirection.Direction = .horizontal {
         didSet {

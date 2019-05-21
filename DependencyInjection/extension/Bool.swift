@@ -26,10 +26,4 @@ public extension Bool {
             self.init(false)
         }
     }
-    
-    static var random: Bool {
-        get {
-            return Int.randomRange(min:0, max:1) == 0 ? false : true;
-        }
-    }
 }

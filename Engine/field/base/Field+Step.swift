@@ -8,7 +8,11 @@
 
 extension Field {
     public func step(tiles: [Tile]) {
-        if (isEndGame || isSuccess(tiles: tiles) == false) { return }
+        if (isEndGame || isSuccess(tiles: tiles) == false) {
+            delegateStep(tiles, false)
+            
+            return
+        }
         
         var tiles = tiles
         
@@ -18,7 +22,7 @@ extension Field {
         
         removeFromHelp(tiles: tiles)
         
-        delegateSuccessTiles(tiles)
+        delegateStep(tiles, true)
         
         removeSuccessRow(tiles)
         
@@ -75,7 +79,8 @@ extension Field {
     
     private func verification() {
         // win max count price
-        if (sceneBaseModel.price >= fieldBaseModel.priceComplete) {
+        if (sceneBaseModel.price >= fieldBaseModel.priceComplete ||
+            sceneBaseModel.view.count >= fieldBaseModel.rows) {
             delegateEndGame()
             
             return
@@ -121,5 +126,9 @@ extension Field {
         }
 
         delegateAddTiles(newTiles)
+        
+        if (success.value.count == 0) {
+            verification()
+        }
     }
 }

@@ -11,7 +11,6 @@ import CoreData
 
 public class LevelsDataService: INJDataService {
     @objc dynamic internal var fileService: INJFileService!
-//    @objc dynamic private var configService: ConfigService!
     
     internal var current: LevelModel! {didSet {
             if (oldValue != current) {
@@ -94,14 +93,4 @@ public class LevelsDataService: INJDataService {
         
         return field
     }
-    
-//    private func updateLevelMode() {
-//        switch current.config.type {
-//            case "Tenner":
-//                _currentMode = Tenner(data: current)
-//            case "Swap":
-//                _currentMode = Swap(data: current)
-//            default: break            
-//        }
-//    }
 }

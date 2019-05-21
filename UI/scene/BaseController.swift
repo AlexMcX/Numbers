@@ -36,11 +36,9 @@ open class BaseController: INJController {
     
     private func listenersBase(_ access: Bool) {
         if (access) {
-            _view.backBtn?.onTouch.add {
+            _view.backBtn?.onTouch.add { [unowned self] in
                 self.sceneService.prevScene()
             }
-        }else {
-            _view.backBtn?.onTouch.clear()
         }
     }
     

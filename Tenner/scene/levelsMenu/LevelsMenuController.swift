@@ -23,10 +23,6 @@ class LevelsMenuController: BaseController, ListDelegate {
         _view.setTotalStars(value: engine.totalStars)
     }
     
-    override func onDispose() {
-        _view.levels.delegate = nil
-    }
-    
     func selectItem(data: Any) {
         engine.initLevel(level: data as? LevelModel)
         
